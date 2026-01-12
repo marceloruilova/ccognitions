@@ -5,14 +5,17 @@ export default function ProjectsPage() {
   const projects = [
     {
       id: 1,
-      title: "Lanzamiento de MVP para FinTech en 3 Semanas",
-      description: "Cómo orquestamos un equipo de IAs para diseñar, desarrollar y testear un producto financiero, reduciendo el time-to-market en un 80%.",
+      title: "xPoverty: Plataforma de Donaciones con Arquitectura Enterprise",
+      description: "Desarrollo completo de una aplicación de donaciones con backend en C# .NET y frontend multiplataforma en Flutter. Implementación de arquitectura robusta, integración de múltiples pasarelas de pago (Stripe, DLocal), webhooks, compliance, y despliegue optimizado en Digital Ocean con CI/CD en GitHub. Incluye suite completa de testing: unitarias, integración y E2E (Flutter Web + Patrol para móvil).",
       metrics: [
-        { label: "Tiempo de Desarrollo", value: "3 Semanas" },
-        { label: "Ahorro de Costos", value: "70%" },
-        { label: "Equipo", value: "1 Orquestador de IA" },
+        { label: "Stack Backend", value: "C# .NET" },
+        { label: "Stack Frontend", value: "Flutter" },
+        { label: "Pasarelas de Pago", value: "Stripe + DLocal" },
+        { label: "Testing", value: "Unit + Integration + E2E" },
+        { label: "Deployment", value: "Digital Ocean + CI/CD" },
+        { label: "Features", value: "Webhooks + Compliance" },
       ],
-      link: "/projects/fintech-mvp", // Example link
+      link: "/projects/xpoverty-donations", // Example link
     }
   ];
 
@@ -35,15 +38,15 @@ export default function ProjectsPage() {
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 text-center">
                 {project.metrics.map(metric => (
-                  <div key={metric.label} className="bg-gray-100 p-4 rounded-lg">
-                    <span className="block text-sm font-semibold text-gray-500">{metric.label}</span>
-                    <span className="block text-2xl font-bold text-blue-600">{metric.value}</span>
+                  <div key={metric.label} className="bg-gray-100 p-4 rounded-lg border border-gray-200">
+                    <span className="block text-sm font-semibold text-gray-600">{metric.label}</span>
+                    <span className="block text-2xl font-bold text-gray-800">{metric.value}</span>
                   </div>
                 ))}
               </div>
 
               <div className="text-right">
-                <Link href={project.link} className="font-semibold text-blue-600 hover:underline">
+                <Link href={project.link} className="font-semibold text-gray-700 hover:text-gray-900 hover:underline transition-colors">
                   Ver detalles del caso →
                 </Link>
               </div>
