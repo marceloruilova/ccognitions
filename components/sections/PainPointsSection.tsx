@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function PainPointsSection() {
   return (
     <section className="py-20">
@@ -6,9 +8,14 @@ export default function PainPointsSection() {
         <p className="mt-4 text-lg text-gray-600">
           Equipos de 9 personas, reuniones interminables, y costos fijos altos antes de ver una línea de código.
         </p>
-        {/* Placeholder for a visual representation */}
-        <div className="mt-8 p-8 bg-gray-100 rounded-lg">
-          <p className="text-gray-500">Visual representation of "Overhead" here</p>
+        <div className="mt-8 flex justify-center">
+          <Image
+            src="/images/overhead.png"
+            alt="Representación visual del overhead"
+            width={600}
+            height={450}
+            className="rounded-lg"
+          />
         </div>
       </div>
     </section>

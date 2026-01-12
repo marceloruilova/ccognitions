@@ -25,7 +25,7 @@ export const SERVICES_DATA = [
     slug: "automatizacion-end-to-end",
     title: "Automatización End-to-End",
     problem: "Procesos manuales y repetitivos ralentizan tu operación. Necesitas automatizar flujos de trabajo complejos que involucran múltiples sistemas y decisiones.",
-    solution: "Diseñamos e implementamos soluciones de automatización completas usando RPA, integraciones API, y flujos de trabajo inteligentes. Automatizamos desde tareas simples hasta procesos complejos que requieren toma de decisiones. Incluye monitoreo, alertas y dashboards de rendimiento.",
+    solution: "Diseñamos e implementamos soluciones de automatización completas, integraciones API, y flujos de trabajo inteligentes. Automatizamos desde tareas simples hasta procesos complejos que requieren toma de decisiones.",
     benefit: "Reducción de hasta 80% en tiempo de ejecución y eliminación de errores manuales.",
   },
   {
