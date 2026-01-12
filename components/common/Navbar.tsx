@@ -1,6 +1,11 @@
+'use client';
+
 import Link from 'next/link';
+import {useTranslations} from 'next-intl';
 
 const Navbar = () => {
+  const t = useTranslations('Navbar');
+
   return (
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
@@ -8,17 +13,20 @@ const Navbar = () => {
           Code Cognition Studio
         </Link>
         <div className="hidden md:flex space-x-4">
+          <Link href="/proceso" className="text-gray-300 hover:text-white">
+            {t('proceso')}
+          </Link>
           <Link href="/projects" className="text-gray-300 hover:text-white">
-            Projects
+            {t('projects')}
           </Link>
           <Link href="/services" className="text-gray-300 hover:text-white">
-            Services
+            {t('services')}
           </Link>
           <Link href="/blog" className="text-gray-300 hover:text-white">
-            Blog
+            {t('blog')}
           </Link>
           <Link href="/contact" className="text-gray-300 hover:text-white">
-            Contact
+            {t('contact')}
           </Link>
         </div>
         <button className="md:hidden text-white">

@@ -1,0 +1,26 @@
+{
+  "Navbar": {
+    "proceso": "Proceso",
+    "projects": "Proyectos",
+    "services": "Servicios",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "HeroSection": {
+    "title": "Cognición Digital, Soluciones Exponenciales",
+    "subtitle": "Somos un estudio creativo de tecnología y desarrollo de software. Transformamos ideas en experiencias digitales memorables.",
+    "cta_button": "Ver cómo funciona",
+    "services_button": "Explorar servicios"
+  },
+  "ContactPage": {
+    "title": "Hablemos de tu proyecto",
+    "subtitle": "Completa el formulario y un orquestador de IA se pondrá en contacto contigo.",
+    "nameLabel": "Nombre",
+    "companyLabel": "Empresa",
+    "emailLabel": "Email",
+    "messageLabel": "¿En qué podemos ayudarte?",
+    "submitButton": "Enviar Mensaje",
+    "statusSending": "Enviando...",
+    "statusSuccess": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto."
+  }
+}
