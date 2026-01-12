@@ -94,7 +94,7 @@ export default function ServicesPage() {
                     Ver Detalles
                   </Link>
                   <Link
-                    href="/contact"
+                    href={`/contact?service=${encodeURIComponent(service.title)}&challenge=${encodeURIComponent(service.problem)}`}
                     className="flex-1 text-center bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105"
                   >
                     Solicitar
