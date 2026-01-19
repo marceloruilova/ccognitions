@@ -26,6 +26,12 @@ export default function HeroSection() {
           >
             {t('services_button')}
           </Link>
+          <Link
+            href="/diy"
+            className="ml-4 inline-block text-gray-300 hover:text-white font-medium py-2 px-4 underline decoration-dotted underline-offset-4 hover:decoration-solid transition-all"
+          >
+            {t('diy_button')}
+          </Link>
         </div>
       </div>
     </section>

@@ -10,7 +10,8 @@
     "title": "Digital Cognition, Exponential Solutions",
     "subtitle": "We are a creative technology and software development studio. We transform ideas into memorable digital experiences.",
     "cta_button": "See how it works",
-    "services_button": "Explore services"
+    "services_button": "Explore services",
+    "diy_button": "Can I do this myself?"
   },
   "ContactPage": {
     "title": "Let's talk about your project",
@@ -22,5 +23,123 @@
     "submitButton": "Send Message",
     "statusSending": "Sending...",
     "statusSuccess": "Thank you for your message! We will get in touch soon."
+  },
+  "DIYPage": {
+    "hero_title": "Yes, You Can Do This Yourself",
+    "hero_subtitle": "And we want to be honest with you about that.",
+    "hero_description": "In an era where ChatGPT, Claude, and other AIs can generate functional code, we believe you deserve total transparency. Here's the truth about what you can do alone and where we really add value.",
+
+    "truth_title": "The Truth About AI and Development",
+    "truth_subtitle": "What's possible today",
+    "truth_intro": "AI tools have democratized software development. Today you can:",
+    "truth_items": [
+      "Generate functional code with ChatGPT, Claude, or Copilot",
+      "Build complete applications using Cursor, Bolt, or Replit",
+      "Create landing pages and websites without writing code",
+      "Automate tasks with no-code/low-code tools"
+    ],
+    "truth_conclusion": "Many entrepreneurs are already building successful products this way. And that's okay.",
+
+    "cost_title": "The Real Cost of Doing It Yourself",
+    "cost_subtitle": "Let's be honest about the downsides",
+    "cost_items": [
+      {
+        "title": "Learning curve",
+        "description": "Weeks or months learning basic concepts of programming, architecture, and deployment."
+      },
+      {
+        "title": "Trial and error",
+        "description": "Hours debugging errors that an experienced developer would solve in minutes."
+      },
+      {
+        "title": "Technical debt",
+        "description": "Architectural decisions that seem right today but cost dearly later."
+      },
+      {
+        "title": "Your time has value",
+        "description": "Every hour you invest in code is an hour you don't invest in your business."
+      }
+    ],
+
+    "value_title": "Our Real Value",
+    "value_subtitle": "Why hiring us makes sense",
+    "value_items": [
+      {
+        "title": "Experience that saves time",
+        "description": "Years of experience condensed into quick and correct decisions."
+      },
+      {
+        "title": "A complete team",
+        "description": "Developers, architects, and consultants for a fraction of the traditional cost."
+      },
+      {
+        "title": "Scalable architecture",
+        "description": "We design for growth from day one, avoiding costly refactoring."
+      },
+      {
+        "title": "Focus on your business",
+        "description": "You focus on what you do best while we build."
+      }
+    ],
+
+    "comparison_title": "Honest Comparison",
+    "comparison_aspect": "Aspect",
+    "comparison_diy": "Do It Yourself",
+    "comparison_us": "With Us",
+    "comparison_rows": [
+      {
+        "aspect": "Time to launch",
+        "diy": "Weeks to months",
+        "us": "Days to weeks"
+      },
+      {
+        "aspect": "Technical risk",
+        "diy": "High - costly mistakes",
+        "us": "Minimized - proven experience"
+      },
+      {
+        "aspect": "Cost",
+        "diy": "Your time (which has value)",
+        "us": "Fixed and predictable investment"
+      },
+      {
+        "aspect": "Scalability",
+        "diy": "Limited without refactoring",
+        "us": "Designed from the start"
+      },
+      {
+        "aspect": "Maintenance",
+        "diy": "You handle everything",
+        "us": "Ongoing support available"
+      }
+    ],
+
+    "philosophy_title": "Our Philosophy",
+    "philosophy_subtitle": "The values of a 2026 startup",
+    "philosophy_items": [
+      {
+        "title": "Radical honesty",
+        "description": "We tell you the truth, even if it's not what you want to hear."
+      },
+      {
+        "title": "Total transparency",
+        "description": "No hidden costs, no empty promises, no tricks."
+      },
+      {
+        "title": "Mutual growth",
+        "description": "We win when you win. Your success is our success."
+      },
+      {
+        "title": "Constant innovation",
+        "description": "We use the best available tools, always up to date."
+      }
+    ],
+
+    "cta_title": "What Do You Prefer?",
+    "cta_subtitle": "Both options are valid",
+    "cta_diy_button": "I want to try it myself",
+    "cta_diy_description": "We wish you success. Here are some resources that can help.",
+    "cta_contact_button": "I'd rather save time",
+    "cta_contact_description": "Let's talk about your project and how we can help."
   }
 }

@@ -10,7 +10,8 @@
     "title": "Cognición Digital, Soluciones Exponenciales",
     "subtitle": "Somos un estudio creativo de tecnología y desarrollo de software. Transformamos ideas en experiencias digitales memorables.",
     "cta_button": "Ver cómo funciona",
-    "services_button": "Explorar servicios"
+    "services_button": "Explorar servicios",
+    "diy_button": "¿Puedo hacer esto solo?"
   },
   "ContactPage": {
     "title": "Hablemos de tu proyecto",
@@ -22,5 +23,123 @@
     "submitButton": "Enviar Mensaje",
     "statusSending": "Enviando...",
     "statusSuccess": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto."
+  },
+  "DIYPage": {
+    "hero_title": "Sí, Puedes Hacer Esto Solo",
+    "hero_subtitle": "Y queremos ser honestos contigo sobre eso.",
+    "hero_description": "En una era donde ChatGPT, Claude y otras IAs pueden generar código funcional, creemos que mereces transparencia total. Te contamos la verdad sobre lo que puedes hacer solo y dónde realmente agregamos valor.",
+
+    "truth_title": "La Verdad sobre IA y Desarrollo",
+    "truth_subtitle": "Lo que es posible hoy",
+    "truth_intro": "Las herramientas de IA han democratizado el desarrollo de software. Hoy puedes:",
+    "truth_items": [
+      "Generar código funcional con ChatGPT, Claude o Copilot",
+      "Construir aplicaciones completas usando Cursor, Bolt o Replit",
+      "Crear landing pages y sitios web sin escribir código",
+      "Automatizar tareas con herramientas no-code/low-code"
+    ],
+    "truth_conclusion": "Muchos emprendedores ya están construyendo productos exitosos así. Y está bien.",
+
+    "cost_title": "El Costo Real de Hacerlo Solo",
+    "cost_subtitle": "Seamos honestos sobre las desventajas",
+    "cost_items": [
+      {
+        "title": "Curva de aprendizaje",
+        "description": "Semanas o meses aprendiendo conceptos básicos de programación, arquitectura y deployment."
+      },
+      {
+        "title": "Prueba y error",
+        "description": "Horas depurando errores que un desarrollador experimentado resolvería en minutos."
+      },
+      {
+        "title": "Deuda técnica",
+        "description": "Decisiones arquitectónicas que parecen correctas hoy pero cuestan caro después."
+      },
+      {
+        "title": "Tu tiempo tiene valor",
+        "description": "Cada hora que inviertes en código es una hora que no inviertes en tu negocio."
+      }
+    ],
+
+    "value_title": "Nuestro Valor Real",
+    "value_subtitle": "Por qué contratarnos tiene sentido",
+    "value_items": [
+      {
+        "title": "Experiencia que ahorra tiempo",
+        "description": "Años de experiencia condensados en decisiones rápidas y correctas."
+      },
+      {
+        "title": "Un equipo completo",
+        "description": "Desarrolladores, arquitectos y consultores por una fracción del costo tradicional."
+      },
+      {
+        "title": "Arquitectura escalable",
+        "description": "Diseñamos para crecer desde el día uno, evitando refactorizaciones costosas."
+      },
+      {
+        "title": "Enfoque en tu negocio",
+        "description": "Tú te concentras en lo que haces mejor mientras nosotros construimos."
+      }
+    ],
+
+    "comparison_title": "Comparativa Honesta",
+    "comparison_aspect": "Aspecto",
+    "comparison_diy": "Hacerlo Solo",
+    "comparison_us": "Con Nosotros",
+    "comparison_rows": [
+      {
+        "aspect": "Tiempo hasta el lanzamiento",
+        "diy": "Semanas a meses",
+        "us": "Días a semanas"
+      },
+      {
+        "aspect": "Riesgo técnico",
+        "diy": "Alto - errores costosos",
+        "us": "Minimizado - experiencia probada"
+      },
+      {
+        "aspect": "Costo",
+        "diy": "Tu tiempo (que tiene valor)",
+        "us": "Inversión fija y predecible"
+      },
+      {
+        "aspect": "Escalabilidad",
+        "diy": "Limitada sin refactorizar",
+        "us": "Diseñada desde el inicio"
+      },
+      {
+        "aspect": "Mantenimiento",
+        "diy": "Tú te encargas de todo",
+        "us": "Soporte continuo disponible"
+      }
+    ],
+
+    "philosophy_title": "Nuestra Filosofía",
+    "philosophy_subtitle": "Los valores de una startup 2026",
+    "philosophy_items": [
+      {
+        "title": "Honestidad radical",
+        "description": "Te decimos la verdad, aunque no sea lo que quieras escuchar."
+      },
+      {
+        "title": "Transparencia total",
+        "description": "Sin costos ocultos, sin promesas vacías, sin trucos."
+      },
+      {
+        "title": "Crecimiento mutuo",
+        "description": "Ganamos cuando tú ganas. Tu éxito es nuestro éxito."
+      },
+      {
+        "title": "Innovación constante",
+        "description": "Usamos las mejores herramientas disponibles, siempre actualizados."
+      }
+    ],
+
+    "cta_title": "¿Qué Prefieres?",
+    "cta_subtitle": "Ambas opciones son válidas",
+    "cta_diy_button": "Quiero intentarlo solo",
+    "cta_diy_description": "Te deseamos éxito. Aquí hay algunos recursos que pueden ayudarte.",
+    "cta_contact_button": "Prefiero ahorrar tiempo",
+    "cta_contact_description": "Hablemos sobre tu proyecto y cómo podemos ayudarte."
   }
 }
