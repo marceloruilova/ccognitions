@@ -145,5 +145,22 @@
     "cta_diy_description": "Te deseamos la mejor de las suertes. Aquí tienes algunos recursos que podrían ayudarte.",
     "cta_contact_button": "Prefiero ahorrar tiempo y dinero",
     "cta_contact_description": "Hablemos de tu proyecto y de cómo podemos ayudarte a alcanzar tus objetivos."
+  },
+  "Metadata": {
+    "title": "Code Cognition Studio - Desarrollo de Software con IA",
+    "description": "Construimos sistemas complejos y MVPs con orquestación de IA, reduciendo costos y tiempo de lanzamiento."
+  },
+  "ContactAPI": {
+    "dailyLimitReached": "Límite diario alcanzado. Por favor, vuelve mañana o contáctanos directamente por teléfono.",
+    "requiredFields": "Por favor completa todos los campos requeridos.",
+    "invalidEmail": "Por favor ingresa un email válido.",
+    "sendError": "Error al enviar el mensaje. Por favor intenta de nuevo.",
+    "internalError": "Error interno del servidor. Por favor intenta de nuevo más tarde.",
+    "messageSentSuccess": "¡Mensaje enviado exitosamente! Te contactaremos pronto."
+  },
+  "Error": {
+    "title": "Algo salió mal",
+    "message": "Ha ocurrido un error inesperado. Por favor, intenta de nuevo.",
+    "retry": "Intentar de nuevo"
   }
 }

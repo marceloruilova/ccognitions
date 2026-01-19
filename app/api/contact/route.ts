@@ -1,3 +1,4 @@
+import { kv } from '@vercel/kv';
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -13,27 +14,23 @@ function escapeHtml(str: string): string {
     .replace(/'/g, '&#039;');
 }
 
-// Rate limiting: simple in-memory counter
-let emailCount = 0;
-let lastResetDate = new Date().toDateString();
-
 // Daily limit (Resend free tier: 100 emails/day, we'll use 90 to be safe)
 const DAILY_LIMIT = 90;
 
 export async function POST(request: NextRequest) {
-  try {
-    // Check and reset daily counter
-    const today = new Date().toDateString();
-    if (lastResetDate !== today) {
-      emailCount = 0;
-      lastResetDate = today;
-    }
+  const today = new Date().toISOString().split('T')[0];
+  const ip = request.ip ?? 'unknown';
+  const kvKey = `contact-form-rate-limit:${today}:${ip}`;
 
+
+  try {
     // Check if limit exceeded
-    if (emailCount >= DAILY_LIMIT) {
+    const count = await kv.get(kvKey) as number | null ?? 0;
+
+    if (count >= DAILY_LIMIT) {
       return NextResponse.json(
         {
-          error: 'Límite diario alcanzado. Por favor, vuelve mañana o contáctanos directamente por teléfono.'
+          error: 'contact.dailyLimitReached'
         },
         { status: 429 }
       );
@@ -49,7 +46,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           success: true,
-          message: '¡Mensaje enviado exitosamente! Te contactaremos pronto.',
+          message: 'contact.messageSentSuccess',
         },
         { status: 200 }
       );
@@ -58,7 +55,7 @@ export async function POST(request: NextRequest) {
     // Validate required fields
     if (!name || !email || !message) {
       return NextResponse.json(
-        { error: 'Por favor completa todos los campos requeridos.' },
+        { error: 'contact.requiredFields' },
         { status: 400 }
       );
     }
@@ -67,7 +64,7 @@ export async function POST(request: NextRequest) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { error: 'Por favor ingresa un email válido.' },
+        { error: 'contact.invalidEmail' },
         { status: 400 }
       );
     }
@@ -132,27 +129,30 @@ export async function POST(request: NextRequest) {
 
     if (error) {
       return NextResponse.json(
-        { error: 'Error al enviar el mensaje. Por favor intenta de nuevo.' },
+        { error: 'contact.sendError' },
         { status: 500 }
       );
     }
 
     // Increment counter on successful send
-    emailCount++;
+    await kv.incr(kvKey);
+    await kv.expire(kvKey, 86400); // 24 hours in seconds
+
+    const newCount = count + 1;
 
     return NextResponse.json(
       {
         success: true,
-        message: '¡Mensaje enviado exitosamente! Te contactaremos pronto.',
-        emailsSentToday: emailCount,
-        remainingToday: DAILY_LIMIT - emailCount
+        message: 'contact.messageSentSuccess',
+        emailsSentToday: newCount,
+        remainingToday: DAILY_LIMIT - newCount
       },
       { status: 200 }
     );
 
   } catch {
     return NextResponse.json(
-      { error: 'Error interno del servidor. Por favor intenta de nuevo más tarde.' },
+      { error: 'contact.internalError' },
       { status: 500 }
     );
   }

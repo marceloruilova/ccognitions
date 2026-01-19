@@ -145,5 +145,22 @@
     "cta_diy_description": "We wish you the best of luck. Here are some resources that might help you.",
     "cta_contact_button": "I'd rather save time and money",
     "cta_contact_description": "Let's talk about your project and how we can help you achieve your goals."
+  },
+  "Metadata": {
+    "title": "Code Cognition Studio - AI-Powered Software Development",
+    "description": "Building complex systems and MVPs with AI orchestration, reducing costs and time-to-market."
+  },
+  "ContactAPI": {
+    "dailyLimitReached": "Daily limit reached. Please try again tomorrow or contact us directly by phone.",
+    "requiredFields": "Please fill all the required fields.",
+    "invalidEmail": "Please enter a valid email.",
+    "sendError": "Error sending the message. Please try again.",
+    "internalError": "Internal server error. Please try again later.",
+    "messageSentSuccess": "Message sent successfully! We will contact you soon."
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "message": "An unexpected error has occurred. Please try again.",
+    "retry": "Try again"
   }
 }

@@ -4,13 +4,17 @@ import '../globals.css'
 import Navbar from '@/components/common/Navbar'
 import Footer from '@/components/common/Footer'
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
+import {getMessages, getTranslations} from 'next-intl/server';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Code Cognition Studio - AI-Powered Software Development',
-  description: 'Building complex systems and MVPs with AI orchestration, reducing costs and time-to-market.',
+export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
+  const t = await getTranslations({locale, namespace: 'Metadata'});
+ 
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
 }
 
 export default async function RootLayout({
