@@ -3,6 +3,16 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// HTML escape function to prevent XSS in email templates
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 // Rate limiting: simple in-memory counter
 let emailCount = 0;
 let lastResetDate = new Date().toDateString();
@@ -31,7 +41,19 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const body = await request.json();
-    const { name, company, email, message } = body;
+    const { name, company, email, message, website } = body;
+
+    // Honeypot check - if website field is filled, it's likely a bot
+    if (website) {
+      // Silently reject but return success to not alert bots
+      return NextResponse.json(
+        {
+          success: true,
+          message: '¡Mensaje enviado exitosamente! Te contactaremos pronto.',
+        },
+        { status: 200 }
+      );
+    }
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -50,12 +72,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Escape user input to prevent XSS
+    const safeName = escapeHtml(name);
+    const safeCompany = company ? escapeHtml(company) : '';
+    const safeEmail = escapeHtml(email);
+    const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
+
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'Formulario de Contacto <onboarding@resend.dev>', // You'll change this later with your verified domain
-      to: [process.env.BUSINESS_EMAIL || 'tu-email@ejemplo.com'], // Your business email
-      replyTo: email, // User's email for easy reply
-      subject: `Nuevo mensaje de contacto: ${name}`,
+      from: 'Formulario de Contacto <marceloruilova@ccognitions.com>',
+      to: [process.env.BUSINESS_EMAIL || 'marceloruilova@ccognitions.com'],
+      replyTo: email,
+      subject: `Nuevo mensaje de contacto: ${safeName}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -74,26 +102,26 @@ export async function POST(request: NextRequest) {
           <body>
             <div class="container">
               <div class="header">
-                <h2>📧 Nuevo Mensaje de Contacto</h2>
+                <h2>Nuevo Mensaje de Contacto</h2>
               </div>
               <div class="content">
                 <div class="field">
-                  <div class="label">👤 Nombre:</div>
-                  <div class="value">${name}</div>
+                  <div class="label">Nombre:</div>
+                  <div class="value">${safeName}</div>
                 </div>
-                ${company ? `
+                ${safeCompany ? `
                 <div class="field">
-                  <div class="label">🏢 Empresa:</div>
-                  <div class="value">${company}</div>
+                  <div class="label">Empresa:</div>
+                  <div class="value">${safeCompany}</div>
                 </div>
                 ` : ''}
                 <div class="field">
-                  <div class="label">📧 Email:</div>
-                  <div class="value">${email}</div>
+                  <div class="label">Email:</div>
+                  <div class="value">${safeEmail}</div>
                 </div>
                 <div class="field">
-                  <div class="label">💬 Mensaje:</div>
-                  <div class="message-box">${message.replace(/\n/g, '<br>')}</div>
+                  <div class="label">Mensaje:</div>
+                  <div class="message-box">${safeMessage}</div>
                 </div>
               </div>
             </div>
@@ -103,7 +131,6 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
-      console.error('Resend error:', error);
       return NextResponse.json(
         { error: 'Error al enviar el mensaje. Por favor intenta de nuevo.' },
         { status: 500 }
@@ -123,8 +150,7 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
 
-  } catch (error) {
-    console.error('API error:', error);
+  } catch {
     return NextResponse.json(
       { error: 'Error interno del servidor. Por favor intenta de nuevo más tarde.' },
       { status: 500 }

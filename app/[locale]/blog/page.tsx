@@ -1,4 +1,15 @@
-import Link from 'next/link';
+import type { Metadata } from 'next';
+import {Link} from '@/i18n/navigation';
+
+export const metadata: Metadata = {
+  title: 'Blog - Code Cognition Studio',
+  description: 'Artículos sobre orquestación de IA, desarrollo de software moderno y el futuro de la tecnología.',
+  openGraph: {
+    title: 'Blog - Code Cognition Studio',
+    description: 'Artículos sobre orquestación de IA, desarrollo de software moderno y el futuro de la tecnología.',
+    type: 'website',
+  },
+};
 
 export default function BlogPage() {
   // Placeholder for future blog post data

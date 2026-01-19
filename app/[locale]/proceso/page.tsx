@@ -1,4 +1,15 @@
-import Link from 'next/link';
+import type { Metadata } from 'next';
+import {Link} from '@/i18n/navigation';
+
+export const metadata: Metadata = {
+  title: 'Nuestro Proceso - Code Cognition Studio',
+  description: 'Conoce nuestro proceso de trabajo profesional y ágil, potenciado por inteligencia artificial para entregar resultados excepcionales.',
+  openGraph: {
+    title: 'Nuestro Proceso - Code Cognition Studio',
+    description: 'Proceso de trabajo profesional y ágil, potenciado por inteligencia artificial.',
+    type: 'website',
+  },
+};
 
 export default function ProcesoPage() {
   const phases = [

@@ -1,4 +1,15 @@
-import Link from 'next/link';
+import type { Metadata } from 'next';
+import {Link} from '@/i18n/navigation';
+
+export const metadata: Metadata = {
+  title: 'Proyectos - Code Cognition Studio',
+  description: 'Casos de éxito y proyectos realizados con nuestro modelo de desarrollo potenciado por IA.',
+  openGraph: {
+    title: 'Proyectos - Code Cognition Studio',
+    description: 'Casos de éxito y proyectos realizados con nuestro modelo de desarrollo potenciado por IA.',
+    type: 'website',
+  },
+};
 
 export default function ProjectsPage() {
   // Placeholder for future dynamic case study data

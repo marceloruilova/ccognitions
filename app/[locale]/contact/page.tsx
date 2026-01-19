@@ -34,6 +34,7 @@ export default function ContactPage() {
       company: formData.get('company') as string,
       email: formData.get('email') as string,
       message: message,
+      website: formData.get('website') as string, // Honeypot field
     };
 
     try {
@@ -61,8 +62,7 @@ export default function ContactPage() {
         setStatus(result.error || 'Error al enviar el mensaje. Por favor intenta de nuevo.');
         setStatusType('error');
       }
-    } catch (error) {
-      console.error('Error:', error);
+    } catch {
       setStatus('Error de conexión. Por favor verifica tu internet e intenta de nuevo.');
       setStatusType('error');
     } finally {
@@ -81,6 +81,11 @@ export default function ContactPage() {
       <main className="container mx-auto px-4 pb-16">
         <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
           <form onSubmit={handleSubmit}>
+            {/* Honeypot field - hidden from users, bots will fill it */}
+            <div className="hidden" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">{t('nameLabel')}</label>

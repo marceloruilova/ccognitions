@@ -1,9 +1,15 @@
-import Link from 'next/link';
+import {Link} from '@/i18n/navigation';
+
+interface BlogPost {
+  title: string;
+  date: string;
+  content: string;
+}
 
 // This function would fetch real blog post data in a real application
-async function getPostData(slug: string) {
+async function getPostData(slug: string): Promise<BlogPost | null> {
   // Placeholder data
-  const posts = {
+  const posts: Record<string, BlogPost> = {
     "por-que-la-orquestacion-de-ia-es-el-futuro-del-software": {
       title: "¿Por qué la Orquestación de IA es el Futuro del Software?",
       date: "Enero 12, 2026",
@@ -38,7 +44,6 @@ async function getPostData(slug: string) {
       `
     }
   };
-  // @ts-ignore
   return posts[slug] || null;
 }
 
@@ -50,8 +55,9 @@ export async function generateStaticParams() {
     ];
 }
 
-export default async function BlogPostPage({ params }: { params: { slug:string }}) {
-  const post = await getPostData(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getPostData(slug);
 
   if (!post) {
     return (

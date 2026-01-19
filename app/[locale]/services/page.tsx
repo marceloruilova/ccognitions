@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import { SERVICES_DATA } from '@/lib/constants';
-import Link from 'next/link';
+import {Link} from '@/i18n/navigation';
+
+export const metadata: Metadata = {
+  title: 'Servicios - Code Cognition Studio',
+  description: 'Desarrollo de software, automatización con IA, consultoría tecnológica y más. Soluciones a medida para tu negocio.',
+  openGraph: {
+    title: 'Servicios - Code Cognition Studio',
+    description: 'Desarrollo de software, automatización con IA, consultoría tecnológica y más.',
+    type: 'website',
+  },
+};
 
 export default function ServicesPage() {
   return (
@@ -123,7 +134,7 @@ export default function ServicesPage() {
               </Link>
               <span className="text-blue-100">o</span>
               <a
-                href="mailto:contacto@tuempresa.com"
+                href="mailto:marceloruilova@ccognitions.com"
                 className="text-white font-semibold underline hover:text-blue-100 transition-colors"
               >
                 Envíanos un email
