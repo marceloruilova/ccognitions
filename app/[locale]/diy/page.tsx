@@ -49,6 +49,22 @@ export default function DIYPage() {
 
       <main className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto space-y-20">
+          {/* New Section */}
+          <section className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="p-8">
+              <p className="text-gray-700 mb-6 text-lg">
+                {t('videos_intro')}
+              </p>
+              <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                <p className="text-yellow-900 font-medium">
+                  {t('videos_work_in_progress')}
+                </p>
+              </div>
+              <p className="text-gray-700 mt-6 text-lg">
+                {t('videos_trust')}
+              </p>
+            </div>
+          </section>
 
           {/* Section: The Truth About AI */}
           <section className="bg-white rounded-2xl shadow-xl overflow-hidden">

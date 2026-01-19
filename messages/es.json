@@ -27,119 +27,123 @@
   "DIYPage": {
     "hero_title": "Sí, Puedes Hacer Esto Solo",
     "hero_subtitle": "Y queremos ser honestos contigo sobre eso.",
-    "hero_description": "En una era donde ChatGPT, Claude y otras IAs pueden generar código funcional, creemos que mereces transparencia total. Te contamos la verdad sobre lo que puedes hacer solo y dónde realmente agregamos valor.",
+    "hero_description": "En una era donde la IA puede generar código funcional, creemos en la transparencia. Te contamos la verdad sobre lo que puedes hacer por tu cuenta y dónde te aportamos un valor real.",
 
-    "truth_title": "La Verdad sobre IA y Desarrollo",
-    "truth_subtitle": "Lo que es posible hoy",
-    "truth_intro": "Las herramientas de IA han democratizado el desarrollo de software. Hoy puedes:",
+    "videos_intro": "Puedes crear el aplicativo por tu cuenta al seguir los siguientes grupos de videos.",
+    "videos_work_in_progress": "Actualmente estamos trabajando en los videos. Por favor, vuelve a consultar más tarde.",
+    "videos_trust": "Mientras tanto, si deseas puedes leer la siguiente información para confiar más en nuestros servicios.",
+
+    "truth_title": "La Realidad de la IA en el Desarrollo",
+    "truth_subtitle": "Lo que es posible hoy en día",
+    "truth_intro": "Las herramientas de IA han democratizado el desarrollo de software. Hoy en día, es posible:",
     "truth_items": [
-      "Generar código funcional con ChatGPT, Claude o Copilot",
-      "Construir aplicaciones completas usando Cursor, Bolt o Replit",
-      "Crear landing pages y sitios web sin escribir código",
-      "Automatizar tareas con herramientas no-code/low-code"
+      "Generar código funcional con ChatGPT, Claude o Copilot.",
+      "Construir aplicaciones completas utilizando herramientas como Cursor, Bolt o Replit.",
+      "Crear landing pages y sitios web sin escribir una sola línea de código.",
+      "Automatizar tareas complejas utilizando plataformas no-code/low-code."
     ],
-    "truth_conclusion": "Muchos emprendedores ya están construyendo productos exitosos así. Y está bien.",
+    "truth_conclusion": "Muchos emprendedores ya están construyendo productos exitosos de esta manera, y eso es algo genial.",
 
-    "cost_title": "El Costo Real de Hacerlo Solo",
-    "cost_subtitle": "Seamos honestos sobre las desventajas",
+    "cost_title": "Los Costes Ocultos del Enfoque DIY",
+    "cost_subtitle": "Seamos honestos sobre los desafíos",
     "cost_items": [
       {
-        "title": "Curva de aprendizaje",
-        "description": "Semanas o meses aprendiendo conceptos básicos de programación, arquitectura y deployment."
+        "title": "La Empinada Curva de Aprendizaje",
+        "description": "Puede llevar semanas o incluso meses aprender los conceptos básicos de programación, arquitectura y despliegue."
       },
       {
-        "title": "Prueba y error",
-        "description": "Horas depurando errores que un desarrollador experimentado resolvería en minutos."
+        "title": "Prueba y Error",
+        "description": "Puedes perder horas depurando errores que un desarrollador experimentado podría resolver en minutos."
       },
       {
-        "title": "Deuda técnica",
-        "description": "Decisiones arquitectónicas que parecen correctas hoy pero cuestan caro después."
+        "title": "Deuda Técnica",
+        "description": "Decisiones arquitectónicas que parecen correctas hoy pueden resultar muy costosas de solucionar en el futuro."
       },
       {
-        "title": "Tu tiempo tiene valor",
-        "description": "Cada hora que inviertes en código es una hora que no inviertes en tu negocio."
+        "title": "Tu Tiempo es un Activo Valioso",
+        "description": "Cada hora que inviertes en problemas técnicos es una hora que no inviertes en hacer crecer tu negocio."
       }
     ],
 
-    "value_title": "Nuestro Valor Real",
-    "value_subtitle": "Por qué contratarnos tiene sentido",
+    "value_title": "El Valor que Aportamos a la Mesa",
+    "value_subtitle": "Por qué trabajar con nosotros es una decisión inteligente",
     "value_items": [
       {
-        "title": "Experiencia que ahorra tiempo",
-        "description": "Años de experiencia condensados en decisiones rápidas y correctas."
+        "title": "Experiencia que te Ahorra Tiempo",
+        "description": "Condensamos años de experiencia en decisiones rápidas y efectivas para tu proyecto."
       },
       {
-        "title": "Un equipo completo",
-        "description": "Desarrolladores, arquitectos y consultores por una fracción del costo tradicional."
+        "title": "Un Equipo Completo a tu Disposición",
+        "description": "Tienes acceso a desarrolladores, arquitectos y consultores por una fracción del coste de contratarlos individualmente."
       },
       {
-        "title": "Arquitectura escalable",
-        "description": "Diseñamos para crecer desde el día uno, evitando refactorizaciones costosas."
+        "title": "Arquitectura Escalable desde el Primer Día",
+        "description": "Diseñamos para el crecimiento desde el principio, evitando costosas refactorizaciones en el futuro."
       },
       {
-        "title": "Enfoque en tu negocio",
-        "description": "Tú te concentras en lo que haces mejor mientras nosotros construimos."
+        "title": "Enfócate en lo que Haces Mejor",
+        "description": "Puedes centrarte en tu negocio mientras nosotros nos encargamos de la parte técnica."
       }
     ],
 
-    "comparison_title": "Comparativa Honesta",
+    "comparison_title": "Una Comparación Honesta",
     "comparison_aspect": "Aspecto",
-    "comparison_diy": "Hacerlo Solo",
+    "comparison_diy": "DIY",
     "comparison_us": "Con Nosotros",
     "comparison_rows": [
       {
-        "aspect": "Tiempo hasta el lanzamiento",
+        "aspect": "Tiempo de Lanzamiento",
         "diy": "Semanas a meses",
         "us": "Días a semanas"
       },
       {
-        "aspect": "Riesgo técnico",
-        "diy": "Alto - errores costosos",
-        "us": "Minimizado - experiencia probada"
+        "aspect": "Riesgo Técnico",
+        "diy": "Alto, con riesgo de errores costosos",
+        "us": "Minimizado, gracias a nuestra experiencia probada"
       },
       {
-        "aspect": "Costo",
-        "diy": "Tu tiempo (que tiene valor)",
-        "us": "Inversión fija y predecible"
+        "aspect": "Coste",
+        "diy": "Tu tiempo (que es un activo valioso)",
+        "us": "Una inversión fija y predecible"
       },
       {
         "aspect": "Escalabilidad",
-        "diy": "Limitada sin refactorizar",
-        "us": "Diseñada desde el inicio"
+        "diy": "Limitada sin una refactorización importante",
+        "us": "Diseñada para el crecimiento desde el principio"
       },
       {
         "aspect": "Mantenimiento",
-        "diy": "Tú te encargas de todo",
-        "us": "Soporte continuo disponible"
+        "diy": "Tú eres responsable de todo",
+        "us": "Ofrecemos soporte continuo"
       }
     ],
 
     "philosophy_title": "Nuestra Filosofía",
-    "philosophy_subtitle": "Los valores de una startup 2026",
+    "philosophy_subtitle": "Los valores de una startup del siglo XXI",
     "philosophy_items": [
       {
-        "title": "Honestidad radical",
-        "description": "Te decimos la verdad, aunque no sea lo que quieras escuchar."
+        "title": "Honestidad Radical",
+        "description": "Te decimos la verdad, aunque no sea lo que quieres oír."
       },
       {
-        "title": "Transparencia total",
-        "description": "Sin costos ocultos, sin promesas vacías, sin trucos."
+        "title": "Transparencia Total",
+        "description": "Sin costes ocultos, sin promesas vacías, sin humo y espejos."
       },
       {
-        "title": "Crecimiento mutuo",
-        "description": "Ganamos cuando tú ganas. Tu éxito es nuestro éxito."
+        "title": "Crecimiento Mutuo",
+        "description": "Nosotros tenemos éxito cuando tú tienes éxito. Tu éxito es nuestro éxito."
       },
       {
-        "title": "Innovación constante",
-        "description": "Usamos las mejores herramientas disponibles, siempre actualizados."
+        "title": "Innovación Constante",
+        "description": "Utilizamos las mejores herramientas disponibles, manteniéndonos siempre al día de las últimas tendencias."
       }
     ],
 
-    "cta_title": "¿Qué Prefieres?",
-    "cta_subtitle": "Ambas opciones son válidas",
-    "cta_diy_button": "Quiero intentarlo solo",
-    "cta_diy_description": "Te deseamos éxito. Aquí hay algunos recursos que pueden ayudarte.",
-    "cta_contact_button": "Prefiero ahorrar tiempo",
-    "cta_contact_description": "Hablemos sobre tu proyecto y cómo podemos ayudarte."
+    "cta_title": "¿Cuál es tu Elección?",
+    "cta_subtitle": "Ambos caminos son válidos",
+    "cta_diy_button": "Quiero intentarlo yo mismo",
+    "cta_diy_description": "Te deseamos la mejor de las suertes. Aquí tienes algunos recursos que podrían ayudarte.",
+    "cta_contact_button": "Prefiero ahorrar tiempo y dinero",
+    "cta_contact_description": "Hablemos de tu proyecto y de cómo podemos ayudarte a alcanzar tus objetivos."
   }
 }

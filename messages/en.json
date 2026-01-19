@@ -27,119 +27,123 @@
   "DIYPage": {
     "hero_title": "Yes, You Can Do This Yourself",
     "hero_subtitle": "And we want to be honest with you about that.",
-    "hero_description": "In an era where ChatGPT, Claude, and other AIs can generate functional code, we believe you deserve total transparency. Here's the truth about what you can do alone and where we really add value.",
+    "hero_description": "In an era where AI can generate functional code, we believe in transparency. Here’s the truth about what you can do on your own and where we provide real value.",
 
-    "truth_title": "The Truth About AI and Development",
-    "truth_subtitle": "What's possible today",
-    "truth_intro": "AI tools have democratized software development. Today you can:",
+    "videos_intro": "You can build the application on your own by following these video groups.",
+    "videos_work_in_progress": "We are currently working on the videos. Please check back later.",
+    "videos_trust": "In the meantime, feel free to read the following information to trust our services more.",
+
+    "truth_title": "The Reality of AI in Development",
+    "truth_subtitle": "What’s possible today",
+    "truth_intro": "AI tools have democratized software development. Today, it’s possible to:",
     "truth_items": [
-      "Generate functional code with ChatGPT, Claude, or Copilot",
-      "Build complete applications using Cursor, Bolt, or Replit",
-      "Create landing pages and websites without writing code",
-      "Automate tasks with no-code/low-code tools"
+      "Generate functional code with ChatGPT, Claude, or Copilot.",
+      "Build complete applications using tools like Cursor, Bolt, or Replit.",
+      "Create landing pages and websites without writing a single line of code.",
+      "Automate complex tasks using no-code/low-code platforms."
     ],
-    "truth_conclusion": "Many entrepreneurs are already building successful products this way. And that's okay.",
+    "truth_conclusion": "Many entrepreneurs are already building successful products this way, and that's a great thing.",
 
-    "cost_title": "The Real Cost of Doing It Yourself",
-    "cost_subtitle": "Let's be honest about the downsides",
+    "cost_title": "The Hidden Costs of the DIY Approach",
+    "cost_subtitle": "Let's be honest about the challenges",
     "cost_items": [
       {
-        "title": "Learning curve",
-        "description": "Weeks or months learning basic concepts of programming, architecture, and deployment."
+        "title": "The Steep Learning Curve",
+        "description": "It can take weeks or even months to learn the basic concepts of programming, architecture, and deployment."
       },
       {
-        "title": "Trial and error",
-        "description": "Hours debugging errors that an experienced developer would solve in minutes."
+        "title": "Trial and Error",
+        "description": "You can lose hours debugging errors that an experienced developer could solve in minutes."
       },
       {
-        "title": "Technical debt",
-        "description": "Architectural decisions that seem right today but cost dearly later."
+        "title": "Technical Debt",
+        "description": "Architectural decisions that seem right today can become very expensive to fix in the future."
       },
       {
-        "title": "Your time has value",
-        "description": "Every hour you invest in code is an hour you don't invest in your business."
+        "title": "Your Time is a Valuable Asset",
+        "description": "Every hour you spend on technical problems is an hour you don't invest in growing your business."
       }
     ],
 
-    "value_title": "Our Real Value",
-    "value_subtitle": "Why hiring us makes sense",
+    "value_title": "The Value We Bring to the Table",
+    "value_subtitle": "Why working with us is a smart decision",
     "value_items": [
       {
-        "title": "Experience that saves time",
-        "description": "Years of experience condensed into quick and correct decisions."
+        "title": "Experience That Saves You Time",
+        "description": "We condense years of experience into quick and effective decisions for your project."
       },
       {
-        "title": "A complete team",
-        "description": "Developers, architects, and consultants for a fraction of the traditional cost."
+        "title": "A Complete Team at Your Disposal",
+        "description": "You get access to developers, architects, and consultants for a fraction of the cost of hiring them individually."
       },
       {
-        "title": "Scalable architecture",
-        "description": "We design for growth from day one, avoiding costly refactoring."
+        "title": "Scalable Architecture from Day One",
+        "description": "We design for growth from the beginning, avoiding costly refactoring in the future."
       },
       {
-        "title": "Focus on your business",
-        "description": "You focus on what you do best while we build."
+        "title": "Focus on What You Do Best",
+        "description": "You can focus on your business while we take care of the technical side of things."
       }
     ],
 
-    "comparison_title": "Honest Comparison",
+    "comparison_title": "An Honest Comparison",
     "comparison_aspect": "Aspect",
-    "comparison_diy": "Do It Yourself",
+    "comparison_diy": "DIY",
     "comparison_us": "With Us",
     "comparison_rows": [
       {
-        "aspect": "Time to launch",
+        "aspect": "Time to Launch",
         "diy": "Weeks to months",
         "us": "Days to weeks"
       },
       {
-        "aspect": "Technical risk",
-        "diy": "High - costly mistakes",
-        "us": "Minimized - proven experience"
+        "aspect": "Technical Risk",
+        "diy": "High, with a risk of costly mistakes",
+        "us": "Minimized, thanks to our proven experience"
       },
       {
         "aspect": "Cost",
-        "diy": "Your time (which has value)",
-        "us": "Fixed and predictable investment"
+        "diy": "Your time (which is a valuable asset)",
+        "us": "A fixed and predictable investment"
       },
       {
         "aspect": "Scalability",
-        "diy": "Limited without refactoring",
-        "us": "Designed from the start"
+        "diy": "Limited without significant refactoring",
+        "us": "Designed for growth from the start"
       },
       {
         "aspect": "Maintenance",
-        "diy": "You handle everything",
-        "us": "Ongoing support available"
+        "diy": "You are responsible for everything",
+        "us": "We offer ongoing support"
       }
     ],
 
     "philosophy_title": "Our Philosophy",
-    "philosophy_subtitle": "The values of a 2026 startup",
+    "philosophy_subtitle": "The values of a 21st-century startup",
     "philosophy_items": [
       {
-        "title": "Radical honesty",
+        "title": "Radical Honesty",
         "description": "We tell you the truth, even if it's not what you want to hear."
       },
       {
-        "title": "Total transparency",
-        "description": "No hidden costs, no empty promises, no tricks."
+        "title": "Total Transparency",
+        "description": "No hidden costs, no empty promises, no smoke and mirrors."
       },
       {
-        "title": "Mutual growth",
-        "description": "We win when you win. Your success is our success."
+        "title": "Mutual Growth",
+        "description": "We succeed when you succeed. Your success is our success."
       },
       {
-        "title": "Constant innovation",
-        "description": "We use the best available tools, always up to date."
+        "title": "Constant Innovation",
+        "description": "We use the best tools available, always staying up-to-date with the latest trends."
       }
     ],
 
-    "cta_title": "What Do You Prefer?",
-    "cta_subtitle": "Both options are valid",
+    "cta_title": "What's Your Choice?",
+    "cta_subtitle": "Both paths are valid",
     "cta_diy_button": "I want to try it myself",
-    "cta_diy_description": "We wish you success. Here are some resources that can help.",
-    "cta_contact_button": "I'd rather save time",
-    "cta_contact_description": "Let's talk about your project and how we can help."
+    "cta_diy_description": "We wish you the best of luck. Here are some resources that might help you.",
+    "cta_contact_button": "I'd rather save time and money",
+    "cta_contact_description": "Let's talk about your project and how we can help you achieve your goals."
   }
 }
