@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: 'Formulario de Contacto <marceloruilova@ccognitions.com>',
       to: [process.env.BUSINESS_EMAIL || 'marceloruilova@ccognitions.com'],
-      replyTo: email,
+      reply_to: email,
       subject: `Nuevo mensaje de contacto: ${safeName}`,
       html: `
         <!DOCTYPE html>
