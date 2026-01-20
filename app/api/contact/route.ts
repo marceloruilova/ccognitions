@@ -1,4 +1,4 @@
-import { kv } from '@vercel/kv';
+import redis from '@/lib/redis';
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -20,14 +20,17 @@ const DAILY_LIMIT = 90;
 export async function POST(request: NextRequest) {
   const today = new Date().toISOString().split('T')[0];
   const ip = request.ip ?? 'unknown';
-  const kvKey = `contact-form-rate-limit:${today}:${ip}`;
+  const redisKey = `contact-form-rate-limit:${today}:${ip}`;
 
 
   try {
+    await redis.connect();
     // Check if limit exceeded
-    const count = await kv.get(kvKey) as number | null ?? 0;
+    const countString = await redis.get(redisKey);
+    const count = countString ? parseInt(countString, 10) : 0;
 
     if (count >= DAILY_LIMIT) {
+      await redis.quit();
       return NextResponse.json(
         {
           error: 'contact.dailyLimitReached'
@@ -43,6 +46,7 @@ export async function POST(request: NextRequest) {
     // Honeypot check - if website field is filled, it's likely a bot
     if (website) {
       // Silently reject but return success to not alert bots
+      await redis.quit();
       return NextResponse.json(
         {
           success: true,
@@ -54,6 +58,7 @@ export async function POST(request: NextRequest) {
 
     // Validate required fields
     if (!name || !email || !message) {
+      await redis.quit();
       return NextResponse.json(
         { error: 'contact.requiredFields' },
         { status: 400 }
@@ -63,6 +68,7 @@ export async function POST(request: NextRequest) {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
+      await redis.quit();
       return NextResponse.json(
         { error: 'contact.invalidEmail' },
         { status: 400 }
@@ -128,6 +134,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
+      await redis.quit();
       return NextResponse.json(
         { error: 'contact.sendError' },
         { status: 500 }
@@ -135,10 +142,12 @@ export async function POST(request: NextRequest) {
     }
 
     // Increment counter on successful send
-    await kv.incr(kvKey);
-    await kv.expire(kvKey, 86400); // 24 hours in seconds
-
-    const newCount = count + 1;
+    const newCount = await redis.incr(redisKey);
+    if (newCount === 1) {
+      await redis.expire(redisKey, 86400); // 24 hours in seconds
+    }
+    
+    await redis.quit();
 
     return NextResponse.json(
       {
@@ -150,7 +159,11 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
 
-  } catch {
+  } catch (error) {
+    if (redis.isOpen) {
+      await redis.quit();
+    }
+    console.error(error);
     return NextResponse.json(
       { error: 'contact.internalError' },
       { status: 500 }

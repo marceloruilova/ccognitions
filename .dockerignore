@@ -1,0 +1,12 @@
+# Dockerignore for Next.js app
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.git
+.next/cache
+.nyc_output
+coverage
+node_modules
+npm-debug.log
+README.md
