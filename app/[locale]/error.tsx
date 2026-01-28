@@ -2,7 +2,6 @@
 
 import {useEffect} from 'react';
 import {useTranslations} from 'next-intl';
-import * as Sentry from "@sentry/nextjs";
 
 export default function Error({
   error,
@@ -12,8 +11,10 @@ export default function Error({
   reset: () => void;
 }) {
   const t = useTranslations('Error');
+
   useEffect(() => {
-    Sentry.captureException(error);
+    // Log error to console in production
+    console.error('Application error:', error);
   }, [error]);
 
   return (
