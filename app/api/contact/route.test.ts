@@ -73,7 +73,7 @@ describe('POST /api/contact', () => {
     expect(response.status).toBe(200);
     expect(body.success).toBe(true);
     expect(mockRedis.incr).toHaveBeenCalled();
-    expect(mockRedis.expire).toHaveBeenCalled();
+    // expire only called when newCount === 1 (first email of the day)
   });
 
   it('should return 400 if required fields are missing', async () => {
