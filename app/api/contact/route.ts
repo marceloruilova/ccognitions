@@ -1,4 +1,4 @@
-import redis from '@/lib/redis';
+import { getRedis } from '@/lib/redis';
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -22,15 +22,14 @@ export async function POST(request: NextRequest) {
   const ip = request.ip ?? 'unknown';
   const redisKey = `contact-form-rate-limit:${today}:${ip}`;
 
-
   try {
-    await redis.connect();
+    const redis = await getRedis();
+
     // Check if limit exceeded
     const countString = await redis.get(redisKey);
     const count = countString ? parseInt(countString, 10) : 0;
 
     if (count >= DAILY_LIMIT) {
-      await redis.quit();
       return NextResponse.json(
         {
           error: 'contact.dailyLimitReached'
@@ -46,7 +45,6 @@ export async function POST(request: NextRequest) {
     // Honeypot check - if website field is filled, it's likely a bot
     if (website) {
       // Silently reject but return success to not alert bots
-      await redis.quit();
       return NextResponse.json(
         {
           success: true,
@@ -58,7 +56,6 @@ export async function POST(request: NextRequest) {
 
     // Validate required fields
     if (!name || !email || !message) {
-      await redis.quit();
       return NextResponse.json(
         { error: 'contact.requiredFields' },
         { status: 400 }
@@ -68,7 +65,6 @@ export async function POST(request: NextRequest) {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      await redis.quit();
       return NextResponse.json(
         { error: 'contact.invalidEmail' },
         { status: 400 }
@@ -134,7 +130,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
-      await redis.quit();
+      console.error('Resend error:', error);
       return NextResponse.json(
         { error: 'contact.sendError' },
         { status: 500 }
@@ -146,8 +142,6 @@ export async function POST(request: NextRequest) {
     if (newCount === 1) {
       await redis.expire(redisKey, 86400); // 24 hours in seconds
     }
-    
-    await redis.quit();
 
     return NextResponse.json(
       {
@@ -160,10 +154,7 @@ export async function POST(request: NextRequest) {
     );
 
   } catch (error) {
-    if (redis.isOpen) {
-      await redis.quit();
-    }
-    console.error(error);
+    console.error('Contact form error:', error);
     return NextResponse.json(
       { error: 'contact.internalError' },
       { status: 500 }

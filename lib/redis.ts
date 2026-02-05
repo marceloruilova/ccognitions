@@ -1,12 +1,20 @@
-import { createClient } from 'redis';
+import { createClient, RedisClientType } from 'redis';
 
-const redis = createClient({
-  url: process.env.REDIS_URL,
-});
+let redis: RedisClientType | null = null;
 
-redis.on('error', (err) => console.log('Redis Client Error', err));
+export async function getRedis(): Promise<RedisClientType> {
+  if (!redis) {
+    redis = createClient({
+      url: process.env.REDIS_URL || 'redis://localhost:6379',
+    });
+    redis.on('error', (err) => console.error('Redis Client Error', err));
+  }
 
-// We don't need to call redis.connect() because the client
-// will automatically connect when a command is sent.
+  if (!redis.isOpen) {
+    await redis.connect();
+  }
 
-export default redis;
+  return redis;
+}
+
+export default { getRedis };
