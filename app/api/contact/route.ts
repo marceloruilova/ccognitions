@@ -2,8 +2,6 @@ import { getRedis } from '@/lib/redis';
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // HTML escape function to prevent XSS in email templates
 function escapeHtml(str: string): string {
   return str
@@ -78,6 +76,7 @@ export async function POST(request: NextRequest) {
     const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
 
     // Send email using Resend
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { data, error } = await resend.emails.send({
       from: 'Formulario de Contacto <marceloruilova@ccognitions.com>',
       to: [process.env.BUSINESS_EMAIL || 'marceloruilova@ccognitions.com'],
