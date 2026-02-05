@@ -1,8 +1,8 @@
 version: '3.8'
 
 # CCOGNITIONS PRODUCTION DOCKER COMPOSE
-# Uses Cloudflare for SSL, exposes on ports 8080/8443
-# Access via: https://ccognitions.com (through Cloudflare proxy)
+# Uses Cloudflare with Full SSL mode
+# Ports: 8080 (HTTP redirect) and 8443 (HTTPS)
 
 services:
   web:
@@ -44,8 +44,10 @@ services:
     restart: always
     ports:
       - "8080:80"
+      - "8443:443"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
       - nginx_logs:/var/log/nginx
     depends_on:
       - web
