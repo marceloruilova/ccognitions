@@ -136,10 +136,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Increment counter on successful send
-    const newCount = await redis.incr(redisKey);
-    if (newCount === 1) {
-      await redis.expire(redisKey, 86400); // 24 hours in seconds
+    // Increment counter on successful send (non-critical, don't block success response)
+    let newCount = count + 1;
+    try {
+      newCount = await redis.incr(redisKey);
+      if (newCount === 1) {
+        await redis.expire(redisKey, 86400); // 24 hours in seconds
+      }
+    } catch (redisError) {
+      console.error('Redis increment error (email was sent successfully):', redisError);
     }
 
     return NextResponse.json(
