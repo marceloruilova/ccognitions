@@ -13,7 +13,7 @@ export default function HeroSection() {
         <p className="mt-4 text-xl">
           {t('subtitle')}
         </p>
-        <div className="mt-8">
+        <div className="mt-8 flex flex-col items-center gap-4 md:flex-row md:justify-center">
           <Link
             href="/proceso"
             className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors"
@@ -22,13 +22,13 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/services"
-            className="ml-4 inline-block bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded transition-colors"
+            className="inline-block bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded transition-colors"
           >
             {t('services_button')}
           </Link>
           <Link
             href="/diy"
-            className="ml-4 inline-block text-gray-300 hover:text-white font-medium py-2 px-4 underline decoration-dotted underline-offset-4 hover:decoration-solid transition-all"
+            className="inline-block text-gray-300 hover:text-white font-medium py-2 px-4 underline decoration-dotted underline-offset-4 hover:decoration-solid transition-all"
           >
             {t('diy_button')}
           </Link>
