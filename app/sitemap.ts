@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts = [
     '/blog/por-que-la-orquestacion-de-ia-es-el-futuro-del-software',
     '/blog/el-fin-de-los-equipos-de-9-personas',
+    '/blog/separacion-de-responsabilidades-en-agentes-de-codigo',
   ];
 
   const allRoutes = [...routes, ...blogPosts];

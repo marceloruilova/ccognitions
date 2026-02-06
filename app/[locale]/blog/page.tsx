@@ -25,6 +25,12 @@ export default function BlogPage() {
       title: "El Fin de los Equipos de 9 Personas",
       excerpt: "Un análisis comparativo de costos y velocidad entre el modelo de agencia tradicional y el desarrollo ágil con IA.",
       date: "Enero 10, 2026",
+    },
+    {
+      slug: "separacion-de-responsabilidades-en-agentes-de-codigo",
+      title: "Separación de Responsabilidades en el Desarrollo Asistido por Agentes de Código",
+      excerpt: "Un análisis técnico sobre cómo estructurar agentes de IA especializados para backend, frontend y pruebas, aplicando separación de responsabilidades para maximizar calidad y eficiencia.",
+      date: "Febrero 6, 2026",
     }
   ];
 
