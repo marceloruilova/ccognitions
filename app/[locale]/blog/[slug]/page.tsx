@@ -1,5 +1,7 @@
 import {Link} from '@/i18n/navigation';
 
+export const dynamic = 'force-dynamic';
+
 interface BlogPost {
   title: string;
   date: string;
@@ -93,14 +95,6 @@ async function getPostData(slug: string): Promise<BlogPost | null> {
   return posts[slug] || null;
 }
 
-export async function generateStaticParams() {
-  // In a real app, you'd fetch all slugs
-  return [
-      { slug: "por-que-la-orquestacion-de-ia-es-el-futuro-del-software" },
-      { slug: "el-fin-de-los-equipos-de-9-personas" },
-      { slug: "separacion-de-responsabilidades-en-agentes-de-codigo" }
-    ];
-}
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
