@@ -12,6 +12,7 @@
     "audit": "npm audit"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "clsx": "^2.0.0",
     "next": "14.0.4",
     "next-intl": "^4.7.0",

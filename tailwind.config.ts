@@ -41,7 +41,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
   safelist: [
     // Asegurar que las clases principales siempre estén disponibles
     'bg-gray-50',
@@ -53,6 +53,10 @@ const config: Config = {
     'text-gray-600',
     'border-gray-200',
     'border-gray-300',
+    // Blog dynamic gradient & accent classes
+    'from-violet-600', 'to-indigo-600', 'from-violet-50', 'to-indigo-50', 'text-violet-700',
+    'from-blue-600', 'to-cyan-600', 'from-blue-50', 'to-cyan-50', 'text-blue-700',
+    'from-emerald-600', 'to-teal-600', 'from-emerald-50', 'to-teal-50', 'text-emerald-700',
   ],
 }
 export default config
