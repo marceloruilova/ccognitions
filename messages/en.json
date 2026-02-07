@@ -22,7 +22,9 @@
     "messageLabel": "How can we help you?",
     "submitButton": "Send Message",
     "statusSending": "Sending...",
-    "statusSuccess": "Thank you for your message! We will get in touch soon."
+    "statusSuccess": "Thank you for your message! We will get in touch soon.",
+    "privacy_checkbox": "I have read and accept the",
+    "privacy_link": "Privacy Policy"
   },
   "DIYPage": {
     "hero_title": "Yes, You Can Do This Yourself",
@@ -162,5 +164,49 @@
     "title": "Something went wrong",
     "message": "An unexpected error has occurred. Please try again.",
     "retry": "Try again"
+  },
+  "Footer": {
+    "brand_description": "AI-Powered Software Development",
+    "quick_links": "Quick Links",
+    "projects": "Projects",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "follow_us": "Follow Us",
+    "privacy": "Privacy Policy",
+    "terms": "Legal Notice",
+    "copyright": "Code Cognition Studio. All rights reserved."
+  },
+  "PrivacyPage": {
+    "meta_title": "Privacy Policy - Code Cognition Studio",
+    "meta_description": "Privacy policy of Code Cognition Studio. Learn how we handle your data.",
+    "title": "Privacy Policy",
+    "last_updated": "Last updated: February 2026",
+    "intro": "At Code Cognition Studio, we respect your privacy and are committed to protecting your personal data. This policy explains what data we collect, why, and how we handle it.",
+    "section_1_title": "1. Data Controller",
+    "section_1_content": "The entity responsible for processing your data is Code Cognition Studio. For any privacy-related inquiries, you can contact us at info@ccognitions.com.",
+    "section_2_title": "2. Data We Collect and Why",
+    "section_2_content": "We only collect data you voluntarily provide through our contact form: name, company (optional), email address, and message. This data is used exclusively to respond to your inquiry. We do not create user accounts, profiles, or sell data to third parties. Our server may automatically log technical information such as IP addresses, which is standard for any web server and is used solely for security and operational purposes.",
+    "section_3_title": "3. Cookies",
+    "section_3_content": "This website does not use its own cookies or third-party cookies. It may use strictly necessary technical cookies for basic functionality (such as language preference). We do not use advertising, tracking, or analytics cookies. If this changes in the future, we will update this policy and inform you accordingly.",
+    "section_4_title": "4. Your Rights",
+    "section_4_content": "You have the right to access, rectify, and delete any personal data we hold about you. You can also request the limitation of processing or object to the processing of your data. To exercise any of these rights, please contact us at info@ccognitions.com.",
+    "section_5_title": "5. Contact",
+    "section_5_content": "If you have any questions about this privacy policy or how we handle your data, please contact us at info@ccognitions.com."
+  },
+  "TermsPage": {
+    "meta_title": "Legal Notice - Code Cognition Studio",
+    "meta_description": "Legal notice and terms of use of Code Cognition Studio.",
+    "title": "Legal Notice",
+    "last_updated": "Last updated: February 2026",
+    "intro": "This legal notice regulates the use of the website ccognitions.com, owned by Code Cognition Studio.",
+    "section_1_title": "1. Site Usage",
+    "section_1_content": "This website is informational in nature. The content published here, including blog posts and service descriptions, does not constitute professional advice. The use of this website implies acceptance of these terms.",
+    "section_2_title": "2. Intellectual Property",
+    "section_2_content": "All content on this website, including text, graphics, logos, images, and software, is the property of Code Cognition Studio and is protected by intellectual property laws. Reproduction, distribution, or modification without prior written authorization is prohibited.",
+    "section_3_title": "3. Limitation of Liability",
+    "section_3_content": "The services and content of this website are provided \"as is\" without any express or implied warranties. Code Cognition Studio shall not be liable for any damages arising from the use or inability to use this website.",
+    "section_4_title": "4. Contact",
+    "section_4_content": "For any questions regarding this legal notice, please contact us at info@ccognitions.com."
   }
 }

@@ -12,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/proceso',
     '/diy',
+    '/privacy',
+    '/terms',
   ];
 
   const blogPosts = [

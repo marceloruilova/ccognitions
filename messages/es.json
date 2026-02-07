@@ -22,7 +22,9 @@
     "messageLabel": "¿En qué podemos ayudarte?",
     "submitButton": "Enviar Mensaje",
     "statusSending": "Enviando...",
-    "statusSuccess": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto."
+    "statusSuccess": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto.",
+    "privacy_checkbox": "He leído y acepto la",
+    "privacy_link": "Política de Privacidad"
   },
   "DIYPage": {
     "hero_title": "Sí, Puedes Hacer Esto Solo",
@@ -162,5 +164,49 @@
     "title": "Algo salió mal",
     "message": "Ha ocurrido un error inesperado. Por favor, intenta de nuevo.",
     "retry": "Intentar de nuevo"
+  },
+  "Footer": {
+    "brand_description": "Desarrollo de Software con IA",
+    "quick_links": "Enlaces Rápidos",
+    "projects": "Proyectos",
+    "services": "Servicios",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "follow_us": "Síguenos",
+    "privacy": "Política de Privacidad",
+    "terms": "Aviso Legal",
+    "copyright": "Code Cognition Studio. Todos los derechos reservados."
+  },
+  "PrivacyPage": {
+    "meta_title": "Política de Privacidad - Code Cognition Studio",
+    "meta_description": "Política de privacidad de Code Cognition Studio. Conoce cómo tratamos tus datos.",
+    "title": "Política de Privacidad",
+    "last_updated": "Última actualización: febrero 2026",
+    "intro": "En Code Cognition Studio respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta política explica qué datos recopilamos, por qué y cómo los tratamos.",
+    "section_1_title": "1. Responsable del Tratamiento",
+    "section_1_content": "El responsable del tratamiento de tus datos es Code Cognition Studio. Para cualquier consulta relacionada con la privacidad, puedes contactarnos en info@ccognitions.com.",
+    "section_2_title": "2. Datos que Recopilamos y Para Qué",
+    "section_2_content": "Solo recopilamos los datos que proporcionas voluntariamente a través de nuestro formulario de contacto: nombre, empresa (opcional), dirección de email y mensaje. Estos datos se utilizan exclusivamente para responder a tu consulta. No creamos cuentas de usuario, perfiles, ni vendemos datos a terceros. Nuestro servidor puede registrar automáticamente información técnica como direcciones IP, lo cual es estándar en cualquier servidor web y se utiliza únicamente con fines de seguridad y operativos.",
+    "section_3_title": "3. Cookies",
+    "section_3_content": "Este sitio web no utiliza cookies propias ni de terceros. Puede usar cookies técnicas estrictamente necesarias para funcionalidades básicas (como la preferencia de idioma). No utilizamos cookies publicitarias, de seguimiento ni de analítica. Si esto cambia en el futuro, actualizaremos esta política y te informaremos.",
+    "section_4_title": "4. Tus Derechos",
+    "section_4_content": "Tienes derecho a acceder, rectificar y suprimir cualquier dato personal que tengamos sobre ti. También puedes solicitar la limitación del tratamiento u oponerte al procesamiento de tus datos. Para ejercer cualquiera de estos derechos, contáctanos en info@ccognitions.com.",
+    "section_5_title": "5. Contacto",
+    "section_5_content": "Si tienes alguna pregunta sobre esta política de privacidad o sobre cómo tratamos tus datos, contáctanos en info@ccognitions.com."
+  },
+  "TermsPage": {
+    "meta_title": "Aviso Legal - Code Cognition Studio",
+    "meta_description": "Aviso legal y términos de uso de Code Cognition Studio.",
+    "title": "Aviso Legal",
+    "last_updated": "Última actualización: febrero 2026",
+    "intro": "Este aviso legal regula el uso del sitio web ccognitions.com, propiedad de Code Cognition Studio.",
+    "section_1_title": "1. Uso del Sitio",
+    "section_1_content": "Este sitio web tiene carácter informativo. El contenido publicado, incluyendo artículos de blog y descripciones de servicios, no constituye asesoramiento profesional. El uso de este sitio web implica la aceptación de estas condiciones.",
+    "section_2_title": "2. Propiedad Intelectual",
+    "section_2_content": "Todo el contenido de este sitio web, incluyendo textos, gráficos, logotipos, imágenes y software, es propiedad de Code Cognition Studio y está protegido por las leyes de propiedad intelectual. Queda prohibida su reproducción, distribución o modificación sin autorización previa por escrito.",
+    "section_3_title": "3. Limitación de Responsabilidad",
+    "section_3_content": "Los servicios y contenidos de este sitio web se proporcionan \"tal cual\" sin garantías expresas ni implícitas. Code Cognition Studio no será responsable de ningún daño derivado del uso o la imposibilidad de uso de este sitio web.",
+    "section_4_title": "4. Contacto",
+    "section_4_content": "Para cualquier consulta sobre este aviso legal, contáctanos en info@ccognitions.com."
   }
 }

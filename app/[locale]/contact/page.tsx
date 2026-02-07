@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import {useTranslations} from 'next-intl';
+import {Link} from '@/i18n/navigation';
 
 export default function ContactPage() {
   const [status, setStatus] = useState('');
@@ -111,6 +112,21 @@ export default function ContactPage() {
                 onChange={(e) => setMessage(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               ></textarea>
+            </div>
+            <div className="mb-6 flex items-start gap-2">
+              <input
+                type="checkbox"
+                id="privacy"
+                name="privacy"
+                required
+                className="mt-1"
+              />
+              <label htmlFor="privacy" className="text-sm text-gray-600">
+                {t('privacy_checkbox')}{' '}
+                <Link href="/privacy" className="text-blue-600 hover:underline" target="_blank">
+                  {t('privacy_link')}
+                </Link>
+              </label>
             </div>
             <div className="text-center">
               <button
