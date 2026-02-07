@@ -136,7 +136,7 @@ export default function ContactPage() {
                   isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >
-                {isSubmitting ? 'Enviando...' : t('submitButton')}
+                {isSubmitting ? t('statusSending') : t('submitButton')}
               </button>
             </div>
           </form>
