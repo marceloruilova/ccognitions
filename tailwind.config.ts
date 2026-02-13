@@ -57,6 +57,7 @@ const config: Config = {
     'from-violet-600', 'to-indigo-600', 'from-violet-50', 'to-indigo-50', 'text-violet-700',
     'from-blue-600', 'to-cyan-600', 'from-blue-50', 'to-cyan-50', 'text-blue-700',
     'from-emerald-600', 'to-teal-600', 'from-emerald-50', 'to-teal-50', 'text-emerald-700',
+    'from-orange-600', 'to-amber-600', 'from-orange-50', 'to-amber-50', 'text-orange-700',
   ],
 }
 export default config

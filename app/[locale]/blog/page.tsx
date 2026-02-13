@@ -14,6 +14,17 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = [
     {
+      slug: "comparativa-agentes-de-codigo-copilot-claude-gemini-deepseek",
+      title: "Comparativa de Agentes de Código: Copilot vs Claude vs Gemini vs DeepSeek",
+      excerpt: "Analizamos cuatro agentes de código populares: GitHub Copilot CLI, Claude Code, Gemini Code Assist y DeepSeek Coder, comparando sus capacidades, costos y casos de uso reales.",
+      date: "Febrero 13, 2026",
+      tag: "Herramientas IA",
+      readTime: "10 min",
+      gradient: "from-orange-600 to-amber-600",
+      gradientLight: "from-orange-50 to-amber-50",
+      accent: "orange",
+    },
+    {
       slug: "separacion-de-responsabilidades-en-agentes-de-codigo",
       title: "Separación de Responsabilidades en el Desarrollo Asistido por Agentes de Código",
       excerpt: "Un análisis técnico sobre cómo estructurar agentes de IA especializados para backend, frontend y pruebas, aplicando separación de responsabilidades para maximizar calidad y eficiencia.",
