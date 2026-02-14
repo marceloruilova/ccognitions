@@ -18,10 +18,9 @@ export default function ContactPage() {
     const challenge = searchParams.get('challenge');
 
     if (service && challenge) {
-      const prefilledMessage = `Hola, estoy interesado en el servicio: ${service}\n\nDesafío: ${challenge}\n\n`;
-      setMessage(prefilledMessage);
+      setMessage(t('prefilled_message', { service, challenge }));
     }
-  }, [searchParams]);
+  }, [searchParams, t]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -56,15 +55,14 @@ export default function ContactPage() {
         e.currentTarget.reset();
         setMessage('');
       } else if (response.status === 429) {
-        // Rate limit exceeded
-        setStatus(result.error || 'Límite diario alcanzado. Por favor, vuelve mañana.');
+        setStatus(result.error || t('error_rate_limit'));
         setStatusType('error');
       } else {
-        setStatus(result.error || 'Error al enviar el mensaje. Por favor intenta de nuevo.');
+        setStatus(result.error || t('error_send'));
         setStatusType('error');
       }
     } catch {
-      setStatus('Error de conexión. Por favor verifica tu internet e intenta de nuevo.');
+      setStatus(t('error_connection'));
       setStatusType('error');
     } finally {
       setIsSubmitting(false);

@@ -1,8 +1,9 @@
+import {getTranslations, getLocale} from 'next-intl/server';
 import {Link} from '@/i18n/navigation';
 
 export const dynamic = 'force-dynamic';
 
-interface BlogPost {
+interface BlogPostData {
   title: string;
   date: string;
   tag: string;
@@ -11,8 +12,10 @@ interface BlogPost {
   content: string;
 }
 
-async function getPostData(slug: string): Promise<BlogPost | null> {
-  const posts: Record<string, BlogPost> = {
+type PostsMap = Record<string, Record<string, BlogPostData>>;
+
+const postsContent: PostsMap = {
+  es: {
     "comparativa-agentes-de-codigo-copilot-claude-gemini-deepseek": {
       title: "Comparativa de Agentes de Código: Copilot vs Claude vs Gemini vs DeepSeek",
       date: "Febrero 13, 2026",
@@ -168,24 +171,188 @@ async function getPostData(slug: string): Promise<BlogPost | null> {
         <p>A medida que maduren estas prácticas, los equipos técnicos podrán enfocarse cada vez más en la visión global, delegando en agentes de código los detalles operativos de cada ámbito.</p>
       `
     }
-  };
-  return posts[slug] || null;
-}
+  },
+  en: {
+    "comparativa-agentes-de-codigo-copilot-claude-gemini-deepseek": {
+      title: "Code Agents Comparison: Copilot vs Claude vs Gemini vs DeepSeek",
+      date: "February 13, 2026",
+      tag: "AI Tools",
+      readTime: "10 min",
+      gradient: "from-orange-600 to-amber-600",
+      content: `
+        <p class="lead">New AI-based <em>code assistant</em> tools allow automating a large part of software development. Each solution has its strengths and limitations. Below we analyze four popular code agents: <strong>GitHub Copilot CLI</strong>, <strong>Anthropic Claude Code (Opus 4.5)</strong>, <strong>Google Gemini Code Assist</strong>, and <strong>DeepSeek Coder</strong>, integrating real usage experiences and recent references.</p>
 
+        <h2>Command Execution and Terminal Agents</h2>
+        <p><strong>GitHub Copilot CLI</strong> is Copilot's terminal version. It allows starting an interactive AI session directly from the command line, working on local code. According to official documentation, "GitHub Copilot's command-line interface (CLI) lets you use Copilot directly in your terminal." In a Copilot CLI session, the agent can read and modify files, execute commands (e.g., <code>!npm install</code>), and even create pull requests on GitHub automatically.</p>
+        <p><strong>Anthropic Claude Code</strong> (Opus 4.5 model) works as a coding agent assistant that can run in terminals, IDEs, or its own desktop app. Claude Code automates tasks from code generation and refactoring to testing and deployments. According to Anthropic, "developers use it as a direct collaborator in their terminal, IDE, or through cloud APIs." This means it can execute local commands, fix bugs, and manipulate large projects with full context, all while the user supervises.</p>
+        <p><strong>Google Gemini CLI</strong> (part of <em>Gemini Code Assist</em>) is an AI code agent based on Gemini 2.5. Google states that Gemini CLI offers "powerful AI capabilities, from code understanding and file manipulation to command execution and dynamic problem-solving." Additionally, the individual Gemini Code Assist service is free up to certain daily limits (6,000 code requests and 240 daily chats). In practice, it allows requesting code creation or fixes via terminal, although some users have reported it can generate very long outputs if the prompt isn't controlled.</p>
+        <p><strong>DeepSeek Coder</strong> also offers a command-line agent (DeepSeek CLI) that can be installed locally or in the cloud. The tool supports installation via Ollama (local model) or cloud API. According to its repository, DeepSeek CLI offers autocomplete and code generation in 100+ languages, large codebase analysis, refactoring, and bug detection. In other words, DeepSeek CLI can execute terminal commands like Copilot or Gemini, although it doesn't include automatic tests out of the box: it focuses on generating or fixing code upon receiving instructions.</p>
+
+        <h2>Complex Problem Solving and Planning</h2>
+        <ul>
+          <li><strong>Multi-stage tasks:</strong> Claude Opus 4.5 excels at reasoning about complex failures and planning solutions. Anthropic reports that Opus 4.5 can "solve a complex bug across multiple systems" and handle very demanding coding workflows. In our experience, Claude (and Copilot) have identified root causes of network errors or infrastructure configuration issues in production. For example, a Copilot session discovered a busy network preventing TLS certificate renewal via Certbot, something neither the code nor logs clearly showed.</li>
+          <li><strong>Code precision:</strong> DeepSeek Coder models have also been extensively trained on code (2 trillion tokens) and perform very well on benchmarks. The instructive DeepSeek-Coder-33B model surpasses GPT-3.5-turbo on Python HumanEval tests. Overall, both Claude Opus 4.5 and large DeepSeek models offer cutting-edge code quality, although Claude tends to generate more refactored and better-structured solutions. In contrast, Gemini (and DeepSeek) tend to focus on generating the requested functionality, sometimes without as much style optimization.</li>
+          <li><strong>Planning and clarity:</strong> Copilot CLI offers a "planning" mode to outline steps before writing code (pressing Shift+Tab). Claude Code also tends to ask for confirmations and details before executing changes. In contrast, Gemini may "jump in" directly to generate a lot of code if not stopped with appropriate prompts. In summary, <strong>Copilot and Claude</strong> are more proactive in questioning and planning, while <strong>Gemini and DeepSeek</strong> may require more human supervision in the conversation.</li>
+        </ul>
+
+        <h2>Token Usage and Costs</h2>
+        <p>The four solutions have different business models:</p>
+        <ul>
+          <li><strong>Copilot CLI</strong> comes included with the GitHub Copilot subscription. It doesn't publicly charge per token, although intensive enterprise use is regulated by licenses. There are no "tokens" exposed to the user, but there are usage limits in corporate environments.</li>
+          <li><strong>Claude Opus 4.5</strong> is billed per token. Anthropic announced prices of <strong>$5/$25 per million tokens</strong> (input/output). This can consume credit quickly if long tasks are launched or a bug is repeatedly addressed. It's key to use concise prompts or planned sessions. Claude sometimes "burns" tokens correcting even minor details, so its progress needs supervision.</li>
+          <li><strong>Gemini Code Assist (individual)</strong> is currently free up to certain limits: the free edition offers 60 requests per minute and 1,000 per day (the site indicates 6,000 code/day). Unlike Claude, it doesn't charge per token individually. For enterprises or Pro/Ultra licenses, there are extended limits.</li>
+          <li><strong>DeepSeek Coder</strong> is notably affordable: around <strong>$0.14 per million tokens</strong> (compared to $10 for GPT-4). A small credit (e.g., USD $5-10/month) allows hundreds of requests and tens of millions of tokens. This makes DeepSeek very viable for individual developers.</li>
+        </ul>
+        <p>In summary, DeepSeek is the cheapest, followed by Gemini (free with limits) and then Copilot/Claude.</p>
+
+        <h2>Frontend, Backend, and Testing Automation</h2>
+        <ul>
+          <li><strong>UI Prototyping:</strong> Claude Code includes a unique functionality: it can take an image or screenshot and generate the corresponding UI code. Just pass it a mockup or design screenshot, and Claude will produce HTML/CSS or Flutter code for the UI. This greatly speeds up frontend development. Neither Gemini nor DeepSeek offer this in an integrated way; they focus on text/IDE. Copilot also generates UI parts from descriptions, but not from images.</li>
+          <li><strong>Backend logic:</strong> All tools can implement business logic, consume APIs, and connect databases. In our tests with C#/.NET and Flutter, we asked agents for complex functions (authentication, Stripe payments, etc.). Copilot and Claude tend to handle security details or infrastructure errors better. Gemini and DeepSeek can generate basic code (classes, controllers, services) but require reviewing fine integration.</li>
+          <li><strong>Testing and integration:</strong> Claude Code can write unit and integration tests, and even validate they pass. Copilot CLI allows running test commands (<code>!dotnet test</code> or <code>/run tests</code>) and examining results, facilitating iterative debugging. Agents can create E2E integration test suites, especially if you provide a testing framework. When we migrated from Playwright to Patrol (for better Flutter Web compatibility), Copilot sped up converting old tests to the new syntax.</li>
+          <li><strong>DevOps and deployments:</strong> All can help with infrastructure scripts. Claude Code can automatically generate CI/CD scripts and server administration. For example, we asked Claude to prepare a GitHub Actions pipeline for Docker deployment and it returned a functional YAML. These AIs can advise on HTTPS, TLS certificates, environment variables, and rate limits.</li>
+        </ul>
+
+        <h2>Development and Repository Integration</h2>
+        <ul>
+          <li><strong>Extensions and plugins:</strong> GitHub Copilot and Google Gemini Code Assist offer official extensions for VS Code and other IDEs. They're easy to install: just search "Copilot" or "Gemini" in the marketplace. Claude Code was recently integrated into the Claude Desktop application (supporting Windows/macOS/Linux); there's no native Claude extension for VS Code yet, although Claude Chat exists in some environments. DeepSeek doesn't have as polished an official extension; for VS Code, it's recommended to use generic AI agent extensions (like "Continue" or others) that send requests to its API.</li>
+          <li><strong>Version control (Git):</strong> Copilot CLI greatly facilitates Git. With the <code>/delegate</code> command, Copilot can create a new branch, commit changes, and open a pull request automatically. This allows "delegating" complex tasks to the agent while maintaining full context. Gemini Code Assist can also review and suggest changes on GitHub PRs. DeepSeek, operating via CLI, allows editing local files but relies on the traditional Git flow (manual commits). Additionally, Copilot can generate descriptive commit messages, review code for style issues, and resolve basic conflicts when instructed.</li>
+        </ul>
+        <p>In summary, Git integration is very smooth with Copilot/Gemini; with DeepSeek and Claude it requires extra steps from the developer.</p>
+
+        <h2>Practical Use Cases</h2>
+        <p>In real projects, we've experienced several cases that illustrate these differences. For example, Copilot and Claude detected that a virtual network was occupied by another service during TLS certificate deployment with Docker. This finding wasn't evident locally, only in production, and the agent solved it by restarting the appropriate resource.</p>
+        <p>Another case involved Stripe payments: when trying to automate account creation and charges, synchronization errors arose between the Flutter frontend and the .NET backend. After several iterations, Copilot suggested fixing the malformed HTTP call; Claude proposed adding an additional server-side check. Both tools accelerated the resolution of these complex bugs.</p>
+        <p>We also faced test migration: we started with Playwright, but when using Flutter Web the team switched to Patrol. With AI assistance, we quickly converted old tests to Patrol without schedule delays.</p>
+        <p>Finally, when implementing complete CI/CD pipelines, at one point Copilot and Claude exhausted their token quotas. That's where <strong>DeepSeek</strong> proved useful: it continued generating missing scripts for the final deployment, completing the planning previously initiated by the other AIs. In practice, these agents can be used complementarily: when one runs out of tokens or hits usage limits, the team can switch to another without losing productivity.</p>
+
+        <h2>Conclusions and Recommendations</h2>
+        <p>In summary, each agent has distinct strengths. <strong>Copilot CLI</strong> and <strong>Claude Code (Opus 4.5)</strong> are the most powerful globally: they execute commands, handle broad context, and solve complex problems with SOTA code quality. They also facilitate continuous integration (CI/CD) and code review. However, they are more costly in tokens (or subscriptions) and sometimes over-process minor errors.</p>
+        <p><strong>Gemini Code Assist</strong> is a solid option for everyday IDE code generation (free with daily limits), although it can generate too much code if not moderated. <strong>DeepSeek Coder</strong> excels in efficiency: it offers specialized programming models with high performance and very accessible pricing. It's ideal for initial tasks and prototypes, where its low cost and step-by-step dialogue mode allow exploring functionalities without exhausting budget.</p>
+        <blockquote>
+          <p>"The best strategy is usually to combine them: use DeepSeek for sketches and base code generation, then Copilot/Claude for debugging complex bugs, optimizing architecture, or finalizing deployment. This synergy maximizes productivity: each tool contributes its strength."</p>
+        </blockquote>
+        <p>In any case, it's key to provide good prompts and guide the agent to avoid wasting tokens and achieve high-quality results. These AIs already behave almost like real development assistants, streamlining both frontend and backend, testing and deployments, but they require human supervision for best results.</p>
+      `
+    },
+    "por-que-la-orquestacion-de-ia-es-el-futuro-del-software": {
+      title: "Why AI Orchestration is the Future of Software?",
+      date: "January 12, 2026",
+      tag: "AI Orchestration",
+      readTime: "5 min",
+      gradient: "from-blue-600 to-cyan-600",
+      content: `
+        <p class="lead">In the last decade, we have witnessed an explosion in artificial intelligence capabilities. However, the biggest change isn't in a single superintelligent model, but in the ability to orchestrate multiple specialized models to achieve a common goal. This is the core of the new era of software development.</p>
+
+        <h2>From Builder to Conductor</h2>
+        <p>The role of the software engineer is fundamentally changing. It's no longer just about writing code line by line. It's about understanding a business problem and knowing which "musicians" (AI models) to invite to the orchestra.</p>
+        <ul>
+          <li><strong>UI Model:</strong> A specialist in generating clean, usable interfaces from a prompt.</li>
+          <li><strong>Business Logic Model:</strong> An expert in translating requirements into robust backend code.</li>
+          <li><strong>Database Model:</strong> An architect who designs optimal and efficient schemas.</li>
+          <li><strong>QA Model:</strong> A tireless tester who writes unit, integration, and e2e tests.</li>
+        </ul>
+
+        <h2>Speed as Competitive Advantage</h2>
+        <p>The most obvious advantage is speed. An expert orchestrator can guide these models to produce in a week what a traditional team would take months. This is not an exaggeration — it's the result of eliminating communicative friction and bureaucracy inherent to large teams.</p>
+        <blockquote>
+          <p>"The bottleneck is no longer typing speed, but thinking and decision-making speed."</p>
+        </blockquote>
+
+        <h2>Implications for the Future</h2>
+        <p>Companies that adopt this model will not only reduce costs but gain unprecedented agility. The ability to launch MVPs, iterate, and pivot quickly will become the main competitive differentiator. At Code Cognition Studio, we don't just predict this future — we're building it today.</p>
+      `
+    },
+    "el-fin-de-los-equipos-de-9-personas": {
+      title: "The End of 9-Person Teams",
+      date: "January 10, 2026",
+      tag: "Strategy",
+      readTime: "4 min",
+      gradient: "from-emerald-600 to-teal-600",
+      content: `
+        <p class="lead">The traditional agency model, with its structure of project manager, scrum master, UI designer, UX designer, frontend developer, backend developer, QA, etc., is obsolete. It's a system designed for an era of scarce information and limited tools.</p>
+
+        <h2>The Hidden Cost of "Overhead"</h2>
+        <p>Each person on that team adds a layer of communication, another meeting on the calendar, and a potential source of misalignment. The real cost isn't just the sum of their salaries, but the "bureaucracy tax" that slows down every decision and every line of code.</p>
+
+        <h2>A New Paradigm</h2>
+        <p>With AI orchestration, 80% of execution work is automated. Human value is concentrated in strategy, supervision, and critical decision-making. A single individual, armed with the right tools, can surpass the output of an entire team.</p>
+      `
+    },
+    "separacion-de-responsabilidades-en-agentes-de-codigo": {
+      title: "Separation of Responsibilities in Code Agent-Assisted Development",
+      date: "February 6, 2026",
+      tag: "Agent Architecture",
+      readTime: "8 min",
+      gradient: "from-violet-600 to-indigo-600",
+      content: `
+        <p class="lead">Today, AI agents are transforming how we program, and it's not about giving them a single <strong>"superprompt"</strong>, but rather a structured workflow with specialized agents for each task. Modern platforms define specific <em>subagents</em> — each with its own context and permissions — that handle certain types of activity. This way, we can assign one agent only backend tasks, another frontend, or another testing, reducing complexity by quickly identifying where an error occurs. This modular approach ensures each agent fulfills a specific role without interfering with others.</p>
+
+        <h2>Back-end Development</h2>
+        <ul>
+          <li><strong>Business logic and APIs:</strong> A specialized agent can handle writing or reviewing server code — for example, designing REST API routes, managing databases, or implementing complex business logic.</li>
+          <li><strong>Service orchestration (BFF):</strong> In microservices architectures, it's common to use a <em>backend-for-frontend</em> (BFF) pattern where a central agent coordinates multiple services. This BFF agent can manage the flow between front-end and different microservices, acting as an intelligent integration point.</li>
+          <li><strong>AI components in infrastructure:</strong> A backend agent's stack includes a language model (the central "brain"), tool integrations (e.g., frameworks, external APIs), short and long-term memory, and configurable roles. Thanks to this, agents operate independently and can collaborate with each other, adapting to changes in real time.</li>
+          <li><strong>Resilience and security:</strong> Robustness patterns are incorporated into the flow: automatic retries, error monitoring, and control logic. Inputs/outputs must also be validated and sanitized at each stage to prevent attacks (prompt injection) and verify outputs against strict criteria.</li>
+        </ul>
+        <p><strong>Advantages:</strong> By delegating specific tasks, we increase speed and precision: a backend agent can specialize in optimizing server code and scalability. Also, by keeping responsibilities isolated, debugging is facilitated. <strong>Disadvantages:</strong> It requires coordinating multiple agents, adding initial complexity. It also increases architectural overhead and requires investing in monitoring and governance to maintain coherence.</p>
+
+        <h2>Front-end Development</h2>
+        <ul>
+          <li><strong>Interface and user experience:</strong> Agents can analyze UI code (HTML/CSS/JS) and ensure visual consistency. For example, they can scan the entire interface repository to detect discordant buttons or styles and fix them automatically. They also help ensure <strong>accessibility</strong> by auditing WCAG compliance and suggesting ARIA labels or alt texts where missing.</li>
+          <li><strong>Performance optimization:</strong> They can review client assets (images, CSS, scripts) and propose improvements (like compression, lazy loading, or modern formats) to speed up loading. Some agents even test A/B variants to measure real impact on users.</li>
+          <li><strong>UI code generation and refactoring:</strong> Given prototypes or wireframes, an agent could generate basic interface components. Or identify obsolete code: for example, detecting a monolithic React component and refactoring it into reusable pieces.</li>
+          <li><strong>Visual collaboration and documentation:</strong> They track UI changes, detect conflicts in <em>merge requests</em>, and can even generate component documentation. They function as a dedicated assistant maintaining coherence between designers and programmers.</li>
+        </ul>
+        <p><strong>Advantages:</strong> They accelerate repetitive tasks and ensure homogeneity: developers spend less time on style adjustments or accessibility testing, focusing on innovation. <strong>Disadvantages:</strong> AI can still fail to understand subjective aesthetic aspects or complex user flows, so its output requires human supervision. It also requires clearly defining scope.</p>
+
+        <h2>End-to-End Testing and Integration</h2>
+        <ul>
+          <li><strong>Automated testing:</strong> Agents can be assigned to generate and execute test cases. For example, an agent could read new code and automatically create unit or integration tests according to project standards. The use of dedicated QA agents is even proposed to validate final software results.</li>
+          <li><strong>E2E testing:</strong> Specialized agents can simulate complete user flows (login, transactions, etc.), connecting frontend and backend. This way they detect integration failures before deployment.</li>
+          <li><strong>Early error detection:</strong> By continuously running these generated tests, agents identify bugs and generate detailed reports (logs, reproduction steps). This reinforces code quality and speeds up feedback for developers.</li>
+        </ul>
+        <p><strong>Advantages:</strong> They expand QA coverage, find errors that might be overlooked manually, and support continuous integration without additional effort. <strong>Disadvantages:</strong> They can generate redundant tests or false positives if validation criteria aren't well adjusted. It's also necessary to manually review critical findings and update tests as requirements change.</p>
+
+        <h2>Additional Roles and Agile Methodologies</h2>
+        <p>Beyond coding, AI agents can assume product management and coordination roles. In certain multi-agent frameworks (like MetaGPT), it's proposed that one agent acts as <strong>Product Manager</strong>, defining requirements and priorities, while other agents architect, develop, and validate. This follows the agile spirit: a digital "Product Owner" could organize the backlog based on user needs. Other agents can function as Scrum Master, tracking sprints, generating meeting minutes, or measuring team metrics.</p>
+        <p>For example, Atlassian highlights that <strong>specialized agents with access to real project context</strong> are the most effective. The case of <em>Rovo</em> is cited, an assistant that reads team documentation (Confluence, Jira, goals) and answers questions aligned to organizational context.</p>
+        <p><strong>Advantages:</strong> AI helps maintain focus on business objectives, automating administrative tasks (planning, data analysis) and offering quick insights. This can double productivity: Atlassian reports that strategic teams collaborating with AI achieve up to <strong>2x return on investment</strong> and save about <strong>105 minutes</strong> of work daily. <strong>Disadvantages:</strong> However, AI doesn't replace human judgment: final review, user empathy, and creativity remain the responsibility of leaders and developers.</p>
+
+        <h2>Best Practices and Considerations</h2>
+        <p>To take advantage of this task division, it's key to clearly define each agent's role with precise instructions. Each agent should receive a system <em>prompt</em> and its own constraints, avoiding overlaps (for example, a UI agent shouldn't modify the database). It's recommended to feed agents with sufficient context: technical specifications, code standards, and reference examples.</p>
+        <p>Additionally, agent performance must be monitored. Logging their actions helps debug issues (traceability) and iterate on <em>prompts</em>. One must also be aware of computational costs: using appropriate models and optimizing prompts reduces token usage and speeds up execution. Finally, even though agents operate autonomously, a human intervention mechanism should always be planned for critical stages.</p>
+        <blockquote>
+          <p>"The separation of responsibilities between AI agents allows leveraging their specific strengths at each development stage, maintaining agile cycles and high quality."</p>
+        </blockquote>
+        <p>As these practices mature, technical teams will be able to increasingly focus on the global vision, delegating operational details of each domain to code agents.</p>
+      `
+    }
+  }
+};
+
+async function getPostData(slug: string, locale: string): Promise<(BlogPostData & { slug: string }) | null> {
+  const localePosts = postsContent[locale] || postsContent['es'];
+  const post = localePosts[slug];
+  if (!post) return null;
+  return { ...post, slug };
+}
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = await getPostData(slug);
+  const locale = await getLocale();
+  const t = await getTranslations('Blog');
+  const post = await getPostData(slug, locale);
 
   if (!post) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-6xl font-bold text-gray-200 mb-4">404</h1>
-          <p className="text-xl text-gray-500 mb-8">Post no encontrado</p>
+          <h1 className="text-6xl font-bold text-gray-200 mb-4">{t('not_found_title')}</h1>
+          <p className="text-xl text-gray-500 mb-8">{t('not_found_message')}</p>
           <Link href="/blog" className="inline-flex items-center gap-2 bg-gray-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
-            Volver al blog
+            {t('back_to_blog')}
           </Link>
         </div>
       </div>
@@ -203,7 +370,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {/* Back link */}
             <Link href="/blog" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 text-sm">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
-              Volver al blog
+              {t('back_to_blog')}
             </Link>
             {/* Meta */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -214,7 +381,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <span className="text-gray-600">|</span>
               <span className="text-gray-400 text-sm flex items-center gap-1">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                {post.readTime} de lectura
+                {post.readTime} {t('read_time_suffix')}
               </span>
             </div>
             {/* Title */}
@@ -250,10 +417,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200">
             <Link href="/blog" className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-900 font-medium transition-colors">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
-              Todos los artículos
+              {t('all_articles_link')}
             </Link>
             <Link href="/contact" className="inline-flex items-center gap-2 bg-gray-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors text-sm">
-              Hablemos de tu proyecto
+              {t('contact_cta')}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
           </div>

@@ -1,231 +1,36 @@
-import type { Metadata } from 'next';
+import {getTranslations} from 'next-intl/server';
 import {Link} from '@/i18n/navigation';
 
-export const metadata: Metadata = {
-  title: 'Nuestro Proceso - Code Cognition Studio',
-  description: 'Conoce nuestro proceso de trabajo profesional y ágil, potenciado por inteligencia artificial para entregar resultados excepcionales.',
-  openGraph: {
-    title: 'Nuestro Proceso - Code Cognition Studio',
-    description: 'Proceso de trabajo profesional y ágil, potenciado por inteligencia artificial.',
-    type: 'website',
-  },
-};
+export async function generateMetadata() {
+  const t = await getTranslations('ProcesoPage');
+  return {
+    title: t('meta_title'),
+    description: t('meta_description'),
+    openGraph: {
+      title: t('meta_title'),
+      description: t('og_description'),
+      type: 'website',
+    },
+  };
+}
 
-export default function ProcesoPage() {
-  const phases = [
-    {
-      number: "01",
-      title: "Entendimiento Estratégico del Problema",
-      subtitle: "Antes de escribir una sola línea de código, pensamos.",
-      intro: "Todo proyecto serio comienza con una fase de planeación inteligente, inspirada en:",
-      inspirations: [
-        "PMBOK (Project Management Body of Knowledge)",
-        "Metodologías ágiles (Scrum, Kanban, híbridos)",
-        "Ingeniería de software tradicional y moderna",
-        "Arquitecturas escalables y mantenibles"
-      ],
-      icon: "🎯",
-      whatWeDo: {
-        title: "¿Qué hacemos aquí?",
-        items: [
-          "Reuniones iniciales claras y directas (sin burocracia)",
-          "Definición del problema real de negocio",
-          "Identificación de riesgos técnicos y operativos",
-          "Definición de alcance, objetivos y métricas de éxito"
-        ]
-      },
-      aiApproach: {
-        title: "Enfoque IA",
-        description: "Utilizamos inteligencia artificial como si fuera un ingeniero senior adicional, ayudándonos a:",
-        items: [
-          "Analizar requerimientos",
-          "Simular escenarios",
-          "Proponer arquitecturas óptimas",
-          "Tomar decisiones técnicas mejor fundamentadas"
-        ]
-      },
-      gradient: "from-blue-500 to-blue-600"
-    },
-    {
-      number: "02",
-      title: "Definición del Producto Final",
-      subtitle: "El cliente sabe exactamente qué va a recibir.",
-      intro: "En esta etapa definimos con total transparencia:",
-      inspirations: [
-        "Qué se va a construir",
-        "Qué no se va a construir",
-        "Qué versión se entregará",
-        "Qué queda para futuras iteraciones"
-      ],
-      icon: "📦",
-      whatWeDo: {
-        title: "Entregables claros",
-        items: [
-          "Descripción funcional del producto",
-          "Arquitectura propuesta (frontend, backend, infraestructura)",
-          "Roadmap técnico",
-          "Estimación de tiempos y costos"
-        ]
-      },
-      footer: {
-        text: "Sin documentos eternos. Sin reuniones innecesarias. Solo lo esencial, bien hecho.",
-        highlight: true
-      },
-      gradient: "from-purple-500 to-purple-600"
-    },
-    {
-      number: "03",
-      title: "Diseño Técnico y Arquitectura",
-      subtitle: "Pensado para crecer, no para romperse.",
-      intro: "Aquí diseñamos la base del sistema:",
-      inspirations: [
-        "Arquitectura modular y escalable",
-        "Decisiones tecnológicas justificadas",
-        "Separación clara de responsabilidades",
-        "Preparación para automatización y testing"
-      ],
-      icon: "🏗️",
-      aiApproach: {
-        title: "IA Aplicada",
-        description: "La inteligencia artificial nos ayuda en:",
-        items: [
-          "Evaluación de patrones de diseño",
-          "Comparación de stacks tecnológicos",
-          "Detección temprana de errores de diseño",
-          "Optimización de costos de infraestructura"
-        ]
-      },
-      gradient: "from-indigo-500 to-indigo-600"
-    },
-    {
-      number: "04",
-      title: "Desarrollo del Aplicativo",
-      subtitle: "Código primero, perfección después.",
-      intro: "Seguimos una filosofía realista y profesional:",
-      inspirations: [
-        "Primero funciona.",
-        "Luego se prueba.",
-        "Después se limpia y se refactoriza."
-      ],
-      principles: {
-        title: "Inspirados en:",
-        items: ["Clean Code", "SOLID", "Buenas prácticas de ingeniería"]
-      },
-      icon: "💻",
-      whatWeDo: {
-        title: "Desarrollo incluye",
-        items: [
-          "Frontend",
-          "Backend",
-          "Integraciones",
-          "Automatización cuando aplica"
-        ]
-      },
-      aiApproach: {
-        title: "La IA acelera",
-        description: "La inteligencia artificial potencia nuestro desarrollo:",
-        items: [
-          "Generación de código base",
-          "Detección de errores comunes",
-          "Refactorización asistida",
-          "Documentación técnica"
-        ]
-      },
-      footer: {
-        text: "Resultado: menos tiempo, menos errores, más calidad.",
-        highlight: true
-      },
-      gradient: "from-green-500 to-green-600"
-    },
-    {
-      number: "05",
-      title: "Testing y Calidad",
-      subtitle: "No confiamos en la suerte, confiamos en pruebas.",
-      intro: "Aplicamos el ciclo completo de testing:",
-      inspirations: [
-        "Pruebas unitarias",
-        "Pruebas de integración",
-        "Pruebas end-to-end (si el servicio lo incluye)",
-        "Validaciones funcionales"
-      ],
-      icon: "✅",
-      whatWeDo: {
-        title: "Enfoque",
-        items: [
-          "Calidad desde el inicio",
-          "Automatización inteligente",
-          "Reducción de regresiones",
-          "Confianza antes de producción"
-        ]
-      },
-      gradient: "from-teal-500 to-teal-600"
-    },
-    {
-      number: "06",
-      title: "Puesta en Producción",
-      subtitle: "Llevamos tu producto al mundo real.",
-      intro: "Para proyectos que incluyen producción:",
-      inspirations: [
-        "Configuración de entornos",
-        "Despliegue controlado",
-        "Validaciones finales",
-        "Monitoreo inicial"
-      ],
-      icon: "🚀",
-      whatWeDo: {
-        title: "Todo pensado para",
-        items: [
-          "Reducir riesgos",
-          "Minimizar caídas",
-          "Facilitar mantenimiento futuro"
-        ]
-      },
-      gradient: "from-orange-500 to-orange-600"
-    },
-    {
-      number: "07",
-      title: "Cierre del Proyecto y Transparencia Total",
-      subtitle: "Sabes exactamente qué se hizo y cuánto ahorraste.",
-      intro: "Al finalizar:",
-      inspirations: [
-        "Entregamos el producto final",
-        "Documentamos lo construido",
-        "Explicamos decisiones técnicas",
-        "Mostramos el ahorro logrado gracias al uso de IA"
-      ],
-      icon: "📊",
-      whatWeDo: {
-        title: "¿Por qué es más económico?",
-        items: [
-          "Equipos más pequeños",
-          "Menos retrabajo",
-          "Menos errores",
-          "Más velocidad",
-          "Más inteligencia en cada decisión"
-        ]
-      },
-      gradient: "from-pink-500 to-pink-600"
-    },
-    {
-      number: "08",
-      title: "Consultoría Continua en IA e Ingeniería",
-      subtitle: "No solo construimos, también pensamos contigo.",
-      intro: "Además del desarrollo, ofrecemos:",
-      inspirations: [
-        "Consultoría en IA aplicada",
-        "Automatización de procesos",
-        "Optimización de sistemas existentes",
-        "Mejora de calidad y testing",
-        "Arquitectura y refactorización"
-      ],
-      icon: "🤝",
-      footer: {
-        text: "Todo basado en ingeniería real, no promesas vacías.",
-        highlight: true
-      },
-      gradient: "from-cyan-500 to-cyan-600"
-    }
-  ];
+interface Phase {
+  number: string;
+  title: string;
+  subtitle: string;
+  intro: string;
+  inspirations: string[];
+  icon: string;
+  gradient: string;
+  whatWeDo?: { title: string; items: string[] };
+  aiApproach?: { title: string; description?: string; items: string[] };
+  principles?: { title: string; items: string[] };
+  footer?: { text: string; highlight: boolean };
+}
+
+export default async function ProcesoPage() {
+  const t = await getTranslations('ProcesoPage');
+  const phases = t.raw('phases') as Phase[];
 
   return (
     <div className="bg-gradient-to-br from-gray-50 via-blue-50 to-gray-50 min-h-screen">
@@ -235,23 +40,23 @@ export default function ProcesoPage() {
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Nuestro Proceso de Trabajo
+              {t('hero_title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8">
-              Un enfoque profesional, ágil y potenciado por inteligencia artificial para entregar resultados excepcionales.
+              {t('hero_subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="bg-blue-600 text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-xl"
               >
-                Comenzar un Proyecto
+                {t('hero_cta_start')}
               </Link>
               <Link
                 href="/services"
                 className="bg-white text-gray-900 font-bold py-4 px-8 rounded-full text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl"
               >
-                Ver Servicios
+                {t('hero_cta_services')}
               </Link>
             </div>
           </div>
@@ -386,23 +191,23 @@ export default function ProcesoPage() {
           <div className="mt-24 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl shadow-2xl overflow-hidden">
             <div className="px-8 py-16 text-center text-white">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                ¿Listo para Transformar tu Idea en Realidad?
+                {t('final_cta_title')}
               </h2>
               <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
-                Trabajemos juntos siguiendo este proceso probado para crear soluciones tecnológicas excepcionales que impulsen tu negocio.
+                {t('final_cta_subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Link
                   href="/contact"
                   className="bg-white text-blue-600 font-bold py-5 px-12 rounded-full text-xl hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl"
                 >
-                  Iniciar Conversación
+                  {t('final_cta_button')}
                 </Link>
                 <Link
                   href="/services"
                   className="text-white font-semibold text-lg hover:text-blue-100 transition-colors underline"
                 >
-                  Explorar nuestros servicios →
+                  {t('final_cta_services')}
                 </Link>
               </div>
             </div>

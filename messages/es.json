@@ -24,17 +24,19 @@
     "statusSending": "Enviando...",
     "statusSuccess": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto.",
     "privacy_checkbox": "He leído y acepto la",
-    "privacy_link": "Política de Privacidad"
+    "privacy_link": "Política de Privacidad",
+    "prefilled_message": "Hola, estoy interesado en el servicio: {service}\n\nDesafío: {challenge}\n\n",
+    "error_rate_limit": "Límite diario alcanzado. Por favor, vuelve mañana.",
+    "error_send": "Error al enviar el mensaje. Por favor intenta de nuevo.",
+    "error_connection": "Error de conexión. Por favor verifica tu internet e intenta de nuevo."
   },
   "DIYPage": {
     "hero_title": "Sí, Puedes Hacer Esto Solo",
     "hero_subtitle": "Y queremos ser honestos contigo sobre eso.",
     "hero_description": "En una era donde la IA puede generar código funcional, creemos en la transparencia. Te contamos la verdad sobre lo que puedes hacer por tu cuenta y dónde te aportamos un valor real.",
-
     "videos_intro": "Puedes crear el aplicativo por tu cuenta al seguir los siguientes grupos de videos.",
     "videos_work_in_progress": "Actualmente estamos trabajando en los videos. Por favor, vuelve a consultar más tarde.",
     "videos_trust": "Mientras tanto, si deseas puedes leer la siguiente información para confiar más en nuestros servicios.",
-
     "truth_title": "La Realidad de la IA en el Desarrollo",
     "truth_subtitle": "Lo que es posible hoy en día",
     "truth_intro": "Las herramientas de IA han democratizado el desarrollo de software. Hoy en día, es posible:",
@@ -45,7 +47,6 @@
       "Automatizar tareas complejas utilizando plataformas no-code/low-code."
     ],
     "truth_conclusion": "Muchos emprendedores ya están construyendo productos exitosos de esta manera, y eso es algo genial.",
-
     "cost_title": "Los Costes Ocultos del Enfoque DIY",
     "cost_subtitle": "Seamos honestos sobre los desafíos",
     "cost_items": [
@@ -66,7 +67,6 @@
         "description": "Cada hora que inviertes en problemas técnicos es una hora que no inviertes en hacer crecer tu negocio."
       }
     ],
-
     "value_title": "El Valor que Aportamos a la Mesa",
     "value_subtitle": "Por qué trabajar con nosotros es una decisión inteligente",
     "value_items": [
@@ -87,7 +87,6 @@
         "description": "Puedes centrarte en tu negocio mientras nosotros nos encargamos de la parte técnica."
       }
     ],
-
     "comparison_title": "Una Comparación Honesta",
     "comparison_aspect": "Aspecto",
     "comparison_diy": "DIY",
@@ -119,7 +118,6 @@
         "us": "Ofrecemos soporte continuo"
       }
     ],
-
     "philosophy_title": "Nuestra Filosofía",
     "philosophy_subtitle": "Los valores de una startup del siglo XXI",
     "philosophy_items": [
@@ -140,7 +138,6 @@
         "description": "Utilizamos las mejores herramientas disponibles, manteniéndonos siempre al día de las últimas tendencias."
       }
     ],
-
     "cta_title": "¿Cuál es tu Elección?",
     "cta_subtitle": "Ambos caminos son válidos",
     "cta_diy_button": "Quiero intentarlo yo mismo",
@@ -208,5 +205,509 @@
     "section_3_content": "Los servicios y contenidos de este sitio web se proporcionan \"tal cual\" sin garantías expresas ni implícitas. Code Cognition Studio no será responsable de ningún daño derivado del uso o la imposibilidad de uso de este sitio web.",
     "section_4_title": "4. Contacto",
     "section_4_content": "Para cualquier consulta sobre este aviso legal, contáctanos en info@ccognitions.com."
+  },
+
+  "Global": {
+    "siteName": "CCognitions",
+    "siteDescription": "Explorando la intersección de la IA, el desarrollo de software y el diseño de productos."
+  },
+
+  "SolutionSection": {
+    "title": "El Orquestador de IA",
+    "description": "Un experto manejando un pipeline de IA acelera el ciclo de vida de desarrollo.",
+    "features": ["Planificación Inteligente", "Diseño Asistido", "Desarrollo Acelerado", "Testing & Validación"]
+  },
+
+  "CaseStudyTeaser": {
+    "title": "Resultados Reales",
+    "quote": "\"MVP lanzado en <bold>3 semanas</bold> con un <bold>70% de ahorro</bold> en costos de desarrollo.\"",
+    "link": "Ver caso de estudio completo"
+  },
+
+  "ComparisonTableSection": {
+    "title": "Tradicional vs. Code Cognition Studio",
+    "metricsHeader": "Métricas",
+    "traditionalHeader": "Modelo Tradicional",
+    "ccognitionsHeader": "Code Cognition Studio",
+    "rows": [
+      { "metric": "Personas", "traditional": "Equipo Tradicional", "ccognitions": "Equipo Eficiente" },
+      { "metric": "Tiempo", "traditional": "Meses", "ccognitions": "Semanas" },
+      { "metric": "Costos", "traditional": "$$$$", "ccognitions": "$$" },
+      { "metric": "Velocidad", "traditional": "Burocracia", "ccognitions": "Iteración rápida" }
+    ]
+  },
+
+  "PainPointsSection": {
+    "title": "El modelo tradicional es lento y costoso",
+    "description": "Equipos de 9 personas, reuniones interminables, y costos fijos altos antes de ver una línea de código.",
+    "imageAlt": "Representación visual del overhead"
+  },
+
+  "FinalCTASection": {
+    "title": "¿Quieres reducir costos sin sacrificar calidad?",
+    "cta": "Hablemos de tu proyecto"
+  },
+
+  "HomePage": {
+    "meta_title": "Code Cognition Studio - Desarrollo de Software con IA",
+    "meta_description": "Transformamos ideas en software de alta calidad usando orquestación de IA. Reducimos costos y tiempos de entrega sin sacrificar calidad.",
+    "og_description": "Transformamos ideas en software de alta calidad usando orquestación de IA."
+  },
+
+  "ServicesPage": {
+    "meta_title": "Servicios - Code Cognition Studio",
+    "meta_description": "Desarrollo de software, automatización con IA, consultoría tecnológica y más. Soluciones a medida para tu negocio.",
+    "og_description": "Desarrollo de software, automatización con IA, consultoría tecnológica y más.",
+    "hero_title": "Soluciones Tecnológicas a tu Medida",
+    "hero_subtitle": "Transformamos tus ideas en realidad con desarrollo profesional, automatización inteligente y consultoría estratégica en IA.",
+    "hero_cta": "Solicita una Consulta Gratuita",
+    "services_title": "Nuestros Servicios",
+    "services_subtitle": "Elige la solución que mejor se adapte a tus necesidades o déjanos asesorarte",
+    "challenge_label": "El Desafío",
+    "solution_label": "Nuestra Solución",
+    "benefit_label": "Beneficio Clave",
+    "view_details": "Ver Detalles",
+    "request": "Solicitar",
+    "bottom_cta_title": "¿No estás seguro qué servicio necesitas?",
+    "bottom_cta_subtitle": "Agenda una consulta gratuita de 30 minutos y te ayudaremos a encontrar la solución perfecta para tu proyecto.",
+    "bottom_cta_button": "Agendar Consulta Gratuita",
+    "bottom_cta_or": "o",
+    "bottom_cta_email": "Envíanos un email"
+  },
+
+  "Services": {
+    "desarrollo-aplicacion-completo": {
+      "title": "Desarrollo de Aplicación Completo",
+      "problem": "Necesitas una aplicación desde cero pero no sabes cómo gestionar todo el proceso: planificación, diseño, arquitectura, desarrollo, pruebas y despliegue.",
+      "solution": "Desarrollamos tu aplicación de inicio a fin con metodología ágil. Incluye análisis de requerimientos, diseño UX/UI, arquitectura escalable, desarrollo con tecnologías modernas, testing exhaustivo, y despliegue en producción. Entregamos código limpio, documentado y mantenible.",
+      "benefit": "Aplicación profesional lista para producción sin preocuparte por los detalles técnicos."
+    },
+    "desarrollo-software-dedicado": {
+      "title": "Desarrollo de Software Dedicado",
+      "problem": "Tienes el diseño y la arquitectura definida, pero necesitas un equipo que se enfoque exclusivamente en implementar la solución de forma eficiente.",
+      "solution": "Nos encargamos únicamente de la fase de desarrollo con las especificaciones que nos proporciones. Utilizamos las mejores prácticas de código, control de versiones, y entrega continua. Integramos con tus sistemas existentes y trabajamos con tu stack tecnológico preferido.",
+      "benefit": "Desarrollo ágil y de calidad sin la carga de gestionar diseño o arquitectura."
+    },
+    "automatizacion-end-to-end": {
+      "title": "Automatización End-to-End",
+      "problem": "Procesos manuales y repetitivos ralentizan tu operación. Necesitas automatizar flujos de trabajo complejos que involucran múltiples sistemas y decisiones.",
+      "solution": "Diseñamos e implementamos soluciones de automatización completas, integraciones API, y flujos de trabajo inteligentes. Automatizamos desde tareas simples hasta procesos complejos que requieren toma de decisiones.",
+      "benefit": "Reducción de hasta 80% en tiempo de ejecución y eliminación de errores manuales."
+    },
+    "consultoria-inteligencia-artificial": {
+      "title": "Consultoría en Inteligencia Artificial",
+      "problem": "Quieres implementar IA en tu negocio pero no sabes qué casos de uso son viables, qué tecnologías usar, o cómo calcular el ROI.",
+      "solution": "Realizamos un análisis profundo de tus procesos de negocio para identificar oportunidades de IA. Te entregamos un roadmap detallado con casos de uso priorizados, estimaciones de costo-beneficio, recomendaciones tecnológicas, y un plan de implementación por fases. Incluye pruebas de concepto para validar viabilidad.",
+      "benefit": "Estrategia clara de adopción de IA con ROI demostrable y riesgos minimizados."
+    }
+  },
+
+  "ServiceDetailPage": {
+    "back_to_services": "Volver a servicios",
+    "hero_subtitle": "Soluciones profesionales diseñadas para impulsar tu negocio",
+    "ready_title": "¿Listo para comenzar?",
+    "ready_description": "Agenda una consulta gratuita y descubre cómo podemos ayudarte con este servicio.",
+    "request_consultation": "Solicitar Consulta →",
+    "challenge": "El Desafío",
+    "our_solution": "Nuestra Solución",
+    "main_benefit": "Beneficio Principal",
+    "interested": "¿Interesado?",
+    "interested_description": "Contáctanos hoy y obtén una evaluación gratuita de tu proyecto.",
+    "contact_now": "Contactar Ahora",
+    "response_time": "Respuesta en menos de 24 horas",
+    "why_choose_us": "¿Por qué elegirnos?",
+    "why_items": ["Experiencia comprobada", "Entrega puntual", "Soporte continuo", "Precios competitivos"],
+    "bottom_cta_title": "Da el Primer Paso Hoy",
+    "bottom_cta_subtitle": "Miles de empresas ya confían en nosotros. Únete y transforma tu negocio con {serviceTitle}.",
+    "start_now": "Comenzar Ahora",
+    "view_other_services": "Ver otros servicios",
+    "not_found_title": "Servicio no encontrado",
+    "not_found_button": "Volver a todos los servicios"
+  },
+
+  "ProjectsPage": {
+    "meta_title": "Proyectos - Code Cognition Studio",
+    "meta_description": "Casos de éxito y proyectos realizados con nuestro modelo de desarrollo potenciado por IA.",
+    "title": "Nuestros Resultados",
+    "subtitle": "Casos de éxito que demuestran el poder de nuestro modelo de desarrollo.",
+    "view_details": "Ver detalles del caso →",
+    "coming_soon": "Más casos de estudio próximamente.",
+    "projects": [
+      {
+        "title": "xPoverty: Plataforma de Donaciones con Arquitectura Enterprise",
+        "description": "Desarrollo completo de una aplicación de donaciones con backend en C# .NET y frontend multiplataforma en Flutter. Implementación de arquitectura robusta, integración de múltiples pasarelas de pago (Stripe, DLocal), webhooks, compliance, y despliegue optimizado en Digital Ocean con CI/CD en GitHub. Incluye suite completa de testing: unitarias, integración y E2E (Flutter Web + Patrol para móvil).",
+        "metrics": [
+          { "label": "Stack Backend", "value": "C# .NET" },
+          { "label": "Stack Frontend", "value": "Flutter" },
+          { "label": "Pasarelas de Pago", "value": "Stripe + DLocal" },
+          { "label": "Testing", "value": "Unit + Integration + E2E" },
+          { "label": "Deployment", "value": "Digital Ocean + CI/CD" },
+          { "label": "Features", "value": "Webhooks + Compliance" }
+        ]
+      }
+    ]
+  },
+
+  "XPovertyPage": {
+    "back_to_projects": "Volver a proyectos",
+    "hero_title": "xPoverty: Plataforma de Donaciones Enterprise",
+    "hero_subtitle": "Arquitectura robusta, múltiples pasarelas de pago y testing completo para transformar el impacto social",
+    "overview_title": "Visión General del Proyecto",
+    "overview_description": "xPoverty es una aplicación de donaciones desarrollada con arquitectura enterprise-grade que permite a organizaciones sin fines de lucro recibir donaciones de manera segura y eficiente. El proyecto fue construido con las mejores prácticas de la industria, enfocándose en escalabilidad, seguridad y experiencia de usuario.",
+    "challenge_title": "El Desafío",
+    "challenge_description": "Crear una plataforma de donaciones que pudiera manejar múltiples pasarelas de pago internacionales, cumplir con estrictos requisitos de compliance, y ofrecer una experiencia fluida tanto en web como en dispositivos móviles.",
+    "challenge_items": [
+      "Integración de múltiples pasarelas de pago (Stripe y DLocal)",
+      "Cumplimiento de normativas de compliance y seguridad",
+      "Experiencia multiplataforma consistente (Web y Mobile)",
+      "Sistema de webhooks confiable para sincronización en tiempo real"
+    ],
+    "solution_title": "La Solución",
+    "solution_description": "Desarrollamos una arquitectura de microservicios robusta con C# .NET para el backend, garantizando escalabilidad y mantenibilidad. El frontend fue construido con Flutter, permitiendo un código único para web, iOS y Android.",
+    "solution_backend_title": "Backend Enterprise",
+    "solution_backend_description": "C# .NET con arquitectura limpia, CQRS pattern, y Entity Framework Core para gestión de datos eficiente.",
+    "solution_frontend_title": "Frontend Multiplataforma",
+    "solution_frontend_description": "Flutter con BLoC pattern para state management, garantizando código reutilizable y mantenible.",
+    "solution_payments_title": "Integración de Pagos",
+    "solution_payments_description": "Implementación de Stripe para mercados globales y DLocal para América Latina, con sistema de fallback automático.",
+    "tech_stack_title": "Stack Tecnológico",
+    "tech_backend_title": "Backend",
+    "tech_backend_items": ["C# .NET Core", "Entity Framework Core", "ASP.NET Web API", "SignalR para real-time"],
+    "tech_frontend_title": "Frontend",
+    "tech_frontend_items": ["Flutter (Dart)", "BLoC State Management", "Material Design", "Responsive UI"],
+    "tech_payments_title": "Pagos",
+    "tech_payments_items": ["Stripe API", "DLocal Integration", "Webhook Management", "PCI Compliance"],
+    "tech_devops_title": "DevOps",
+    "tech_devops_items": ["GitHub Actions CI/CD", "Digital Ocean Hosting", "Docker Containers", "Automated Deployments"],
+    "testing_title": "Estrategia de Testing",
+    "testing_description": "Implementamos una estrategia de testing multinivel que garantiza la calidad y confiabilidad del código en todos los niveles de la aplicación.",
+    "testing_unit_title": "Unitarias",
+    "testing_unit_description": "xUnit para .NET y Flutter Test para validar lógica de negocio y componentes individuales.",
+    "testing_integration_title": "Integración",
+    "testing_integration_description": "Testing de APIs, base de datos y servicios externos para garantizar comunicación correcta.",
+    "testing_e2e_title": "End-to-End",
+    "testing_e2e_description": "Flutter Web testing y Patrol para mobile, simulando flujos completos de usuario.",
+    "features_title": "Características Clave",
+    "features_items": [
+      "Arquitectura limpia y escalable",
+      "Paletas de colores optimizadas",
+      "Webhooks confiables",
+      "Costos optimizados",
+      "Testing completo",
+      "Despliegue automatizado"
+    ],
+    "key_results_title": "Resultados Clave",
+    "key_results": [
+      { "value": "2", "label": "Pasarelas de Pago Integradas" },
+      { "value": "3", "label": "Plataformas (Web, iOS, Android)" },
+      { "value": "100%", "label": "Compliance Verificado" },
+      { "value": "CI/CD", "label": "Deployment Automatizado" }
+    ],
+    "architecture_title": "Decisiones Arquitectónicas Clave",
+    "architecture_description": "El proyecto se benefició de consultas con múltiples agentes de código especializados y GPTs, evaluando cuidadosamente cada decisión técnica para garantizar la mejor solución a largo plazo.",
+    "architecture_items": [
+      { "title": "Arquitectura Backend", "description": "CQRS y Clean Architecture para separación de responsabilidades y facilitar testing." },
+      { "title": "State Management", "description": "BLoC pattern en Flutter para gestión de estado predecible y testeable." },
+      { "title": "Payment Gateway", "description": "Sistema de fallback entre Stripe y DLocal para maximizar tasas de éxito." },
+      { "title": "Deployment Strategy", "description": "Digital Ocean con costos optimizados y CI/CD automatizado con GitHub Actions." }
+    ],
+    "visit_title": "Visita xPoverty",
+    "visit_description": "Descubre cómo esta plataforma está transformando el impacto social a través de donaciones seguras y eficientes.",
+    "visit_button": "Visitar xPoverty.com →",
+    "visit_contact": "¿Necesitas un proyecto similar?"
+  },
+
+  "ProcesoPage": {
+    "meta_title": "Nuestro Proceso - Code Cognition Studio",
+    "meta_description": "Conoce nuestro proceso de trabajo profesional y ágil, potenciado por inteligencia artificial para entregar resultados excepcionales.",
+    "og_description": "Proceso de trabajo profesional y ágil, potenciado por inteligencia artificial.",
+    "hero_title": "Nuestro Proceso de Trabajo",
+    "hero_subtitle": "Un enfoque profesional, ágil y potenciado por inteligencia artificial para entregar resultados excepcionales.",
+    "hero_cta_start": "Comenzar un Proyecto",
+    "hero_cta_services": "Ver Servicios",
+    "final_cta_title": "¿Listo para Transformar tu Idea en Realidad?",
+    "final_cta_subtitle": "Trabajemos juntos siguiendo este proceso probado para crear soluciones tecnológicas excepcionales que impulsen tu negocio.",
+    "final_cta_button": "Iniciar Conversación",
+    "final_cta_services": "Explorar nuestros servicios →",
+    "phases": [
+      {
+        "number": "01",
+        "title": "Entendimiento Estratégico del Problema",
+        "subtitle": "Antes de escribir una sola línea de código, pensamos.",
+        "intro": "Todo proyecto serio comienza con una fase de planeación inteligente, inspirada en:",
+        "inspirations": [
+          "PMBOK (Project Management Body of Knowledge)",
+          "Metodologías ágiles (Scrum, Kanban, híbridos)",
+          "Ingeniería de software tradicional y moderna",
+          "Arquitecturas escalables y mantenibles"
+        ],
+        "icon": "🎯",
+        "gradient": "from-blue-500 to-blue-600",
+        "whatWeDo": {
+          "title": "¿Qué hacemos aquí?",
+          "items": [
+            "Reuniones iniciales claras y directas (sin burocracia)",
+            "Definición del problema real de negocio",
+            "Identificación de riesgos técnicos y operativos",
+            "Definición de alcance, objetivos y métricas de éxito"
+          ]
+        },
+        "aiApproach": {
+          "title": "Enfoque IA",
+          "description": "Utilizamos inteligencia artificial como si fuera un ingeniero senior adicional, ayudándonos a:",
+          "items": [
+            "Analizar requerimientos",
+            "Simular escenarios",
+            "Proponer arquitecturas óptimas",
+            "Tomar decisiones técnicas mejor fundamentadas"
+          ]
+        }
+      },
+      {
+        "number": "02",
+        "title": "Definición del Producto Final",
+        "subtitle": "El cliente sabe exactamente qué va a recibir.",
+        "intro": "En esta etapa definimos con total transparencia:",
+        "inspirations": [
+          "Qué se va a construir",
+          "Qué no se va a construir",
+          "Qué versión se entregará",
+          "Qué queda para futuras iteraciones"
+        ],
+        "icon": "📦",
+        "gradient": "from-purple-500 to-purple-600",
+        "whatWeDo": {
+          "title": "Entregables claros",
+          "items": [
+            "Descripción funcional del producto",
+            "Arquitectura propuesta (frontend, backend, infraestructura)",
+            "Roadmap técnico",
+            "Estimación de tiempos y costos"
+          ]
+        },
+        "footer": {
+          "text": "Sin documentos eternos. Sin reuniones innecesarias. Solo lo esencial, bien hecho.",
+          "highlight": true
+        }
+      },
+      {
+        "number": "03",
+        "title": "Diseño Técnico y Arquitectura",
+        "subtitle": "Pensado para crecer, no para romperse.",
+        "intro": "Aquí diseñamos la base del sistema:",
+        "inspirations": [
+          "Arquitectura modular y escalable",
+          "Decisiones tecnológicas justificadas",
+          "Separación clara de responsabilidades",
+          "Preparación para automatización y testing"
+        ],
+        "icon": "🏗️",
+        "gradient": "from-indigo-500 to-indigo-600",
+        "aiApproach": {
+          "title": "IA Aplicada",
+          "description": "La inteligencia artificial nos ayuda en:",
+          "items": [
+            "Evaluación de patrones de diseño",
+            "Comparación de stacks tecnológicos",
+            "Detección temprana de errores de diseño",
+            "Optimización de costos de infraestructura"
+          ]
+        }
+      },
+      {
+        "number": "04",
+        "title": "Desarrollo del Aplicativo",
+        "subtitle": "Código primero, perfección después.",
+        "intro": "Seguimos una filosofía realista y profesional:",
+        "inspirations": [
+          "Primero funciona.",
+          "Luego se prueba.",
+          "Después se limpia y se refactoriza."
+        ],
+        "icon": "💻",
+        "gradient": "from-green-500 to-green-600",
+        "principles": {
+          "title": "Inspirados en:",
+          "items": ["Clean Code", "SOLID", "Buenas prácticas de ingeniería"]
+        },
+        "whatWeDo": {
+          "title": "Desarrollo incluye",
+          "items": [
+            "Frontend",
+            "Backend",
+            "Integraciones",
+            "Automatización cuando aplica"
+          ]
+        },
+        "aiApproach": {
+          "title": "La IA acelera",
+          "description": "La inteligencia artificial potencia nuestro desarrollo:",
+          "items": [
+            "Generación de código base",
+            "Detección de errores comunes",
+            "Refactorización asistida",
+            "Documentación técnica"
+          ]
+        },
+        "footer": {
+          "text": "Resultado: menos tiempo, menos errores, más calidad.",
+          "highlight": true
+        }
+      },
+      {
+        "number": "05",
+        "title": "Testing y Calidad",
+        "subtitle": "No confiamos en la suerte, confiamos en pruebas.",
+        "intro": "Aplicamos el ciclo completo de testing:",
+        "inspirations": [
+          "Pruebas unitarias",
+          "Pruebas de integración",
+          "Pruebas end-to-end (si el servicio lo incluye)",
+          "Validaciones funcionales"
+        ],
+        "icon": "✅",
+        "gradient": "from-teal-500 to-teal-600",
+        "whatWeDo": {
+          "title": "Enfoque",
+          "items": [
+            "Calidad desde el inicio",
+            "Automatización inteligente",
+            "Reducción de regresiones",
+            "Confianza antes de producción"
+          ]
+        }
+      },
+      {
+        "number": "06",
+        "title": "Puesta en Producción",
+        "subtitle": "Llevamos tu producto al mundo real.",
+        "intro": "Para proyectos que incluyen producción:",
+        "inspirations": [
+          "Configuración de entornos",
+          "Despliegue controlado",
+          "Validaciones finales",
+          "Monitoreo inicial"
+        ],
+        "icon": "🚀",
+        "gradient": "from-orange-500 to-orange-600",
+        "whatWeDo": {
+          "title": "Todo pensado para",
+          "items": [
+            "Reducir riesgos",
+            "Minimizar caídas",
+            "Facilitar mantenimiento futuro"
+          ]
+        }
+      },
+      {
+        "number": "07",
+        "title": "Cierre del Proyecto y Transparencia Total",
+        "subtitle": "Sabes exactamente qué se hizo y cuánto ahorraste.",
+        "intro": "Al finalizar:",
+        "inspirations": [
+          "Entregamos el producto final",
+          "Documentamos lo construido",
+          "Explicamos decisiones técnicas",
+          "Mostramos el ahorro logrado gracias al uso de IA"
+        ],
+        "icon": "📊",
+        "gradient": "from-pink-500 to-pink-600",
+        "whatWeDo": {
+          "title": "¿Por qué es más económico?",
+          "items": [
+            "Equipos más pequeños",
+            "Menos retrabajo",
+            "Menos errores",
+            "Más velocidad",
+            "Más inteligencia en cada decisión"
+          ]
+        }
+      },
+      {
+        "number": "08",
+        "title": "Consultoría Continua en IA e Ingeniería",
+        "subtitle": "No solo construimos, también pensamos contigo.",
+        "intro": "Además del desarrollo, ofrecemos:",
+        "inspirations": [
+          "Consultoría en IA aplicada",
+          "Automatización de procesos",
+          "Optimización de sistemas existentes",
+          "Mejora de calidad y testing",
+          "Arquitectura y refactorización"
+        ],
+        "icon": "🤝",
+        "gradient": "from-cyan-500 to-cyan-600",
+        "footer": {
+          "text": "Todo basado en ingeniería real, no promesas vacías.",
+          "highlight": true
+        }
+      }
+    ]
+  },
+
+  "Blog": {
+    "meta_title": "Blog - Code Cognition Studio",
+    "meta_description": "Artículos sobre orquestación de IA, desarrollo de software moderno y el futuro de la tecnología.",
+    "og_description": "Artículos sobre orquestación de IA, desarrollo de software moderno y el futuro de la tecnología.",
+    "hero_badge": "BLOG",
+    "hero_title_prefix": "Ideas, Estrategia y ",
+    "hero_title_highlight": "Tecnología",
+    "hero_subtitle": "Exploramos el futuro del desarrollo de software con orquestación de IA, buenas prácticas de ingeniería y análisis técnico.",
+    "featured_label": "Artículo destacado",
+    "all_articles_label": "Todos los artículos",
+    "read_article": "Leer artículo",
+    "read": "Leer",
+    "read_time_suffix": "de lectura",
+    "back_to_blog": "Volver al blog",
+    "not_found_title": "404",
+    "not_found_message": "Post no encontrado",
+    "all_articles_link": "Todos los artículos",
+    "contact_cta": "Hablemos de tu proyecto",
+    "posts": [
+      {
+        "slug": "comparativa-agentes-de-codigo-copilot-claude-gemini-deepseek",
+        "title": "Comparativa de Agentes de Código: Copilot vs Claude vs Gemini vs DeepSeek",
+        "excerpt": "Analizamos cuatro agentes de código populares: GitHub Copilot CLI, Claude Code, Gemini Code Assist y DeepSeek Coder, comparando sus capacidades, costos y casos de uso reales.",
+        "date": "Febrero 13, 2026",
+        "tag": "Herramientas IA",
+        "readTime": "10 min",
+        "gradient": "from-orange-600 to-amber-600",
+        "gradientLight": "from-orange-50 to-amber-50",
+        "accent": "orange"
+      },
+      {
+        "slug": "separacion-de-responsabilidades-en-agentes-de-codigo",
+        "title": "Separación de Responsabilidades en el Desarrollo Asistido por Agentes de Código",
+        "excerpt": "Un análisis técnico sobre cómo estructurar agentes de IA especializados para backend, frontend y pruebas, aplicando separación de responsabilidades para maximizar calidad y eficiencia.",
+        "date": "Febrero 6, 2026",
+        "tag": "Arquitectura de Agentes",
+        "readTime": "8 min",
+        "gradient": "from-violet-600 to-indigo-600",
+        "gradientLight": "from-violet-50 to-indigo-50",
+        "accent": "violet"
+      },
+      {
+        "slug": "por-que-la-orquestacion-de-ia-es-el-futuro-del-software",
+        "title": "¿Por qué la Orquestación de IA es el Futuro del Software?",
+        "excerpt": "Exploramos cómo el rol del desarrollador está evolucionando de constructor a director de una sinfonía de modelos de IA...",
+        "date": "Enero 12, 2026",
+        "tag": "Orquestación IA",
+        "readTime": "5 min",
+        "gradient": "from-blue-600 to-cyan-600",
+        "gradientLight": "from-blue-50 to-cyan-50",
+        "accent": "blue"
+      },
+      {
+        "slug": "el-fin-de-los-equipos-de-9-personas",
+        "title": "El Fin de los Equipos de 9 Personas",
+        "excerpt": "Un análisis comparativo de costos y velocidad entre el modelo de agencia tradicional y el desarrollo ágil con IA.",
+        "date": "Enero 10, 2026",
+        "tag": "Estrategia",
+        "readTime": "4 min",
+        "gradient": "from-emerald-600 to-teal-600",
+        "gradientLight": "from-emerald-50 to-teal-50",
+        "accent": "emerald"
+      }
+    ]
   }
 }

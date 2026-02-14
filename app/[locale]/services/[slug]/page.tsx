@@ -1,32 +1,39 @@
-import { SERVICES_DATA } from '@/lib/constants';
-import Link from 'next/link';
+import { SERVICE_SLUGS } from '@/lib/constants';
+import {getTranslations} from 'next-intl/server';
+import {Link} from '@/i18n/navigation';
 
 export async function generateStaticParams() {
-  return SERVICES_DATA.map((service) => ({
-    slug: service.slug,
-  }));
+  return SERVICE_SLUGS.map((slug) => ({ slug }));
 }
 
-export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
-  const service = SERVICES_DATA.find(s => s.slug === params.slug);
-  const serviceIndex = SERVICES_DATA.findIndex(s => s.slug === params.slug);
+export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const t = await getTranslations('ServiceDetailPage');
+  const ts = await getTranslations('Services');
+  const serviceIndex = SERVICE_SLUGS.indexOf(slug);
 
-  if (!service) {
+  if (serviceIndex === -1) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-6xl font-bold text-gray-300 mb-4">404</h1>
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Servicio no encontrado</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">{t('not_found_title')}</h2>
           <Link
             href="/services"
             className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors"
           >
-            Volver a todos los servicios
+            {t('not_found_button')}
           </Link>
         </div>
       </div>
     );
   }
+
+  const serviceTitle = ts(`${slug}.title`);
+  const serviceProblem = ts(`${slug}.problem`);
+  const serviceSolution = ts(`${slug}.solution`);
+  const serviceBenefit = ts(`${slug}.benefit`);
+  const whyItems = t.raw('why_items') as string[];
 
   const gradientColors = [
     'from-purple-500 to-purple-700',
@@ -46,13 +53,13 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               href="/services"
               className="inline-flex items-center text-white hover:text-gray-200 mb-8 transition-colors"
             >
-              <span className="mr-2">←</span> Volver a servicios
+              <span className="mr-2">←</span> {t('back_to_services')}
             </Link>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              {service.title}
+              {serviceTitle}
             </h1>
             <p className="text-xl md:text-2xl text-white opacity-90">
-              Soluciones profesionales diseñadas para impulsar tu negocio
+              {t('hero_subtitle')}
             </p>
           </div>
         </div>
@@ -67,17 +74,17 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex-1">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  ¿Listo para comenzar?
+                  {t('ready_title')}
                 </h3>
                 <p className="text-gray-600">
-                  Agenda una consulta gratuita y descubre cómo podemos ayudarte con este servicio.
+                  {t('ready_description')}
                 </p>
               </div>
               <Link
                 href="/contact"
                 className="bg-blue-600 text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg whitespace-nowrap"
               >
-                Solicitar Consulta →
+                {t('request_consultation')}
               </Link>
             </div>
           </div>
@@ -96,13 +103,13 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                   </div>
                   <div>
                     <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                      El Desafío
+                      {t('challenge')}
                     </h2>
                     <div className="h-1 w-20 bg-red-500 rounded-full"></div>
                   </div>
                 </div>
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  {service.problem}
+                  {serviceProblem}
                 </p>
               </div>
 
@@ -114,13 +121,13 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                   </div>
                   <div>
                     <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                      Nuestra Solución
+                      {t('our_solution')}
                     </h2>
                     <div className="h-1 w-20 bg-blue-500 rounded-full"></div>
                   </div>
                 </div>
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  {service.solution}
+                  {serviceSolution}
                 </p>
               </div>
 
@@ -132,13 +139,13 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                   </div>
                   <div>
                     <h2 className="text-3xl font-bold text-green-800 mb-2">
-                      Beneficio Principal
+                      {t('main_benefit')}
                     </h2>
                     <div className="h-1 w-20 bg-green-500 rounded-full"></div>
                   </div>
                 </div>
                 <p className="text-green-900 text-xl font-bold leading-relaxed">
-                  {service.benefit}
+                  {serviceBenefit}
                 </p>
               </div>
 
@@ -150,44 +157,34 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               {/* Quick CTA Card */}
               <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 text-white sticky top-8">
                 <h3 className="text-2xl font-bold mb-4">
-                  ¿Interesado?
+                  {t('interested')}
                 </h3>
                 <p className="text-blue-100 mb-6">
-                  Contáctanos hoy y obtén una evaluación gratuita de tu proyecto.
+                  {t('interested_description')}
                 </p>
                 <Link
                   href="/contact"
                   className="block w-full bg-white text-blue-600 font-bold py-4 px-6 rounded-lg text-center hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg mb-4"
                 >
-                  Contactar Ahora
+                  {t('contact_now')}
                 </Link>
                 <div className="text-center text-blue-100 text-sm">
-                  Respuesta en menos de 24 horas
+                  {t('response_time')}
                 </div>
               </div>
 
               {/* Why Choose Us */}
               <div className="bg-white rounded-2xl shadow-lg p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  ¿Por qué elegirnos?
+                  {t('why_choose_us')}
                 </h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 text-lg">✓</span>
-                    <span className="text-gray-700">Experiencia comprobada</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 text-lg">✓</span>
-                    <span className="text-gray-700">Entrega puntual</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 text-lg">✓</span>
-                    <span className="text-gray-700">Soporte continuo</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 text-lg">✓</span>
-                    <span className="text-gray-700">Precios competitivos</span>
-                  </li>
+                  {whyItems.map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-green-500 mr-2 text-lg">✓</span>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -197,23 +194,23 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           {/* Bottom CTA Section */}
           <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl shadow-2xl p-12 text-center text-white">
             <h2 className="text-4xl font-bold mb-4">
-              Da el Primer Paso Hoy
+              {t('bottom_cta_title')}
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Miles de empresas ya confían en nosotros. Únete y transforma tu negocio con {service.title.toLowerCase()}.
+              {t('bottom_cta_subtitle', { serviceTitle: serviceTitle.toLowerCase() })}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/contact"
                 className="bg-blue-600 text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-xl"
               >
-                Comenzar Ahora
+                {t('start_now')}
               </Link>
               <Link
                 href="/services"
                 className="text-white font-semibold hover:text-gray-300 transition-colors underline"
               >
-                Ver otros servicios
+                {t('view_other_services')}
               </Link>
             </div>
           </div>

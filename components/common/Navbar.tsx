@@ -3,6 +3,7 @@
 import {useState} from 'react';
 import {Link} from '@/i18n/navigation';
 import {useTranslations} from 'next-intl';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const t = useTranslations('Navbar');
@@ -32,6 +33,7 @@ const Navbar = () => {
           <Link href="/contact" className="text-gray-300 hover:text-white">
             {t('contact')}
           </Link>
+          <LanguageSwitcher />
         </div>
         <button
           className="md:hidden text-white"
@@ -65,6 +67,7 @@ const Navbar = () => {
           <Link href="/contact" className="block text-gray-300 hover:text-white" onClick={closeMenu}>
             {t('contact')}
           </Link>
+          <LanguageSwitcher />
         </div>
       )}
     </nav>
