@@ -665,6 +665,17 @@
     "contact_cta": "Hablemos de tu proyecto",
     "posts": [
       {
+        "slug": "la-era-del-todista-fin-de-los-roles-tradicionales",
+        "title": "La Era del Todista: ¿El Fin de los Roles Tradicionales en Tecnología?",
+        "excerpt": "La IA está redibujando los perfiles profesionales. Microsoft ya fusionó cuatro roles en uno: el 'Full Stack Builder'. ¿Estamos ante el fin de los especialistas rígidos y el auge del profesional todista?",
+        "date": "Febrero 23, 2026",
+        "tag": "Futuro del Trabajo",
+        "readTime": "7 min",
+        "gradient": "from-purple-600 to-pink-600",
+        "gradientLight": "from-purple-50 to-pink-50",
+        "accent": "purple"
+      },
+      {
         "slug": "comparativa-agentes-de-codigo-copilot-claude-gemini-deepseek",
         "title": "Comparativa de Agentes de Código: Copilot vs Claude vs Gemini vs DeepSeek",
         "excerpt": "Analizamos cuatro agentes de código populares: GitHub Copilot CLI, Claude Code, Gemini Code Assist y DeepSeek Coder, comparando sus capacidades, costos y casos de uso reales.",

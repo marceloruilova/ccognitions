@@ -17,9 +17,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const blogPosts = [
+    '/blog/la-era-del-todista-fin-de-los-roles-tradicionales',
+    '/blog/comparativa-agentes-de-codigo-copilot-claude-gemini-deepseek',
+    '/blog/separacion-de-responsabilidades-en-agentes-de-codigo',
     '/blog/por-que-la-orquestacion-de-ia-es-el-futuro-del-software',
     '/blog/el-fin-de-los-equipos-de-9-personas',
-    '/blog/separacion-de-responsabilidades-en-agentes-de-codigo',
   ];
 
   const allRoutes = [...routes, ...blogPosts];

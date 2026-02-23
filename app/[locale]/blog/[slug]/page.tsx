@@ -16,6 +16,59 @@ type PostsMap = Record<string, Record<string, BlogPostData>>;
 
 const postsContent: PostsMap = {
   es: {
+    "la-era-del-todista-fin-de-los-roles-tradicionales": {
+      title: "La Era del Todista: ¿El Fin de los Roles Tradicionales en Tecnología?",
+      date: "Febrero 23, 2026",
+      tag: "Futuro del Trabajo",
+      readTime: "7 min",
+      gradient: "from-purple-600 to-pink-600",
+      content: `
+        <p class="lead">La rápida adopción de la IA y la automatización está replanteando los perfiles profesionales. Microsoft ya fusionó cuatro roles clave &mdash;gestor de producto, diseñador, desarrollador front-end y desarrollador back-end&mdash; en uno solo: el <strong>Full Stack Builder</strong>. ¿Estamos ante el fin de los especialistas rígidos y el auge del profesional que domina todo?</p>
+
+        <h2>El Auge del Full Stack Builder</h2>
+        <p>Microsoft ha reorganizado sus equipos alrededor del arquetipo <strong>Full Stack Builder</strong>, argumentando que hoy una sola persona, con ayuda de IA, puede hacer lo que antes requería un equipo de cuatro. Según Reggie Britt, ingeniero de Microsoft: <em>"una persona puede ahora hacer lo que solía requerir un equipo cross-funcional de cuatro"</em>.</p>
+        <p>Esta tendencia no es un caso aislado. Oliver Reeves, experto en selección de personal de tecnología, reporta un declive progresivo de las ofertas específicas de "ingeniero frontend". Muchas startups confirman que hoy su ingeniero de back-end, apoyado por grandes modelos de lenguaje (LLMs), puede cubrir también el trabajo de front-end, eliminando la necesidad de roles dedicados a UI.</p>
+        <p>Abderahmane Boucetta (PhD) publicó en LinkedIn que las IA de asistencia permiten a cada individuo <em>"hacer todo"</em>, por lo que los <em>"silos especializados desaparecerán"</em> y los generalistas ganarán terreno. En otras palabras, el talento <strong>todista</strong> &mdash;el profesional que abarca múltiples áreas&mdash; cobra fuerza ante la visión tradicional de especialistas rígidos.</p>
+
+        <h2>La Voz de los Expertos</h2>
+        <p>Los analistas más reconocidos del sector coinciden en que el cambio ya está en marcha:</p>
+        <ul>
+          <li><strong>Bethan Vincent (comunicadora):</strong> usa la analogía del panda versus el tiburón. El especialista (panda) prospera en entornos estables, pero el generalista (tiburón, que come de todo) tiene ventaja en entornos cambiantes. En su visión, <em>"elegir ser generalista significa optimizar para la volatilidad"</em>, capacidad clave en el mundo actual.</li>
+          <li><strong>Scott Amenta (Chief of Staff Network):</strong> sostiene que en la era de la IA el talento definitorio ya no es la <em>"experticia profunda en un campo estrecho"</em>, sino la habilidad de pensar en sistemas y conectar ideas de distintas áreas. <em>"Esta es la era del generalista"</em>, afirma. Los perfiles más valiosos serán aquellos que <em>"conectan los puntos"</em> entre disciplinas: gestores de producto que entienden tanto lo técnico como la psicología del usuario, o líderes de operaciones capaces de integrar finanzas, logística y equipo humano.</li>
+          <li><strong>Satya Nadella (Microsoft):</strong> impulsa activamente el modelo Full Stack Builder como parte de una reorganización estratégica que refleja la confianza de la empresa en que la IA puede absorber las tareas repetitivas y especializadas de cada rol.</li>
+        </ul>
+
+        <h2>¿Especialista o Generalista? El Debate</h2>
+        <p>La tendencia hacia el todismo no implica abandonar la especialización, sino enriquecerla con una visión holística. La nueva economía prefiere profesionales <strong>T-shaped</strong>: con un profundo conocimiento anclado en una especialidad y un ancho de banda extenso en habilidades complementarias.</p>
+        <p>Según Manpower Group, el profesional TI ideal del futuro será un híbrido: <em>"no será únicamente un experto en un área ni un generalista sin enfoque, sino un híbrido que combine profundidad en su área con una visión amplia"</em>. Las empresas valoran cada vez más especialistas que además <em>"puedan colaborar, liderar y conectar puntos entre distintas disciplinas"</em>.</p>
+        <blockquote>
+          <p>"El lugar de trabajo moderno no será amable con los especialistas puros: quienes prosperarán serán los que sepan pivotar y aprender en múltiples dominios." &mdash; Scott Amenta</p>
+        </blockquote>
+
+        <h2>Implicaciones para las Empresas</h2>
+        <p>Las organizaciones tecnológicas ya están rediseñando sus estructuras. En lugar de contratar cuatro roles por proyecto, buscan individuos que cubran todo el ciclo del producto. Las empresas que no se reorganicen así pueden quedarse rezagadas, mientras startups pequeñas con <em>"todistas"</em> ágiles avanzan más rápido.</p>
+        <p>Los equipos más planos y multifuncionales no solo son más económicos: son más veloces. Eliminan la fricción comunicativa entre roles, reducen reuniones de coordinación y permiten iterar con mayor rapidez. Las clásicas divisiones (front-end vs back-end, desarrollo vs diseño, PM vs ingeniería) tienden a difuminarse cuando una persona con las herramientas correctas puede abarcarlas todas.</p>
+
+        <h2>Implicaciones para la Formación</h2>
+        <p>La educación también debe evolucionar. Un informe de Microsoft muestra que muchos empleos profesionales &mdash;incluso los que requieren títulos universitarios como periodistas o científicos políticos&mdash; están en riesgo por la IA. Obtener un título ya no es suficiente para garantizar estabilidad laboral.</p>
+        <p>Las universidades deben dejar de ofrecer itinerarios ultra-especializados y promover currículos más integrales, donde el aprendizaje continuo, las competencias interdisciplinares y las habilidades blandas (liderazgo, comunicación, trabajo en equipo) sean tan importantes como los conocimientos técnicos profundos.</p>
+
+        <h2>Habilidades Clave en la Era del Todista</h2>
+        <p>Para prosperar en este contexto se requieren nuevas habilidades mixtas:</p>
+        <ul>
+          <li><strong>Dominio de herramientas avanzadas de IA y plataformas no-code:</strong> facilitan que un solo profesional realice múltiples tareas.</li>
+          <li><strong>Conocimientos técnicos sólidos en áreas críticas:</strong> IA, cloud, ciberseguridad o UX siguen siendo pilares insustituibles.</li>
+          <li><strong>Comunicación efectiva y liderazgo:</strong> para coordinar sin depender de jerarquías rígidas.</li>
+          <li><strong>Visión de negocio y adaptabilidad:</strong> entender el impacto de la tecnología en el negocio y pivotar cuando sea necesario.</li>
+          <li><strong>Aprendizaje continuo:</strong> los todistas exitosos aprenden a aprender en diferentes campos, encontrando patrones transferibles entre disciplinas.</li>
+        </ul>
+
+        <h2>Conclusión: El Futuro es de los Conectores</h2>
+        <p>La industria tecnológica avanza hacia perfiles integrales. Los todistas &mdash;profesionales polivalentes que comprenden tanto lo técnico como lo organizativo&mdash; parecen ser los mejor posicionados para la próxima década. Los trabajadores que puedan conectar áreas (tanto al diseñar productos como al gestionar procesos) serán cada vez más demandados.</p>
+        <p>Esto no implica que la especialización desaparezca: implica que el especialista del futuro deberá también ser capaz de pensar en el sistema completo. Las carreras universitarias y las empresas deben potenciar esta combinación: formar profesionales con profundidad en una materia, pero entrenados para pensar <em>"en todo"</em>.</p>
+        <p>En definitiva, el futuro del trabajo TI apunta a una convergencia de talentos: aquellos que equilibren pericia técnica con habilidades amplias serán los verdaderos ganadores en la era del todista.</p>
+      `
+    },
     "comparativa-agentes-de-codigo-copilot-claude-gemini-deepseek": {
       title: "Comparativa de Agentes de Código: Copilot vs Claude vs Gemini vs DeepSeek",
       date: "Febrero 13, 2026",
@@ -173,6 +226,59 @@ const postsContent: PostsMap = {
     }
   },
   en: {
+    "la-era-del-todista-fin-de-los-roles-tradicionales": {
+      title: "The Era of the All-Rounder: The End of Traditional Tech Roles?",
+      date: "February 23, 2026",
+      tag: "Future of Work",
+      readTime: "7 min",
+      gradient: "from-purple-600 to-pink-600",
+      content: `
+        <p class="lead">The rapid adoption of AI and automation is reshaping professional profiles. Microsoft has already merged four key roles &mdash;product manager, designer, frontend developer, and backend developer&mdash; into one: the <strong>Full Stack Builder</strong>. Are we witnessing the end of rigid specialists and the rise of the all-rounder professional?</p>
+
+        <h2>The Rise of the Full Stack Builder</h2>
+        <p>Microsoft has reorganized its teams around the <strong>Full Stack Builder</strong> archetype, arguing that today a single person, aided by AI, can do what previously required a team of four. According to Reggie Britt, a Microsoft engineer: <em>"one person can now do what used to require a cross-functional team of four."</em></p>
+        <p>This trend is not an isolated case. Oliver Reeves, a tech recruiting expert, reports a gradual decline in specific "frontend engineer" job postings. Many startups confirm that today their backend engineer, supported by large language models (LLMs), can also cover frontend work, eliminating the need for dedicated UI roles.</p>
+        <p>Abderahmane Boucetta (PhD) posted on LinkedIn that AI assistance tools allow each individual to <em>"do everything"</em>, meaning <em>"specialized silos will disappear"</em> and generalists will gain ground. In other words, the <strong>all-rounder</strong> talent &mdash;the professional who spans multiple areas&mdash; is gaining strength over the traditional vision of rigid specialists.</p>
+
+        <h2>The Voice of Experts</h2>
+        <p>The most recognized industry analysts agree that the change is already underway:</p>
+        <ul>
+          <li><strong>Bethan Vincent (communicator):</strong> uses the panda versus shark analogy. The specialist (panda) thrives in stable environments, but the generalist (shark, which eats everything) has an advantage in changing environments. In her view, <em>"choosing to be a generalist means optimizing for volatility"</em> &mdash; a key capability in today's world.</li>
+          <li><strong>Scott Amenta (Chief of Staff Network):</strong> argues that in the AI era, the defining talent is no longer <em>"deep expertise in a narrow field"</em>, but the ability to think in systems and connect ideas from different areas. <em>"This is the era of the generalist,"</em> he states. The most valuable profiles will be those who <em>"connect the dots"</em> between disciplines: product managers who understand both technical aspects and user psychology, or operations leaders capable of integrating finance, logistics, and human teams.</li>
+          <li><strong>Satya Nadella (Microsoft):</strong> actively drives the Full Stack Builder model as part of a strategic reorganization that reflects the company's confidence that AI can absorb the repetitive and specialized tasks of each role.</li>
+        </ul>
+
+        <h2>Specialist or Generalist? The Debate</h2>
+        <p>The trend toward all-rounder professionals doesn't mean abandoning specialization, but enriching it with a holistic vision. The new economy prefers <strong>T-shaped</strong> professionals: with deep knowledge anchored in a specialty and broad bandwidth in complementary skills.</p>
+        <p>According to Manpower Group, the ideal IT professional of the future will be a hybrid: <em>"not solely an expert in one area nor an unfocused generalist, but a hybrid who combines depth in their area with a broad vision."</em> Companies increasingly value specialists who can also <em>"collaborate, lead, and connect dots between different disciplines."</em></p>
+        <blockquote>
+          <p>"The modern workplace will not be kind to pure specialists: those who will thrive are those who can pivot and learn across multiple domains." &mdash; Scott Amenta</p>
+        </blockquote>
+
+        <h2>Implications for Companies</h2>
+        <p>Technology organizations are already redesigning their structures. Instead of hiring four roles per project, they seek individuals who can cover the entire product lifecycle. Companies that don't reorganize this way may fall behind, while small startups with agile <em>"all-rounders"</em> move faster.</p>
+        <p>Flatter, multifunctional teams are not only more economical: they are faster. They eliminate communicative friction between roles, reduce coordination meetings, and allow quicker iteration. The classic divisions (front-end vs back-end, development vs design, PM vs engineering) tend to blur when one person with the right tools can cover them all.</p>
+
+        <h2>Implications for Education</h2>
+        <p>Education must also evolve. A Microsoft report shows that many professional jobs &mdash;even those requiring university degrees like journalists or political scientists&mdash; are at risk from AI. Getting a degree is no longer enough to guarantee job stability.</p>
+        <p>Universities must stop offering ultra-specialized tracks and promote more comprehensive curricula, where continuous learning, interdisciplinary competencies, and soft skills (leadership, communication, teamwork) are just as important as deep technical knowledge.</p>
+
+        <h2>Key Skills in the All-Rounder Era</h2>
+        <p>Thriving in this context requires new mixed skills:</p>
+        <ul>
+          <li><strong>Mastery of advanced AI tools and no-code platforms:</strong> they enable a single professional to perform multiple tasks.</li>
+          <li><strong>Solid technical knowledge in critical areas:</strong> AI, cloud, cybersecurity, and UX remain irreplaceable pillars.</li>
+          <li><strong>Effective communication and leadership:</strong> to coordinate without relying on rigid hierarchies.</li>
+          <li><strong>Business vision and adaptability:</strong> understanding the impact of technology on the business and pivoting when necessary.</li>
+          <li><strong>Continuous learning:</strong> successful all-rounders learn to learn in different fields, finding transferable patterns across disciplines.</li>
+        </ul>
+
+        <h2>Conclusion: The Future Belongs to Connectors</h2>
+        <p>The tech industry is moving toward comprehensive profiles. All-rounders &mdash;versatile professionals who understand both the technical and organizational aspects&mdash; appear to be the best positioned for the next decade. Workers who can connect areas (both when designing products and managing processes) will be increasingly in demand.</p>
+        <p>This doesn't mean specialization will disappear: it means the specialist of the future will also need to be able to think about the complete system. Universities and companies must strengthen this combination: training professionals with depth in a subject, but trained to think <em>"about everything."</em></p>
+        <p>Ultimately, the future of IT work points to a convergence of talents: those who balance technical expertise with broad skills will be the true winners in the era of the all-rounder.</p>
+      `
+    },
     "comparativa-agentes-de-codigo-copilot-claude-gemini-deepseek": {
       title: "Code Agents Comparison: Copilot vs Claude vs Gemini vs DeepSeek",
       date: "February 13, 2026",
@@ -330,6 +436,29 @@ const postsContent: PostsMap = {
     }
   }
 };
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const locale = await getLocale();
+  const t = await getTranslations('Blog');
+  const post = postsContent[locale]?.[slug] || postsContent['es']?.[slug];
+
+  if (!post) return {};
+
+  const posts = t.raw('posts') as Array<{ slug: string; excerpt: string }>;
+  const postMeta = posts.find(p => p.slug === slug);
+  const description = postMeta?.excerpt ?? post.title;
+
+  return {
+    title: `${post.title} - Code Cognition Studio`,
+    description,
+    openGraph: {
+      title: post.title,
+      description,
+      type: 'article',
+    },
+  };
+}
 
 async function getPostData(slug: string, locale: string): Promise<(BlogPostData & { slug: string }) | null> {
   const localePosts = postsContent[locale] || postsContent['es'];
