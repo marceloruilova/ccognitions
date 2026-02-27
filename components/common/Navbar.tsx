@@ -18,6 +18,9 @@ const Navbar = () => {
           Code Cognition Studio
         </Link>
         <div className="hidden md:flex space-x-4">
+          <Link href="/about" className="text-gray-300 hover:text-white">
+            {t('about')}
+          </Link>
           <Link href="/proceso" className="text-gray-300 hover:text-white">
             {t('proceso')}
           </Link>
@@ -52,6 +55,9 @@ const Navbar = () => {
       </div>
       {isMenuOpen && (
         <div className="md:hidden mt-4 space-y-3">
+          <Link href="/about" className="block text-gray-300 hover:text-white" onClick={closeMenu}>
+            {t('about')}
+          </Link>
           <Link href="/proceso" className="block text-gray-300 hover:text-white" onClick={closeMenu}>
             {t('proceso')}
           </Link>

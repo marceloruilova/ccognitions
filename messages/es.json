@@ -4,7 +4,8 @@
     "projects": "Proyectos",
     "services": "Servicios",
     "blog": "Blog",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "about": "Acerca de"
   },
   "HeroSection": {
     "title": "Cognición Digital, Soluciones Exponenciales",
@@ -165,6 +166,7 @@
   "Footer": {
     "brand_description": "Desarrollo de Software con IA",
     "quick_links": "Enlaces Rápidos",
+    "about": "Acerca de",
     "projects": "Proyectos",
     "services": "Servicios",
     "blog": "Blog",
@@ -185,7 +187,7 @@
     "section_2_title": "2. Datos que Recopilamos y Para Qué",
     "section_2_content": "Solo recopilamos los datos que proporcionas voluntariamente a través de nuestro formulario de contacto: nombre, empresa (opcional), dirección de email y mensaje. Estos datos se utilizan exclusivamente para responder a tu consulta. No creamos cuentas de usuario, perfiles, ni vendemos datos a terceros. Nuestro servidor puede registrar automáticamente información técnica como direcciones IP, lo cual es estándar en cualquier servidor web y se utiliza únicamente con fines de seguridad y operativos.",
     "section_3_title": "3. Cookies",
-    "section_3_content": "Este sitio web no utiliza cookies propias ni de terceros. Puede usar cookies técnicas estrictamente necesarias para funcionalidades básicas (como la preferencia de idioma). No utilizamos cookies publicitarias, de seguimiento ni de analítica. Si esto cambia en el futuro, actualizaremos esta política y te informaremos.",
+    "section_3_content": "Este sitio web utiliza cookies para mejorar tu experiencia y mostrar publicidad personalizada a través de Google AdSense (un servicio de Google LLC). Estas cookies pueden recopilar información sobre tu comportamiento de navegación para mostrar anuncios relevantes. Puedes gestionar tus preferencias de cookies a través del banner de consentimiento que se muestra en tu primera visita. Para más información sobre las prácticas de datos de Google, visita los Términos y Privacidad de Google.",
     "section_4_title": "4. Tus Derechos",
     "section_4_content": "Tienes derecho a acceder, rectificar y suprimir cualquier dato personal que tengamos sobre ti. También puedes solicitar la limitación del tratamiento u oponerte al procesamiento de tus datos. Para ejercer cualquiera de estos derechos, contáctanos en info@ccognitions.com.",
     "section_5_title": "5. Contacto",
@@ -643,6 +645,47 @@
         }
       }
     ]
+  },
+
+  "CookieConsent": {
+    "message": "Usamos cookies para personalizar contenido y anuncios, y para analizar nuestro tráfico. Al hacer clic en \"Aceptar\", consientes el uso de cookies. Más información en nuestra",
+    "privacy_link": "Política de Privacidad",
+    "accept": "Aceptar",
+    "reject": "Rechazar no esenciales"
+  },
+
+  "AboutPage": {
+    "meta_title": "Acerca de - Code Cognition Studio",
+    "meta_description": "Conoce a Marcelo Ruilova, fundador de Code Cognition Studio. Construimos software de alta calidad usando orquestación de IA.",
+    "hero_badge": "ACERCA DE",
+    "hero_title": "Construido por Ingenieros, Potenciado por IA",
+    "hero_subtitle": "Somos un estudio de desarrollo de software que combina experiencia técnica profunda con las últimas herramientas de IA para entregar resultados excepcionales.",
+    "mission_title": "Nuestra Misión",
+    "mission_p1": "En Code Cognition Studio, creemos que el desarrollo de software debe ser rápido, transparente y asequible — sin sacrificar calidad. Aprovechamos la orquestación de IA no para reemplazar a los ingenieros expertos, sino para amplificar su rendimiento y eliminar el overhead innecesario.",
+    "mission_p2": "Nuestra misión es hacer que el desarrollo de software de clase mundial sea accesible para startups, PYMEs y empresas, entregando resultados en semanas en lugar de meses, a una fracción del costo tradicional.",
+    "founder_title": "El Fundador",
+    "founder_name": "Marcelo Ruilova",
+    "founder_role": "Fundador e Ingeniero Principal",
+    "founder_bio_p1": "Marcelo Ruilova es un ingeniero de software y practicante de IA con más de 10 años de experiencia construyendo sistemas en producción en múltiples industrias. Su trabajo abarca arquitectura backend, desarrollo full-stack, infraestructura cloud y pipelines de automatización con IA.",
+    "founder_bio_p2": "Después de años trabajando con equipos de desarrollo tradicionales, Marcelo identificó una ineficiencia fundamental: la mayoría de los proyectos desperdician entre el 60 y el 70% de su presupuesto en coordinación, reuniones y retrabajo — no en desarrollo real. Fundó Code Cognition Studio para solucionar esto.",
+    "founder_bio_p3": "Hoy lidera un equipo reducido de ingenieros especializados que usan herramientas de IA (Claude, GPT-4, Copilot) no como sustituto de la experiencia, sino como multiplicador de fuerza — permitiendo que equipos pequeños entreguen lo que tradicionalmente requería departamentos enteros.",
+    "values_title": "Nuestros Valores",
+    "v1_title": "Transparencia Radical",
+    "v1_desc": "Sin costos ocultos, sin promesas vacías. Siempre sabes qué estamos construyendo, por qué y cuánto cuesta.",
+    "v2_title": "Excelencia en Ingeniería",
+    "v2_desc": "Código limpio, arquitectura sólida y patrones probados. Construimos para la mantenibilidad, no solo para el demo.",
+    "v3_title": "IA que Augmenta, No Reemplaza",
+    "v3_desc": "Usamos IA para eliminar el trabajo repetitivo y acelerar el desarrollo — la expertise humana sigue siendo el núcleo de cada decisión.",
+    "v4_title": "Éxito Mutuo",
+    "v4_desc": "Tenemos éxito cuando tú tienes éxito. Cada proyecto es una asociación a largo plazo, no una transacción única.",
+    "trust_title": "Por qué Confiar en Nosotros",
+    "trust_item1": "Proyectos reales entregados: desde plataformas de pago enterprise (xPoverty) hasta pipelines de automatización con IA",
+    "trust_item2": "Expertise en el stack completo: C# .NET, Flutter, Next.js, TypeScript, Docker, CI/CD",
+    "trust_item3": "Conocimiento profundo de IA: usamos y escribimos sobre Claude, GPT-4, Copilot y arquitecturas basadas en agentes a diario",
+    "trust_item4": "Proceso transparente: cada proyecto incluye entregables claros, cronogramas y desglose de costos",
+    "cta_title": "¿Listo para Construir Algo Grande?",
+    "cta_subtitle": "Hablemos de tu proyecto y cómo podemos ayudarte a lanzar más rápido, con más inteligencia y menor costo.",
+    "cta_button": "Iniciar una Conversación"
   },
 
   "Blog": {

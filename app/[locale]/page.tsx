@@ -19,9 +19,30 @@ export async function generateMetadata() {
   };
 }
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Code Cognition Studio',
+  url: 'https://ccognitions.com',
+  description: 'AI-powered software development studio building complex systems and MVPs with AI orchestration.',
+  founder: {
+    '@type': 'Person',
+    name: 'Marcelo Ruilova',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'info@ccognitions.com',
+    contactType: 'customer support',
+  },
+};
+
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
       <HeroSection />
       <PainPointsSection />
       <SolutionSection />

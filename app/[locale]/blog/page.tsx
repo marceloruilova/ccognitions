@@ -1,5 +1,6 @@
 import {getTranslations} from 'next-intl/server';
 import {Link} from '@/i18n/navigation';
+import AdUnit from '@/components/common/AdUnit';
 
 export async function generateMetadata() {
   const t = await getTranslations('Blog');
@@ -95,6 +96,8 @@ export default async function BlogPage() {
               </article>
             </Link>
           </section>
+
+          <AdUnit slot="XXXXXXXXXX" />
 
           {/* Posts Grid */}
           <section>

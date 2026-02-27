@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import '../globals.css'
 import Navbar from '@/components/common/Navbar'
 import Footer from '@/components/common/Footer'
+import CookieConsent from '@/components/common/CookieConsent'
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations} from 'next-intl/server';
 
@@ -43,6 +44,7 @@ export default async function RootLayout({
             {children}
           </main>
           <Footer />
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>

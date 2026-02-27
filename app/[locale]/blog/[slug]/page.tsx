@@ -1,5 +1,6 @@
 import {getTranslations, getLocale} from 'next-intl/server';
 import {Link} from '@/i18n/navigation';
+import AdUnit from '@/components/common/AdUnit';
 
 export const dynamic = 'force-dynamic';
 
@@ -488,8 +489,30 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     );
   }
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    datePublished: post.date,
+    author: {
+      '@type': 'Person',
+      name: 'Marcelo Ruilova',
+      url: 'https://ccognitions.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Code Cognition Studio',
+      url: 'https://ccognitions.com',
+    },
+    keywords: post.tag,
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* Hero Header */}
       <header className="relative bg-gray-900 overflow-hidden">
         <div className="absolute inset-0 opacity-[0.07]" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'}} />
@@ -524,6 +547,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Article Content */}
       <main className="container mx-auto px-4 py-12 md:py-16">
         <article className="max-w-3xl mx-auto">
+          {/* Author info */}
+          <div className="flex items-center gap-3 mb-6 text-sm text-gray-500">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+              MR
+            </div>
+            <span>
+              <span className="font-semibold text-gray-700">Marcelo Ruilova</span>
+              {' · '}
+              {post.date}
+              {' · '}
+              {post.readTime} {t('read_time_suffix')}
+            </span>
+          </div>
+
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 lg:p-16">
             <div
               className="prose prose-lg max-w-none
@@ -540,6 +577,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               "
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
+            <AdUnit slot="XXXXXXXXXX" />
           </div>
 
           {/* Bottom Navigation */}

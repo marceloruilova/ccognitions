@@ -4,7 +4,8 @@
     "projects": "Projects",
     "services": "Services",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "about": "About"
   },
   "HeroSection": {
     "title": "Digital Cognition, Exponential Solutions",
@@ -165,6 +166,7 @@
   "Footer": {
     "brand_description": "AI-Powered Software Development",
     "quick_links": "Quick Links",
+    "about": "About",
     "projects": "Projects",
     "services": "Services",
     "blog": "Blog",
@@ -185,7 +187,7 @@
     "section_2_title": "2. Data We Collect and Why",
     "section_2_content": "We only collect data you voluntarily provide through our contact form: name, company (optional), email address, and message. This data is used exclusively to respond to your inquiry. We do not create user accounts, profiles, or sell data to third parties. Our server may automatically log technical information such as IP addresses, which is standard for any web server and is used solely for security and operational purposes.",
     "section_3_title": "3. Cookies",
-    "section_3_content": "This website does not use its own cookies or third-party cookies. It may use strictly necessary technical cookies for basic functionality (such as language preference). We do not use advertising, tracking, or analytics cookies. If this changes in the future, we will update this policy and inform you accordingly.",
+    "section_3_content": "This website uses cookies to improve your experience and to serve personalized advertising via Google AdSense (a service of Google LLC). These cookies may collect information about your browsing behavior to show relevant ads. You can manage your cookie preferences via the consent banner shown on your first visit. For more information about Google's data practices, please visit Google's Privacy & Terms.",
     "section_4_title": "4. Your Rights",
     "section_4_content": "You have the right to access, rectify, and delete any personal data we hold about you. You can also request the limitation of processing or object to the processing of your data. To exercise any of these rights, please contact us at info@ccognitions.com.",
     "section_5_title": "5. Contact",
@@ -643,6 +645,47 @@
         }
       }
     ]
+  },
+
+  "CookieConsent": {
+    "message": "We use cookies to personalize content and ads, and to analyze our traffic. By clicking \"Accept\", you consent to our use of cookies. Learn more in our",
+    "privacy_link": "Privacy Policy",
+    "accept": "Accept",
+    "reject": "Reject non-essential"
+  },
+
+  "AboutPage": {
+    "meta_title": "About - Code Cognition Studio",
+    "meta_description": "Meet Marcelo Ruilova, founder of Code Cognition Studio. We build high-quality software using AI orchestration.",
+    "hero_badge": "ABOUT US",
+    "hero_title": "Built by Engineers, Powered by AI",
+    "hero_subtitle": "We are a software development studio that combines deep engineering expertise with the latest AI tools to deliver exceptional results for our clients.",
+    "mission_title": "Our Mission",
+    "mission_p1": "At Code Cognition Studio, we believe software development should be fast, transparent, and affordable — without sacrificing quality. We leverage AI orchestration not to replace skilled engineers, but to amplify their output and eliminate unnecessary overhead.",
+    "mission_p2": "Our mission is to make world-class software development accessible to startups, SMBs, and enterprises alike, delivering results in weeks instead of months at a fraction of the traditional cost.",
+    "founder_title": "The Founder",
+    "founder_name": "Marcelo Ruilova",
+    "founder_role": "Founder & Lead Engineer",
+    "founder_bio_p1": "Marcelo Ruilova is a software engineer and AI practitioner with over 10 years of experience building production systems across multiple industries. His work spans backend architecture, full-stack development, cloud infrastructure, and AI-powered automation pipelines.",
+    "founder_bio_p2": "After years working with traditional development teams, Marcelo recognized a fundamental inefficiency: most projects waste 60-70% of their budget on coordination, meetings, and rework — not actual development. He founded Code Cognition Studio to fix that.",
+    "founder_bio_p3": "Today he leads a lean team of specialized engineers who use AI tools (Claude, GPT-4, Copilot) not as a replacement for expertise, but as a force multiplier — enabling small teams to deliver what traditionally required entire departments.",
+    "values_title": "Our Values",
+    "v1_title": "Radical Transparency",
+    "v1_desc": "No hidden costs, no empty promises. You always know what we're building, why, and how much it costs.",
+    "v2_title": "Engineering Excellence",
+    "v2_desc": "Clean code, solid architecture, and proven patterns. We build for maintainability, not just for demo day.",
+    "v3_title": "AI-Augmented, Not AI-Replaced",
+    "v3_desc": "We use AI to eliminate repetitive work and accelerate development — human expertise remains at the core of every decision.",
+    "v4_title": "Mutual Success",
+    "v4_desc": "We succeed when you succeed. Every project is a long-term partnership, not a one-time transaction.",
+    "trust_title": "Why Trust Us",
+    "trust_item1": "Real projects delivered: from enterprise payment platforms (xPoverty) to AI automation pipelines",
+    "trust_item2": "Expertise across the full stack: C# .NET, Flutter, Next.js, TypeScript, Docker, CI/CD",
+    "trust_item3": "Deep AI knowledge: we use and write about Claude, GPT-4, Copilot, and agent-based architectures daily",
+    "trust_item4": "Transparent process: every engagement includes clear deliverables, timelines, and cost breakdowns",
+    "cta_title": "Ready to Build Something Great?",
+    "cta_subtitle": "Let's talk about your project and how we can help you ship faster, smarter, and at lower cost.",
+    "cta_button": "Start a Conversation"
   },
 
   "Blog": {

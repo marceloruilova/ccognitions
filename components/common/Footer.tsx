@@ -15,7 +15,8 @@ const Footer = () => {
         </div>
         <div>
           <h4 className="font-bold mb-4">{t('quick_links')}</h4>
-          <ul>
+          <ul className="space-y-1">
+            <li><Link href="/about" className="text-gray-400 hover:text-white">{t('about')}</Link></li>
             <li><Link href="/projects" className="text-gray-400 hover:text-white">{t('projects')}</Link></li>
             <li><Link href="/services" className="text-gray-400 hover:text-white">{t('services')}</Link></li>
             <li><Link href="/blog" className="text-gray-400 hover:text-white">{t('blog')}</Link></li>
@@ -25,8 +26,8 @@ const Footer = () => {
         <div>
           <h4 className="font-bold mb-4">{t('follow_us')}</h4>
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-white">Twitter</a>
-            <a href="#" className="text-gray-400 hover:text-white">LinkedIn</a>
+            <a href="https://x.com/ccognitions" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">Twitter / X</a>
+            <a href="https://linkedin.com/company/ccognitions" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">LinkedIn</a>
           </div>
         </div>
       </div>

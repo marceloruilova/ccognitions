@@ -4,7 +4,9 @@
       "Bash(head:*)",
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "WebFetch(domain:support.google.com)",
+      "WebFetch(domain:developers.google.com)"
     ]
   }
 }
