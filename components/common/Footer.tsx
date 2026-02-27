@@ -20,6 +20,7 @@ const Footer = () => {
             <li><Link href="/projects" className="text-gray-400 hover:text-white">{t('projects')}</Link></li>
             <li><Link href="/services" className="text-gray-400 hover:text-white">{t('services')}</Link></li>
             <li><Link href="/blog" className="text-gray-400 hover:text-white">{t('blog')}</Link></li>
+            <li><Link href="/faq" className="text-gray-400 hover:text-white">{t('faq')}</Link></li>
             <li><Link href="/contact" className="text-gray-400 hover:text-white">{t('contact')}</Link></li>
           </ul>
         </div>

@@ -170,6 +170,7 @@
     "projects": "Projects",
     "services": "Services",
     "blog": "Blog",
+    "faq": "FAQ",
     "contact": "Contact",
     "follow_us": "Follow Us",
     "privacy": "Privacy Policy",
@@ -686,6 +687,79 @@
     "cta_title": "Ready to Build Something Great?",
     "cta_subtitle": "Let's talk about your project and how we can help you ship faster, smarter, and at lower cost.",
     "cta_button": "Start a Conversation"
+  },
+
+  "FaqPage": {
+    "meta_title": "FAQ - Frequently Asked Questions | Code Cognition Studio",
+    "meta_description": "Answers to the most common questions about AI-powered software development, our services, costs, timelines, and methodologies at Code Cognition Studio.",
+    "hero_badge": "FAQ",
+    "hero_title": "Frequently Asked Questions",
+    "hero_subtitle": "Everything you need to know about AI-powered software development and how we work.",
+    "cta_title": "Didn't find your answer?",
+    "cta_subtitle": "Contact us directly and we'll respond within 24 hours.",
+    "cta_button": "Contact Us",
+    "questions": [
+      {
+        "question": "What is AI orchestration and how does it apply to software development?",
+        "answer": "AI orchestration is the practice of coordinating multiple artificial intelligence models and tools to work together on a complex task, much like a conductor leading an orchestra. In software development, this means using specialized AI agents for different tasks — one agent might generate backend code, another reviews it for security vulnerabilities, and a third writes the tests. At Code Cognition Studio, our engineers act as orchestrators: they define the strategy, prompt the right AI tools at the right time, validate the output, and integrate everything into a coherent, production-ready system. This approach allows a small team of experienced engineers to deliver the output that would traditionally require a much larger team, dramatically reducing costs and time-to-market without sacrificing quality."
+      },
+      {
+        "question": "What is the difference between using AI tools yourself (DIY) and hiring Code Cognition Studio?",
+        "answer": "The tools are accessible to anyone, but knowing how to use them professionally is a different skill set. When you use AI tools on your own without deep engineering experience, you risk generating code that works for demos but breaks under real-world conditions — poor architecture, missing error handling, security vulnerabilities, and no testing. You also face a steep learning curve: understanding how to prompt AI effectively, how to evaluate its output critically, and how to integrate AI-generated code into a maintainable system takes months or years to develop. At Code Cognition Studio, we bring 10+ years of software engineering experience to every AI-assisted project. We know which AI suggestions to accept, which to modify, and which to discard. We enforce clean architecture, write real tests, and ensure the code is maintainable long after the project ends. The result is a production-grade application, not a prototype."
+      },
+      {
+        "question": "Which AI tools and technologies do you use?",
+        "answer": "We work with a curated set of AI and engineering tools, selecting the right ones based on the project's specific needs. For AI code generation and assistance, we regularly use Claude (Anthropic), GitHub Copilot, and GPT-4. For our technology stack, we specialize in: backend development with C# .NET, Node.js, and Python; frontend with Next.js, React, and Flutter; cloud infrastructure on Digital Ocean, AWS, and Vercel; databases including PostgreSQL, MongoDB, and Redis; and DevOps with Docker, GitHub Actions, and CI/CD pipelines. We stay current with the latest AI developments and continuously evaluate new tools like DeepSeek Coder, Gemini Code Assist, and emerging agent frameworks to ensure we're always using the most effective approach for our clients."
+      },
+      {
+        "question": "How long does a typical project take?",
+        "answer": "Project timelines vary significantly depending on scope and complexity, but our AI-augmented workflow consistently delivers faster than traditional development. A simple MVP (Minimum Viable Product) with core functionality typically takes 2-4 weeks. A medium-complexity application with integrations, authentication, and custom business logic usually takes 4-8 weeks. A complex enterprise application with multiple integrations, extensive testing, and production deployment can take 8-16 weeks. These timelines are typically 40-60% shorter than what a traditional development team would require for the same scope. We achieve this by eliminating the non-productive overhead that consumes most of a traditional project's time: excessive meetings, slow code reviews, manual repetitive work, and architectural rework. Our AI-assisted approach front-loads the thinking and accelerates the execution."
+      },
+      {
+        "question": "How much does your software development service cost?",
+        "answer": "Our pricing is project-based and depends on scope, complexity, and timeline. We intentionally avoid vague hourly rates that create uncertainty — instead, we provide a clear fixed price after a brief discovery conversation. As a general reference, our engagements typically range from $3,000 for a focused MVP to $25,000+ for complex enterprise applications. Our pricing is significantly lower than traditional agencies because our AI-augmented workflow eliminates much of the overhead and rework that drives up costs in conventional projects. Every proposal includes a detailed breakdown of what's included, what's not included, and what the milestones are. There are no hidden fees, no scope creep charges without explicit approval, and no surprises. Contact us for a free 30-minute consultation and a tailored quote."
+      },
+      {
+        "question": "What is a code agent and how does it differ from a regular AI chatbot?",
+        "answer": "A code agent is a specialized AI system designed specifically for software development tasks, with capabilities that go far beyond what a general-purpose chatbot can do. While a chatbot like ChatGPT can write code snippets in a conversation, a code agent can autonomously read your existing codebase, understand its structure and patterns, make targeted changes across multiple files, run tests, interpret the results, and iterate until the tests pass. Modern code agents like Claude Code, GitHub Copilot Workspace, and Cursor can maintain context across an entire project, follow your coding conventions, and integrate with your development workflow. They work within your IDE or terminal, not just in a chat window. The key distinction is autonomy and context: code agents act on your codebase rather than just describing what code should look like."
+      },
+      {
+        "question": "Can AI fully replace software developers?",
+        "answer": "Not yet, and not in the foreseeable future for complex, production-grade systems. AI tools are extraordinarily powerful accelerators for experienced developers, but they have significant limitations when used without expert oversight. AI models can produce code with subtle logical errors, security vulnerabilities, or architectural flaws that look correct to a non-expert but cause serious problems in production. They can miss edge cases, generate inconsistent APIs, and create code that's difficult to maintain or scale. They also cannot fully understand business context, user needs, and strategic product decisions the way a skilled engineer can. What AI is doing is fundamentally changing the ratio of engineers needed: tasks that once required five developers can now be handled by two, with AI handling the repetitive and boilerplate work while human engineers focus on architecture, critical decisions, and quality assurance. This is the model we operate on at Code Cognition Studio."
+      },
+      {
+        "question": "What is clean architecture and why does it matter for my project?",
+        "answer": "Clean architecture is a set of design principles that organize code in a way that makes it easier to understand, test, modify, and scale over time. It separates your application into distinct layers — business logic, data access, user interface, external integrations — so that changes in one layer don't require rewriting everything else. The practical benefit for your project is significant: clean architecture means your application can grow as your business grows without requiring expensive full rewrites. It means adding a new payment gateway, changing your database, or adding a mobile app won't break your existing system. It also means any developer who works on your code in the future (including us, if you want ongoing support) can understand and modify it quickly. AI-generated code without architectural discipline tends to accumulate technical debt rapidly — that's why we always apply architectural patterns even when using AI tools to accelerate development."
+      },
+      {
+        "question": "What is CI/CD and do you implement it for all projects?",
+        "answer": "CI/CD stands for Continuous Integration and Continuous Deployment, a set of practices and tools that automate the process of testing and deploying your application. With CI/CD, every time a code change is pushed, an automated system runs your test suite, checks for errors, and if everything passes, deploys the new version to your server automatically. This eliminates manual deployment steps, reduces human error, and means you can ship updates to your users in minutes instead of hours. We implement CI/CD for all projects that include production deployment, typically using GitHub Actions. This means from day one of your project, your deployment process is automated, reliable, and repeatable. When you want to add a feature or fix a bug after launch, the update process is seamless. CI/CD is not optional infrastructure — it's a fundamental requirement for maintaining a professional application at scale."
+      },
+      {
+        "question": "What is the difference between GitHub Copilot, Claude Code, and Gemini Code Assist?",
+        "answer": "These are all AI-powered coding assistants but they have different strengths, integrations, and use cases. GitHub Copilot is deeply integrated into most popular IDEs and excels at autocomplete-style suggestions as you type — it's great for increasing typing speed and suggesting common patterns. Claude Code (by Anthropic) is a more autonomous agent designed to work on entire tasks from the terminal: it can read, edit, and write files across your project, run commands, and iterate based on results. It excels at complex, multi-step tasks and tends to produce more thoughtful architectural decisions. Gemini Code Assist (by Google) integrates tightly with Google Cloud services and offers strong performance for enterprise codebases. DeepSeek Coder is an open-source alternative that performs surprisingly well for its cost. In practice, we use whichever tool produces the best result for a given task — often using Claude Code for complex architecture work and Copilot for rapid implementation within a defined structure."
+      },
+      {
+        "question": "What is the 'Full Stack Builder' concept that Microsoft introduced?",
+        "answer": "In 2025, Microsoft announced a restructuring of developer roles where four traditional positions — frontend developer, backend developer, data engineer, and DevOps engineer — were merged into a single role called the 'Full Stack Builder.' This reflects a broader industry shift driven by AI tools: when AI can handle much of the boilerplate and implementation work in all these areas, a single skilled engineer with broad knowledge and strong AI orchestration skills can cover ground that previously required four specialized professionals. This is not simply 'every developer must know everything' — it's a recognition that the bottleneck in software development is no longer typing code, but rather understanding problems, making architectural decisions, and directing AI tools effectively. At Code Cognition Studio, we've operated on this model from the start: our engineers are generalists with deep expertise who use AI to amplify their impact across the full technology stack."
+      },
+      {
+        "question": "Do you handle the entire project from design to deployment, or only certain phases?",
+        "answer": "We offer flexible engagement models depending on what you need. Our full-service model covers the entire lifecycle: requirements discovery, UX/UI design, architecture, development, testing, deployment, and post-launch support. This is the simplest option for clients who want to hand off the entire project and receive a finished product. If you already have designs and architecture defined, we also offer dedicated development-only engagements where we focus purely on implementation. We can also provide consulting and architecture review if you have a development team but want expert guidance on technical decisions. And for teams that want to build in-house but need a head start, we offer AI workflow setup and training. Every engagement starts with a free 30-minute discovery call to understand your specific situation and determine the right model for your project."
+      },
+      {
+        "question": "What testing approach do you use, and are tests included in the project?",
+        "answer": "Testing is not optional at Code Cognition Studio — it's part of our standard development process. We apply a multi-layer testing strategy that covers the full spectrum of quality assurance. Unit tests validate individual functions and components in isolation, ensuring business logic works correctly. Integration tests verify that different parts of the system communicate correctly — APIs, databases, external services. End-to-end (E2E) tests simulate real user flows through the entire application, catching issues that only appear when everything runs together. The testing scope depends on the project tier: our standard development engagements include unit and integration tests by default. E2E testing is included in full-service projects. We use tools appropriate for the technology stack — xUnit and NUnit for C# .NET, Jest and React Testing Library for frontend, Patrol for Flutter mobile apps. Our xPoverty project is a concrete example: we delivered a complete three-layer test suite covering unit, integration, and E2E scenarios across web and mobile platforms."
+      },
+      {
+        "question": "What happens after the project is delivered? Do you offer maintenance and support?",
+        "answer": "Yes, we offer ongoing support and maintenance packages after project delivery. At the conclusion of every project, you receive complete ownership of all source code, documentation of the architecture and key technical decisions, and a handover session where we explain how the system works and how to make future changes. If you want us to continue supporting the project, we offer retainer-based maintenance agreements that cover bug fixes, dependency updates, minor feature additions, and performance optimization. Our consulting service is also available on an as-needed basis for teams that want expert guidance on specific technical challenges without a full ongoing retainer. We believe in long-term partnerships: the best outcome for us is a client who succeeds with the software we built together and comes back when they need to expand it."
+      },
+      {
+        "question": "How do I get started with Code Cognition Studio?",
+        "answer": "Getting started is straightforward. The first step is a free 30-minute discovery call where we discuss your project, your goals, your timeline, and your budget. This call helps us understand whether we're the right fit for your project and gives you a clear sense of how we work. After the call, we prepare a detailed proposal within 2-3 business days that includes a fixed price, a project timeline with milestones, and a clear definition of what's included and what's not. If you decide to proceed, we start with a paid kickoff session where we deeply explore your requirements, define the architecture, and set up the project infrastructure. Development begins within one week of contract signing. To get started, simply use our contact form or send us an email at info@ccognitions.com. We respond to all inquiries within 24 hours."
+      }
+    ]
   },
 
   "Blog": {

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import '../globals.css'
 import Navbar from '@/components/common/Navbar'
 import Footer from '@/components/common/Footer'
@@ -15,6 +16,9 @@ export async function generateMetadata({params: {locale}}: {params: {locale: str
   return {
     title: t('title'),
     description: t('description'),
+    other: {
+      'google-adsense-account': 'ca-pub-2184085000526938',
+    },
   };
 }
 
@@ -30,13 +34,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2184085000526938"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
@@ -46,6 +43,12 @@ export default async function RootLayout({
           <Footer />
           <CookieConsent />
         </NextIntlClientProvider>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2184085000526938"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
