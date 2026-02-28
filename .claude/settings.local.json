@@ -8,7 +8,9 @@
       "WebFetch(domain:support.google.com)",
       "WebFetch(domain:developers.google.com)",
       "Bash(wc:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(python3:*)",
+      "Bash(node:*)"
     ]
   }
 }

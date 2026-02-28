@@ -782,6 +782,17 @@
     "contact_cta": "Let's talk about your project",
     "posts": [
       {
+        "slug": "el-futuro-utopico-de-musk-utopia-o-distopia-para-el-sector-it",
+        "title": "Elon Musk's 'Utopian' Future: Real Utopia or Dystopia for the IT Sector?",
+        "excerpt": "AI and robotics promise a world where work is optional. We analyze whether Musk's vision is an egalitarian utopia or a dystopia controlled by those who own the robots and digital infrastructure.",
+        "date": "February 28, 2026",
+        "tag": "Future of Work",
+        "readTime": "12 min",
+        "gradient": "from-red-600 to-rose-600",
+        "gradientLight": "from-red-50 to-rose-50",
+        "accent": "red"
+      },
+      {
         "slug": "la-era-del-todista-fin-de-los-roles-tradicionales",
         "title": "The Era of the All-Rounder: The End of Traditional Tech Roles?",
         "excerpt": "AI is redrawing professional profiles. Microsoft has already merged four roles into one: the 'Full Stack Builder'. Are we witnessing the end of rigid specialists and the rise of the all-rounder professional?",
