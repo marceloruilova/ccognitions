@@ -12,7 +12,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 export default async function PrivacyPage() {
   const t = await getTranslations('PrivacyPage');
 
-  const sections = [1, 2, 3, 4, 5] as const;
+  const sections = [1, 2, 3, 4, 5, 6, 7, 8] as const;
 
   return (
     <div className="bg-gray-50 min-h-screen">

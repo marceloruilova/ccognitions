@@ -181,8 +181,8 @@
     "meta_title": "Privacy Policy - Code Cognition Studio",
     "meta_description": "Privacy policy of Code Cognition Studio. Learn how we handle your data.",
     "title": "Privacy Policy",
-    "last_updated": "Last updated: February 2026",
-    "intro": "At Code Cognition Studio, we respect your privacy and are committed to protecting your personal data. This policy explains what data we collect, why, and how we handle it.",
+    "last_updated": "Last updated: October 2026",
+    "intro": "At Code Cognition Studio, we respect your privacy and are committed to protecting your personal data. This policy explains what data we collect, why, and how we handle it on our website and in Little Soldiers.",
     "section_1_title": "1. Data Controller",
     "section_1_content": "The entity responsible for processing your data is Code Cognition Studio. For any privacy-related inquiries, you can contact us at info@ccognitions.com.",
     "section_2_title": "2. Data We Collect and Why",
@@ -192,7 +192,13 @@
     "section_4_title": "4. Your Rights",
     "section_4_content": "You have the right to access, rectify, and delete any personal data we hold about you. You can also request the limitation of processing or object to the processing of your data. To exercise any of these rights, please contact us at info@ccognitions.com.",
     "section_5_title": "5. Contact",
-    "section_5_content": "If you have any questions about this privacy policy or how we handle your data, please contact us at info@ccognitions.com."
+    "section_5_content": "If you have any questions about this privacy policy or how we handle your data, please contact us at info@ccognitions.com.",
+    "section_6_title": "6. Little Soldiers",
+    "section_6_content": "Little Soldiers is a turn-based multiplayer strategy game developed by Code Cognition Studio. The game lets you create an account or sign in with Google to save and sync your profile, team, and matches between sessions.",
+    "section_7_title": "7. Game Data and Google Sign-in",
+    "section_7_content": "To provide the game service, we may process your account identifier, name or email associated with Google when you authorize it, and data needed for the game to work, such as your profile, team, progress, and matches. Google manages the authentication process under its own policies. We use this data only to authenticate you, save your progress, enable multiplayer features, and keep the service secure. We do not sell this data to third parties.",
+    "section_8_title": "8. Game Data Retention and Deletion",
+    "section_8_content": "We retain account and game data while you keep an active account or while it is needed to operate and protect the service. You can request access to, correction of, or deletion of your data and account by writing to info@ccognitions.com. We will process the request in accordance with applicable law, except for information we must retain for legal, security, or dispute-resolution purposes."
   },
   "TermsPage": {
     "meta_title": "Legal Notice - Code Cognition Studio",
@@ -255,6 +261,14 @@
     "meta_title": "Code Cognition Studio - AI-Powered Software Development",
     "meta_description": "We transform ideas into high-quality software using AI orchestration. We reduce costs and delivery times without sacrificing quality.",
     "og_description": "We transform ideas into high-quality software using AI orchestration."
+  },
+
+  "LittleSoldiers": {
+    "eyebrow": "A Code Cognition Studio game",
+    "title": "Little Soldiers",
+    "description": "Little Soldiers is a turn-based multiplayer strategy game developed by Ccognitions.",
+    "account_description": "You can create an account or sign in with Google to save your profile, team, and matches.",
+    "privacy_link": "View the Little Soldiers privacy policy"
   },
 
   "ServicesPage": {

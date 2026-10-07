@@ -181,8 +181,8 @@
     "meta_title": "Política de Privacidad - Code Cognition Studio",
     "meta_description": "Política de privacidad de Code Cognition Studio. Conoce cómo tratamos tus datos.",
     "title": "Política de Privacidad",
-    "last_updated": "Última actualización: febrero 2026",
-    "intro": "En Code Cognition Studio respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta política explica qué datos recopilamos, por qué y cómo los tratamos.",
+    "last_updated": "Última actualización: octubre 2026",
+    "intro": "En Code Cognition Studio respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta política explica qué datos recopilamos, por qué y cómo los tratamos en nuestro sitio web y en Little Soldiers.",
     "section_1_title": "1. Responsable del Tratamiento",
     "section_1_content": "El responsable del tratamiento de tus datos es Code Cognition Studio. Para cualquier consulta relacionada con la privacidad, puedes contactarnos en info@ccognitions.com.",
     "section_2_title": "2. Datos que Recopilamos y Para Qué",
@@ -192,7 +192,13 @@
     "section_4_title": "4. Tus Derechos",
     "section_4_content": "Tienes derecho a acceder, rectificar y suprimir cualquier dato personal que tengamos sobre ti. También puedes solicitar la limitación del tratamiento u oponerte al procesamiento de tus datos. Para ejercer cualquiera de estos derechos, contáctanos en info@ccognitions.com.",
     "section_5_title": "5. Contacto",
-    "section_5_content": "Si tienes alguna pregunta sobre esta política de privacidad o sobre cómo tratamos tus datos, contáctanos en info@ccognitions.com."
+    "section_5_content": "Si tienes alguna pregunta sobre esta política de privacidad o sobre cómo tratamos tus datos, contáctanos en info@ccognitions.com.",
+    "section_6_title": "6. Little Soldiers",
+    "section_6_content": "Little Soldiers es un juego multijugador de estrategia por turnos desarrollado por Code Cognition Studio. El juego permite crear una cuenta o iniciar sesión con Google para guardar y sincronizar tu perfil, equipo y partidas entre sesiones.",
+    "section_7_title": "7. Datos del Juego e Inicio de Sesión con Google",
+    "section_7_content": "Para prestar el servicio del juego, podemos tratar tu identificador de cuenta, nombre o email asociado a Google cuando lo autorices, así como los datos necesarios para el funcionamiento del juego, por ejemplo tu perfil, equipo, progreso y partidas. Google gestiona el proceso de autenticación conforme a sus propias políticas. Usamos estos datos únicamente para autenticarte, guardar tu progreso, habilitar las funciones multijugador y mantener la seguridad del servicio. No vendemos estos datos a terceros.",
+    "section_8_title": "8. Conservación y Eliminación de Datos del Juego",
+    "section_8_content": "Conservamos los datos de la cuenta y del juego mientras mantengas una cuenta activa o mientras sean necesarios para operar y proteger el servicio. Puedes solicitar acceso, corrección o eliminación de tus datos y de tu cuenta escribiendo a info@ccognitions.com. Atenderemos la solicitud conforme a la legislación aplicable, salvo la información que debamos conservar por motivos legales, de seguridad o para resolver disputas."
   },
   "TermsPage": {
     "meta_title": "Aviso Legal - Code Cognition Studio",
@@ -255,6 +261,14 @@
     "meta_title": "Code Cognition Studio - Desarrollo de Software con IA",
     "meta_description": "Transformamos ideas en software de alta calidad usando orquestación de IA. Reducimos costos y tiempos de entrega sin sacrificar calidad.",
     "og_description": "Transformamos ideas en software de alta calidad usando orquestación de IA."
+  },
+
+  "LittleSoldiers": {
+    "eyebrow": "Juego de Code Cognition Studio",
+    "title": "Little Soldiers",
+    "description": "Little Soldiers es un juego multijugador de estrategia por turnos desarrollado por Ccognitions.",
+    "account_description": "Puedes crear una cuenta o ingresar con Google para guardar tu perfil, equipo y partidas.",
+    "privacy_link": "Ver política de privacidad de Little Soldiers"
   },
 
   "ServicesPage": {

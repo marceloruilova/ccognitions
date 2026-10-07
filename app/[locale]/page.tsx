@@ -5,6 +5,7 @@ import SolutionSection from '@/components/sections/SolutionSection';
 import ComparisonTableSection from '@/components/sections/ComparisonTableSection';
 import CaseStudyTeaser from '@/components/sections/CaseStudyTeaser';
 import FinalCTASection from '@/components/sections/FinalCTASection';
+import LittleSoldiersSection from '@/components/sections/LittleSoldiersSection';
 
 export async function generateMetadata() {
   const t = await getTranslations('HomePage');
@@ -48,6 +49,7 @@ export default function Home() {
       <SolutionSection />
       <ComparisonTableSection />
       <CaseStudyTeaser />
+      <LittleSoldiersSection />
       <FinalCTASection />
     </main>
   );
