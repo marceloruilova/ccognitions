@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ccognitions-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   # Job 1: Build and Test
   build-and-test:
@@ -33,8 +37,19 @@ jobs:
       - name: Run production build
         run: npm run build
 
-      - name: Build Docker image (validation)
-        run: docker build -t ccognitions-test:${{ github.sha }} .
+      - name: Build production image on GitHub
+        run: docker build -t ccognitions-web:${{ github.sha }} .
+
+      - name: Export production image
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: docker save ccognitions-web:${{ github.sha }} | gzip -1 > ccognitions-image.tar.gz
+
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        with:
+          name: production-image
+          path: ccognitions-image.tar.gz
+          retention-days: 2
 
   # Job 2: Deploy (solo en push a main, NO en PRs)
   deploy:
@@ -44,6 +59,20 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: production-image
+
+      - name: Transfer built image
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.DO_USERNAME }}
+          key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.DO_SSH_PORT }}
+          source: ccognitions-image.tar.gz
+          target: /opt/ccognitions/incoming/${{ github.sha }}
+
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -52,6 +81,7 @@ jobs:
           key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
           port: ${{ secrets.DO_SSH_PORT }}
           script_stop: true
+          command_timeout: 15m
           script: |
             set -e
             echo "=== CCOGNITIONS DEPLOYMENT ==="
@@ -59,18 +89,29 @@ jobs:
 
             cd /opt/ccognitions
 
-            # Pull latest code
-            git fetch origin main
-            git reset --hard origin/main
-
-            # Build and deploy with zero-downtime
-            docker compose -f docker-compose.prod.yml --env-file .env.production build
-            docker compose -f docker-compose.prod.yml --env-file .env.production up -d --remove-orphans
-
-            # Wait and verify
-            sleep 10
-            curl -sf http://localhost:8080/api/health || exit 1
-
-            # Cleanup
-            docker image prune -f
+            # Preserve host configuration and every other service, including the game.
+            exec 9>/opt/ccognitions/web-deploy.lock
+            flock -n 9
+            previous=$(docker inspect ccognitions-web-prod --format '{{.Image}}')
+            docker load -i incoming/${{ github.sha }}/ccognitions-image.tar.gz
+            docker tag ccognitions-web:${{ github.sha }} ccognitions-web:latest
+            rollback() {
+              docker tag "$previous" ccognitions-web:latest
+              docker compose -f docker-compose.prod.yml --env-file .env.production up -d --no-build --no-deps web
+            }
+            trap rollback ERR
+            docker compose -f docker-compose.prod.yml --env-file .env.production up -d --no-build --no-deps web
+            healthy=false
+            for attempt in $(seq 1 30); do
+              if docker exec ccognitions-web-prod wget -q -O /dev/null http://localhost:3000/api/health; then
+                healthy=true
+                break
+              fi
+              sleep 2
+            done
+            test "$healthy" = true
+            trap - ERR
+            # A changed web IP requires a graceful proxy reload; existing game sockets remain open.
+            docker exec ccognitions-nginx-prod nginx -t
+            docker exec ccognitions-nginx-prod nginx -s reload
             echo "=== DEPLOYMENT SUCCESSFUL ==="

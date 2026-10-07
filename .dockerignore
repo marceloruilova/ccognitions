@@ -4,7 +4,10 @@
 .env.development.local
 .env.test.local
 .git
-.next/cache
+.next
+.env*
+ssl
+incoming
 .nyc_output
 coverage
 node_modules
